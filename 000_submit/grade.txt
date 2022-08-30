@@ -1,10 +1,6 @@
-Grading at 08/30/2022:03:20:00.827763
-For commit ID 589e482a9cd56e016e043f559cf6cc8f6abdc7eb
-Grading at Mon Aug 29 11:20:00 PM EDT 2022
-I expected to find a file called 'myNetID.txt' but it did not exist
-(or was not a regular file)
-Here are the files that I can find:
-README
-xc139.txt
+Grading at 08/30/2022:03:33:51.938336
+For commit ID 0ddcfd2c2b5f75e3fb8504632164fc5aaac5fb77
+Grading at Mon Aug 29 11:33:51 PM EDT 2022
+Your file matched the expected output
 
-Overall Grade: FAILED
+Overall Grade: PASSED
