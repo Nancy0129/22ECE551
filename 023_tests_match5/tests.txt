@@ -1,0 +1,19 @@
+abcde fghij
+aabcd bbcde
+aaabd aaaab
+aaaab aaabd
+aaaaa aaaac
+andor andif
+abcde aaaaa
+aaaaa bbbbb ccccc
+aaaaa
+aaaaaa bbbbb
+aaaa bbbbb
+aaaaa bbbbbb
+aaaaa bbbb
+aabcd abbcd
+abcdd abbcd
+AAabc aaabc
+$$$ab !!abc
+aabbb aaabb
+aaacc aaccc
