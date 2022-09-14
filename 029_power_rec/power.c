@@ -23,9 +23,6 @@ unsigned power(unsigned x, unsigned y) {
 }
 
 //void check_helper(unsigned x, unsigned y, unsigned ans) {
-//if (power(x, y) != ans) {
-//exit(EXIT_FAILURE);
-//}
 //printf("Out:%d, expected:%d \n", power(x, y), ans);
 //}
 
