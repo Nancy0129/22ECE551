@@ -7,7 +7,7 @@ void check_helper(unsigned x, unsigned y, unsigned ans) {
   }
 }
 int main(void) {
-  //printf("%d", power(-1, 3));
+  printf("%d", power(2.5, 1));
   check_helper(3, 0, 1);
   check_helper(0, 0, 1);
   check_helper(0, 3, 0);
