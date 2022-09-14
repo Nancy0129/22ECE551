@@ -1,0 +1,8 @@
+Grading at 09/14/2022:16:59:56.336887
+For commit ID 7dc1cf30bb5b0f5cdb0f023bec1680e28e604c63
+Grading at Wed Sep 14 12:59:56 PM EDT 2022
+Attempting to compile power.c
+Attempting to compile power.o with our main
+The code did not compile! (did you leave your own main in there??)
+
+Overall Grade: F
