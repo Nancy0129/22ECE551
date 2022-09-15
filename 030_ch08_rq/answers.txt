@@ -5,10 +5,10 @@ C
 C
 B
 C
-B
+C
 F
 B
-B
+F
 C
 F
 C
