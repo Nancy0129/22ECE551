@@ -38,10 +38,10 @@ int main(int argc, char ** argv) {
   int array[26] = {0};
   countC(f, array);
   int res = findMax(array) + 97 - 101;
-  //if (res < 0 || res >= 26) {
-  //perror("Invalid Key value!");
-  //return EXIT_FAILURE;
-  //}
+  if (res < 0 || res >= 26) {
+    perror("Invalid Key value!");
+    return EXIT_FAILURE;
+  }
   printf("%d\n", res);
   if (fclose(f) != 0) {
     perror("Failed to close the input file!");
