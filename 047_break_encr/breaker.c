@@ -21,6 +21,9 @@ int findMax(int * save) {
       maxC = save[i];
     }
   }
+  if (maxI < 4) {
+    maxI += 26;
+  }
   return maxI;
 }
 
