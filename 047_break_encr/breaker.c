@@ -21,6 +21,10 @@ int findMax(int * save) {
       maxC = save[i];
     }
   }
+  if (maxC == 0) {
+    fprintf(stderr, "Invalid Input file- not letter!");
+    return EXIT_FAILURE;
+  }
   if (maxI < 4) {
     maxI += 26;
   }
