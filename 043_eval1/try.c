@@ -4,7 +4,7 @@
 
 #include "pandemic.h"
 int main(void) {
-  char word[] = "xyz,18446744073709551616";
+  char word[] = "xyz,184467440737095516\n";
   int i = 0;
   while (word[i] != ',') {
     i++;

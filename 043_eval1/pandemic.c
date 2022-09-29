@@ -64,14 +64,28 @@ country_t parseLine(char * line) {
     fprintf(stderr, "Invalid Input in 1: no number input!\n");
     exit(EXIT_FAILURE);
   }
-  // The input for strtoull to store invalid characters
+  // The input for strtoull to store invalid characters('/n' or '/0')
   char * endptr;
   ans.population = strtoull(line + nameL, &endptr, 10);
   return ans;
 }
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
-  //WRITE ME
+  if (n_days < 7) {
+    fprintf(stderr, "Invalid Input in 2: Less than 7 days!\n");
+    exit(EXIT_FAILURE);
+  }
+  double sum7 = 0;
+  for (int i = 0; i < 7; i++) {
+    sum7 += data[i];
+  }
+  avg[0] = sum7 / 7;
+  for (int i = 1; i < n_days - 6; i++) {
+    sum7 -= data[i - 1];
+    sum7 += data[i + 6];
+    avg[i] = sum7 / 7;
+  }
+  return;
 }
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
