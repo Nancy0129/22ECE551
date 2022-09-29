@@ -80,7 +80,7 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     sum7 += data[i];
   }
   avg[0] = sum7 / 7;
-  for (int i = 1; i < n_days - 6; i++) {
+  for (unsigned i = 1; i < n_days - 6; i++) {
     sum7 -= data[i - 1];
     sum7 += data[i + 6];
     avg[i] = sum7 / 7;
@@ -89,7 +89,15 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 }
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
-  //WRITE ME
+  double cumsum = 0;
+  //double pop_double = (double)pop;
+  for (unsigned i = 0; i < n_days; i++) {
+    if (i > 6) {
+      cumsum -= data[i - 7];
+    }
+    cumsum += data[i];
+    cum[i] = cumsum * 100000 / pop;
+  }
 }
 
 void printCountryWithMax(country_t * countries,

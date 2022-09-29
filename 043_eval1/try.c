@@ -4,7 +4,7 @@
 
 #include "pandemic.h"
 int main(void) {
-  char word[] = "xyz,184467440737095516\n";
+  char word[] = "xyz,184467440737095516";
   int i = 0;
   while (word[i] != ',') {
     i++;
@@ -12,6 +12,7 @@ int main(void) {
   char * nums = word + i + 1;
   char * pr;
   uint64_t a = strtoull(nums, &pr, 10);
+  double b = (double)a / 100000;
 
   if (*pr != '\0') {
     printf("%d\n", 1);
@@ -19,5 +20,6 @@ int main(void) {
   printf("%lu\n", a);
   printf("%s\n", pr);
   printf("%s\n", nums);
+  printf("%lf\n", b);
   return 0;
 }
