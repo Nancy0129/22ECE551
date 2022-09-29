@@ -90,7 +90,6 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
   double cumsum = 0;
-  //double pop_double = (double)pop;
   for (unsigned i = 0; i < n_days; i++) {
     if (i > 6) {
       cumsum -= data[i - 7];
@@ -104,5 +103,15 @@ void printCountryWithMax(country_t * countries,
                          size_t n_countries,
                          unsigned ** data,
                          size_t n_days) {
-  //WRITE ME
+  int resInd = 0;
+  unsigned maxCase = 0;
+  for (unsigned i = 0; i < n_countries; i++) {
+    for (unsigned j = 0; j < n_days; j++) {
+      if (data[i][j] > maxCase) {
+        maxCase = data[i][j];
+        resInd = i;
+      }
+    }
+  }
+  printf("%s has the most daily cases with %u\n", countries[resInd].name, maxCase);
 }
