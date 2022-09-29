@@ -92,10 +92,6 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   double cumsum = 0;
   double pop_per = (double)pop / 100000;
   for (unsigned i = 0; i < n_days; i++) {
-    if (i > 6) {
-      cumsum -= data[i - 7];
-    }
-    //printf("%lf\n", pop_per);
     cumsum += data[i];
     cum[i] = cumsum / pop_per;
   }
