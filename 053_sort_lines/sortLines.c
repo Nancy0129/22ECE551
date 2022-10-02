@@ -56,7 +56,7 @@ int main(int argc, char ** argv) {
         data = NULL;
         len++;
       }
-      free(data);
+      //free(data);
       //if (len < 1) {
       //perror("no input in file!\n");
       //free(lines);
@@ -68,11 +68,12 @@ int main(int argc, char ** argv) {
       lines = NULL;
       if (fclose(f) != 0) {
         perror("Failed to close the input file!\n");
-
+        free(data);
         return EXIT_FAILURE;
       }
       len = 0;
     }
+    free(data);
   }
   return EXIT_SUCCESS;
 }
