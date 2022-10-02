@@ -56,15 +56,24 @@ int main(int argc, char ** argv) {
         data = NULL;
         len++;
       }
-      free(data);
+      //free(data);
+      //if (len < 1) {
+      //perror("no input in file!\n");
+      //free(lines);
+      //fclose(f);
+      //return EXIT_FAILURE;
+      //}
       sortData(lines, len);
       showRes(lines, len);
+      lines = NULL;
       if (fclose(f) != 0) {
         perror("Failed to close the input file!\n");
 
         return EXIT_FAILURE;
       }
+      len = 0;
     }
+    free(data);
   }
   return EXIT_SUCCESS;
 }
