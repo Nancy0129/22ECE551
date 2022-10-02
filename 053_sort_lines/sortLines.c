@@ -48,6 +48,7 @@ int main(int argc, char ** argv) {
       f = fopen(argv[i], "r");
       if (f == NULL) {
         perror("Could not open file!\n");
+        free(data);
         return EXIT_FAILURE;
       }
       while (getline(&data, &data_len, f) >= 0) {
