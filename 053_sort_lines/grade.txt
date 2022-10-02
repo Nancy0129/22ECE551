@@ -1,37 +1,12 @@
-Grading at 10/02/2022:17:11:52.439457
-For commit ID 420ed3dfeefd6e02507ec613b86b0576e38230b0
-Grading at Sun Oct  2 01:11:47 PM EDT 2022
+Grading at 10/02/2022:17:18:09.755777
+For commit ID 139c4b3078ab1c80e99000c25b01a37660794804
+Grading at Sun Oct  2 01:18:05 PM EDT 2022
 Attempting to compile sortLines.c
 #################################################
 testcase1:
 testcase1 passed, your program successfully indicated a failure
-  - Valgrind reported errors
-valgrind was not clean
-==764222== Memcheck, a memory error detector
-==764222== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==764222== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==764222== 
-==764222== Parent PID: 764221
-==764222== 
-==764222== 
-==764222== HEAP SUMMARY:
-==764222==     in use at exit: 120 bytes in 1 blocks
-==764222==   total heap usage: 15 allocs, 14 frees, 9,976 bytes allocated
-==764222== 
-==764222== 120 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==764222==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==764222==    by 0x48E31A2: getdelim (iogetdelim.c:62)
-==764222==    by 0x109522: main (in sortLines)
-==764222== 
-==764222== LEAK SUMMARY:
-==764222==    definitely lost: 120 bytes in 1 blocks
-==764222==    indirectly lost: 0 bytes in 0 blocks
-==764222==      possibly lost: 0 bytes in 0 blocks
-==764222==    still reachable: 0 bytes in 0 blocks
-==764222==         suppressed: 0 bytes in 0 blocks
-==764222== 
-==764222== For lists of detected and suppressed errors, rerun with: -s
-==764222== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase2:
 Your output is correct
@@ -44,8 +19,6 @@ Your output is correct
 valgrind was clean
 #################################################
 testcase4:
-Your output is correct
-  - Valgrind was clean (no errors, no memory leaks)
-valgrind was clean
+valgrind reported memory errors
 
-Overall Grade: B
+Overall Grade: C
