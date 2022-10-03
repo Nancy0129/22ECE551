@@ -4,7 +4,7 @@ printRunningAvg population.csv daily_cases.csv
 printCumulative population.csv daily_cases.csv
 printDailyMax population.csv daily_cases.csv
 printCountries testspace2.csv
-
+printCountries testspace1.csv 
 
 #error
 printCountries test1.csv

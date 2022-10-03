@@ -42,6 +42,9 @@ country_t parseLine(char * line) {
     if (line[nameL + pos] < 48 || line[nameL + pos] > 57) {
       // Ignore the space
       if (line[nameL + pos] == ' ' || line[nameL + pos] == '\t') {
+        if (popuL > 0) {
+          break;
+        }
         pos++;
         continue;
       }
