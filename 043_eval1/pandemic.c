@@ -16,6 +16,7 @@ country_t parseLine(char * line) {
   // To save the length of name and population later
   int nameL = 0;
   int popuL = 0;
+  int pos = 0;
   char max_uin64[] = "18446744073709551615";
   // Get country name before ','
   while (line[nameL] != ',') {
@@ -36,17 +37,18 @@ country_t parseLine(char * line) {
   // Use this to allocate the beginning of population number (after ',')
   nameL++;
   // Get the population value
-  while (line[nameL + popuL] != '\n' && line[nameL + popuL] != '\0') {
+  while (line[nameL + pos] != '\n' && line[nameL + pos] != '\0') {
     // Make sure the input is number
-    if (line[nameL + popuL] < 48 || line[nameL + popuL] > 57) {
+    if (line[nameL + pos] < 48 || line[nameL + pos] > 57) {
       // Ignore the space
-      if (line[nameL + popuL] == ' ' || line[nameL + popuL] == '\t') {
+      if (line[nameL + pos] == ' ' || line[nameL + pos] == '\t') {
+        pos++;
         continue;
       }
       else {
         fprintf(stderr,
                 "Invalid Input in 1: %c is invalid number character!\n",
-                line[nameL + popuL]);
+                line[nameL + pos]);
         exit(EXIT_FAILURE);
       }
     }
@@ -73,6 +75,7 @@ country_t parseLine(char * line) {
           k++;
         }
       }
+      pos++;
       popuL++;
     }
   }
