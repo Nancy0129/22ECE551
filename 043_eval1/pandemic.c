@@ -70,6 +70,7 @@ country_t parseLine(char * line) {
               fprintf(stderr, "Invalid Input in 1: too large  number!\n");
               exit(EXIT_FAILURE);
             }
+
             j++;
           }
           k++;
