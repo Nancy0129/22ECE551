@@ -121,9 +121,11 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
     fprintf(stderr, "Invalid Input in 3: No data!\n");
     exit(EXIT_FAILURE);
   }
-  if (pop < 1) {
-    fprintf(stderr, "Invalid Input in 3: Population too small (<1)!\n");
-    exit(EXIT_FAILURE);
+  if (pop == 0) {
+    for (unsigned i = 0; i < n_days; i++) {
+      cum[i] = 0;
+    }
+    return;
   }
   double cumsum = 0;
   double pop_per = (double)pop / 100000;
