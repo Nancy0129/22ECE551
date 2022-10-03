@@ -8,7 +8,9 @@ printCountries testspace1.csv
 printCountries test3.csv
 printCumulative test3.csv daily_cases.csv
 
+
 #error
 printCountries test1.csv
 printCountries test2.csv
+printRunningAvg population.csv daily_5.csv
 
