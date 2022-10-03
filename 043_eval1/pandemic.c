@@ -62,12 +62,12 @@ country_t parseLine(char * line) {
         // for pos in line (include space)
         int k = 0;
         while (j < 20) {
-          if (line[nameL + k] > max_uin64[j]) {
-            fprintf(stderr, "Invalid Input in 1: too large  number!\n");
-            exit(EXIT_FAILURE);
-          }
           //skip whitespace
           if (line[nameL + k] >= 48 && line[nameL + k] <= 57) {
+            if (line[nameL + k] > max_uin64[j]) {
+              fprintf(stderr, "Invalid Input in 1: too large  number!\n");
+              exit(EXIT_FAILURE);
+            }
             j++;
           }
           k++;
