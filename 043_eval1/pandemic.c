@@ -102,13 +102,13 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   }
 
   if (n_days < 7) {
-    //  for (int i = 0; i < n_days; i++) {
-    //sum7 += data[i];
-    // }
-    //avg[0] = sum7 / n_days;
-    //return;
-    fprintf(stderr, "Invalid Input in 2: Less than 7 days!\n");
-    exit(EXIT_FAILURE);
+    for (int i = 0; i < n_days; i++) {
+      sum7 += data[i];
+    }
+    avg[0] = sum7 / n_days;
+    return;
+    //fprintf(stderr, "Invalid Input in 2: Less than 7 days!\n");
+    //exit(EXIT_FAILURE);
   }
 
   for (int i = 0; i < 7; i++) {
