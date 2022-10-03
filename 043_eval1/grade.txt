@@ -1,6 +1,6 @@
-Grading at 10/03/2022:19:17:41.583493
-For commit ID 3048acd95e9af651c18bc03fb4d8bff8e3ed228a
-Grading at Mon Oct  3 03:17:36 PM EDT 2022
+Grading at 10/03/2022:19:31:36.444205
+For commit ID 7e9c7aeecffae44f6f988754f21907f80e3f3772
+Grading at Mon Oct  3 03:31:30 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -23,6 +23,9 @@ Test case printDailyMax population.csv daily_cases.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries testspace2.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries testspace1.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries test1.csv
