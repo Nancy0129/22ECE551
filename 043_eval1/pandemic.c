@@ -39,32 +39,49 @@ country_t parseLine(char * line) {
   while (line[nameL + popuL] != '\n' && line[nameL + popuL] != '\0') {
     // Make sure the input is number
     if (line[nameL + popuL] < 48 || line[nameL + popuL] > 57) {
-      fprintf(stderr,
-              "Invalid Input in 1: %c is invalid number character!\n",
-              line[nameL + popuL]);
-      exit(EXIT_FAILURE);
-    }
-    // Make sure the value is not larger than the maximum of unsigned int64
-    if (popuL > 19) {
-      fprintf(stderr, "Invalid Input in 1: too large  number!\n");
-      exit(EXIT_FAILURE);
-    }
-    if (popuL == 19) {
-      for (int i = 0; i < 20; i++) {
-        if (line[nameL + i] > max_uin64[i]) {
-          fprintf(stderr, "Invalid Input in 1: too large  number!\n");
-          exit(EXIT_FAILURE);
-        }
+      // Ignore the space
+      if (line[nameL + popuL] == ' ' || line[nameL + popuL] == '\t') {
+        continue;
+      }
+      else {
+        fprintf(stderr,
+                "Invalid Input in 1: %c is invalid number character!\n",
+                line[nameL + popuL]);
+        exit(EXIT_FAILURE);
       }
     }
-    popuL++;
+    else {
+      // Make sure the value is not larger than the maximum of unsigned int64
+      if (popuL > 19) {
+        fprintf(stderr, "Invalid Input in 1: too large  number!\n");
+        exit(EXIT_FAILURE);
+      }
+      if (popuL == 19) {
+        // for digit number (not include space)
+        int j = 0;
+        // for pos in line (include space)
+        int k = 0;
+        while (j < 20) {
+          if (line[nameL + k] > max_uin64[j]) {
+            fprintf(stderr, "Invalid Input in 1: too large  number!\n");
+            exit(EXIT_FAILURE);
+          }
+          //skip whitespace
+          if (line[nameL + k] >= 48 && line[nameL + k] <= 57) {
+            j++;
+          }
+          k++;
+        }
+      }
+      popuL++;
+    }
   }
   // Make sure there is a value for population
   if (popuL < 1) {
     fprintf(stderr, "Invalid Input in 1: no number input!\n");
     exit(EXIT_FAILURE);
   }
-  // The input for strtoull to store invalid characters('/n' or '/0')
+  // The input for strtoull to store invalid characters('/n' or '/0' or ' ')
   char * endptr;
   ans.population = strtoull(line + nameL, &endptr, 10);
   return ans;
@@ -73,6 +90,10 @@ country_t parseLine(char * line) {
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   if (n_days < 7) {
     fprintf(stderr, "Invalid Input in 2: Less than 7 days!\n");
+    exit(EXIT_FAILURE);
+  }
+  if (data == NULL || avg == NULL) {
+    fprintf(stderr, "Invalid Input in 2: No data!\n");
     exit(EXIT_FAILURE);
   }
   double sum7 = 0;
@@ -89,6 +110,14 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 }
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
+  if (n_days < 1 || data == NULL || cum == NULL) {
+    fprintf(stderr, "Invalid Input in 3: No data!\n");
+    exit(EXIT_FAILURE);
+  }
+  if (pop < 1) {
+    fprintf(stderr, "Invalid Input in 3: Population too small (<1)!\n");
+    exit(EXIT_FAILURE);
+  }
   double cumsum = 0;
   double pop_per = (double)pop / 100000;
   for (unsigned i = 0; i < n_days; i++) {
@@ -101,9 +130,17 @@ void printCountryWithMax(country_t * countries,
                          size_t n_countries,
                          unsigned ** data,
                          size_t n_days) {
+  if (n_countries < 1 || n_days < 1 || countries == NULL || data == NULL) {
+    fprintf(stderr, "Invalid Input in 4: No data!\n");
+    exit(EXIT_FAILURE);
+  }
   int resInd = 0;
   unsigned maxCase = 0;
   for (unsigned i = 0; i < n_countries; i++) {
+    if (data[i] == NULL) {
+      fprintf(stderr, "Invalid Input in 4: No data!\n");
+      exit(EXIT_FAILURE);
+    }
     for (unsigned j = 0; j < n_days; j++) {
       if (data[i][j] > maxCase) {
         maxCase = data[i][j];
