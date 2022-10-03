@@ -1,6 +1,6 @@
-Grading at 10/03/2022:18:50:28.961213
-For commit ID 2ab1d2940b82abe93239ea7f850ffffd35487994
-Grading at Mon Oct  3 02:50:23 PM EDT 2022
+Grading at 10/03/2022:19:17:41.583493
+For commit ID 3048acd95e9af651c18bc03fb4d8bff8e3ed228a
+Grading at Mon Oct  3 03:17:36 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -28,13 +28,10 @@ Your file matched the expected output
 Test case printCountries test1.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case printCountries testspace1.csv
-Our printCountries does not consider this an error case
-+-----------------------------------------------------------------------+
 Test case printCountries test2.csv
 Your program successfully indicated a failure case
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
