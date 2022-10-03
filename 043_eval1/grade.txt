@@ -1,6 +1,6 @@
-Grading at 10/03/2022:18:07:50.665952
-For commit ID 074e449c6d01e31008c34544f46eeac27fe3c165
-Grading at Mon Oct  3 02:07:46 PM EDT 2022
+Grading at 10/03/2022:18:18:09.377365
+For commit ID 5164e30f78194468af5c2b932be365c8164b0746
+Grading at Mon Oct  3 02:18:05 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -23,9 +23,10 @@ Test case printDailyMax population.csv daily_cases.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries testspace1.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
