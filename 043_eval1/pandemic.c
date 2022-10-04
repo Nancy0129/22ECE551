@@ -125,17 +125,17 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
     fprintf(stderr, "Invalid Input in 3: No data!\n");
     exit(EXIT_FAILURE);
   }
-  if (pop <= 0) {
-    exit(EXIT_SUCCESS);
+  if (pop > 0) {
+    double cumsum = 0;
+    // Change the type into double and calculate the value  per 100000 people
+    double pop_per = (double)pop / 100000;
+    for (unsigned i = 0; i < n_days; i++) {
+      // Divide first to reduce the possibility of overflow
+      cumsum += data[i] / pop_per;
+      cum[i] = cumsum;
+    }
   }
-  double cumsum = 0;
-  // Change the type into double and calculate the value  per 100000 people
-  double pop_per = (double)pop / 100000;
-  for (unsigned i = 0; i < n_days; i++) {
-    // Divide first to reduce the possibility of overflow
-    cumsum += data[i] / pop_per;
-    cum[i] = cumsum;
-  }
+  return;
 }
 
 void printCountryWithMax(country_t * countries,
