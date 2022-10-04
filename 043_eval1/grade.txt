@@ -1,6 +1,6 @@
-Grading at 10/04/2022:19:03:56.727418
-For commit ID 6612a6f1cdfe1445390e4a5a1c56662ee0c1abce
-Grading at Tue Oct  4 03:03:46 PM EDT 2022
+Grading at 10/04/2022:19:16:01.617546
+For commit ID 3fa6d353ddbe7d4b3a8b79eec30ecec5486f085b
+Grading at Tue Oct  4 03:15:51 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -31,35 +31,13 @@ Your file matched the expected output
 Test case printDailyMax population.csv daily_small.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries testspace2.csv
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Line_8_did_not_match
-Line_9_did_not_match
-Your file did not match the expected ouput
-+-----------------------------------------------------------------------+
 Test case printCountries testspace1.csv
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Line_8_did_not_match
-Line_9_did_not_match
-Your file did not match the expected ouput
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries test3.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCumulative test3.csv daily_cases.csv
-Line_6_did_not_match
 Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_5.csv
@@ -69,6 +47,9 @@ Test case printCountries test1.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries test2.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries testspace2.csv
 Your program successfully indicated a failure case
 
 You have FAILED one or more of your test cases
