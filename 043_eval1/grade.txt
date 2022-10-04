@@ -1,6 +1,6 @@
-Grading at 10/03/2022:20:38:45.524685
-For commit ID 8d1e0fe10a27f08edbd8802d7fcd6ef3a3f52f8d
-Grading at Mon Oct  3 04:38:36 PM EDT 2022
+Grading at 10/04/2022:18:55:49.783894
+For commit ID 89f3e556afffe710448eb6ecd78a4b5e70774ea0
+Grading at Tue Oct  4 02:55:40 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -32,15 +32,29 @@ Test case printDailyMax population.csv daily_small.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries testspace2.csv
-Your file matched the expected output
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printCountries testspace1.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printCountries test3.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCumulative test3.csv daily_cases.csv
+Line_6_did_not_match
+Your file did not match the expected ouput
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_5.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries test1.csv
@@ -49,7 +63,7 @@ Your program successfully indicated a failure case
 Test case printCountries test2.csv
 Your program successfully indicated a failure case
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
