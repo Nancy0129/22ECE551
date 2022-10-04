@@ -34,6 +34,7 @@ country_t parseLine(char * line) {
   }
   // Put the '\0' at the end of name to indicate the end
   ans.name[nameL] = '\0';
+
   // Use this to allocate the beginning of population number (after ',')
   nameL++;
   // Get the population value
@@ -58,6 +59,7 @@ country_t parseLine(char * line) {
         exit(EXIT_FAILURE);
       }
     }
+    // WHen the input is number
     else {
       // Make sure the value is not larger than the maximum of unsigned int64
       if (popuL > 19) {
@@ -121,12 +123,19 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 }
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
-  if (n_days < 1 || data == NULL || cum == NULL) {
+  // No calculations to do, exit with success
+  if (n_days < 1) {
+    exit(EXIT_SUCCESS);
+  }
+  // n_days>0 but no data should be error
+  else if (data == NULL || cum == NULL) {
     fprintf(stderr, "Invalid Input in 3: No data!\n");
     exit(EXIT_FAILURE);
   }
+  // Population cannot be 0
   if (pop <= 0) {
-    exit(EXIT_SUCCESS);
+    fprintf(stderr, "Invalid Input in 3: Population cannot be 0!\n");
+    exit(EXIT_FAILURE);
   }
   double cumsum = 0;
   // Change the type into double and calculate the value  per 100000 people
@@ -144,7 +153,12 @@ void printCountryWithMax(country_t * countries,
                          size_t n_countries,
                          unsigned ** data,
                          size_t n_days) {
-  if (n_countries < 1 || n_days < 1 || countries == NULL || data == NULL) {
+  // No calculate to do, exit with success
+  if (n_countries < 1 || n_days < 1) {
+    exit(EXIT_SUCCESS);
+  }
+  // n_days>0 and n_countries>0 but no data should be error
+  else if (countries == NULL || data == NULL) {
     fprintf(stderr, "Invalid Input in 4: No data!\n");
     exit(EXIT_FAILURE);
   }
