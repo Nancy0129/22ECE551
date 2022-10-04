@@ -40,8 +40,14 @@ country_t parseLine(char * line) {
   while (line[nameL + pos] != '\n' && line[nameL + pos] != '\0') {
     // Make sure the input is number
     if (line[nameL + pos] < 48 || line[nameL + pos] > 57) {
-      // Ignore the space
+      // Ignore the space in front of the number
       if (line[nameL + pos] == ' ' || line[nameL + pos] == '\t') {
+        if (popuL > 0) {
+          fprintf(stderr,
+                  "Invalid Input in 1: %c is invalid number character!\n",
+                  line[nameL + pos]);
+          exit(EXIT_FAILURE);
+        }
         pos++;
         continue;
       }
@@ -118,6 +124,9 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   if (n_days < 1 || data == NULL || cum == NULL) {
     fprintf(stderr, "Invalid Input in 3: No data!\n");
     exit(EXIT_FAILURE);
+  }
+  if (pop <= 0) {
+    exit(EXIT_SUCCESS);
   }
   double cumsum = 0;
   // Change the type into double and calculate the value  per 100000 people
