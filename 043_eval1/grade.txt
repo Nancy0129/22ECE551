@@ -1,6 +1,6 @@
-Grading at 10/04/2022:18:55:49.783894
-For commit ID 89f3e556afffe710448eb6ecd78a4b5e70774ea0
-Grading at Tue Oct  4 02:55:40 PM EDT 2022
+Grading at 10/04/2022:19:03:56.727418
+For commit ID 6612a6f1cdfe1445390e4a5a1c56662ee0c1abce
+Grading at Tue Oct  4 03:03:46 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -45,6 +45,14 @@ Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printCountries testspace1.csv
 Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
 Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printCountries test3.csv
