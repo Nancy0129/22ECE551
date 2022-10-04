@@ -42,9 +42,6 @@ country_t parseLine(char * line) {
     if (line[nameL + pos] < 48 || line[nameL + pos] > 57) {
       // Ignore the space
       if (line[nameL + pos] == ' ' || line[nameL + pos] == '\t') {
-        if (popuL > 0) {
-          break;
-        }
         pos++;
         continue;
       }
@@ -73,7 +70,6 @@ country_t parseLine(char * line) {
               fprintf(stderr, "Invalid Input in 1: too large  number!\n");
               exit(EXIT_FAILURE);
             }
-
             j++;
           }
           k++;
@@ -100,21 +96,16 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     fprintf(stderr, "Invalid Input in 2: No data!\n");
     exit(EXIT_FAILURE);
   }
-
+  // When no running average calculations to do, exit with success
   if (n_days < 7) {
-    //    for (int i = 0; i < n_days; i++) {
-    //sum7 += data[i];
-    // }
-    //avg[0] = sum7 / n_days;
-    //return;
-    fprintf(stderr, "Invalid Input in 2: Less than 7 days!\n");
-    exit(EXIT_FAILURE);
+    exit(EXIT_SUCCESS);
   }
-
+  // Calculate the sum of the first 7 days
   for (int i = 0; i < 7; i++) {
     sum7 += data[i];
   }
   avg[0] = sum7 / 7;
+  // Each time substract the earliest day and add a new day
   for (unsigned i = 1; i < n_days - 6; i++) {
     sum7 -= data[i - 1];
     sum7 += data[i + 6];
@@ -129,10 +120,12 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
     exit(EXIT_FAILURE);
   }
   double cumsum = 0;
+  // Change the type into double and calculate the value  per 100000 people
   double pop_per = (double)pop / 100000;
   for (unsigned i = 0; i < n_days; i++) {
-    cumsum += data[i];
-    cum[i] = cumsum / pop_per;
+    // Divide first to reduce the possibility of overflow
+    cumsum += data[i] / pop_per;
+    cum[i] = cumsum;
   }
 }
 
