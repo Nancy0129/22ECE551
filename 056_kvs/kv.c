@@ -27,7 +27,7 @@ kvarray_t * readKVs(const char * fname) {
     pair->key = NULL;
     pair->value = NULL;
     while (data[j] != '=') {
-      if (data[j] == '\0') {
+      if (data[j] == '\0' || data[j] == '\n') {
         free(pair->key);
         pair->key = NULL;
         pair->value = NULL;
@@ -42,7 +42,7 @@ kvarray_t * readKVs(const char * fname) {
       pair->key[j] = '\0';
       j++;
       size_t i = 0;
-      while (data[j + i] != '\0') {
+      while (data[j + i] != '\n' && data[j + i] != '\0') {
         pair->value = realloc(pair->value, (i + 1) * sizeof(*pair->value));
         pair->value[i] = data[j + i];
         i++;
