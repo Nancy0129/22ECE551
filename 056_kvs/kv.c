@@ -87,7 +87,7 @@ char * lookupValue(kvarray_t * pairs, const char * key) {
     is_match = 1;
     j = 0;
     while (pairs->array[i]->key[j] != '\0') {
-      if (key[j] == '\0') {
+      if (key[j] == '\0' || key[j] == '\n') {
         is_match = 0;
         break;
       }
@@ -97,7 +97,7 @@ char * lookupValue(kvarray_t * pairs, const char * key) {
       }
       j++;
     }
-    if (key[j] == '\0' && is_match > 0) {
+    if ((key[j] == '\0' || key[j] == '\n') && is_match > 0) {
       return pairs->array[i]->value;
     }
   }
