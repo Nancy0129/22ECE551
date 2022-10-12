@@ -12,15 +12,15 @@ char * computeOutputFileName(const char * inputName) {
     outName[j] = inputName[j];
     j++;
   }
-  if (inputName[j - 1] == 't' && inputName[j - 2] == 'x' && inputName[j - 3] == 't' &&
-      inputName[j - 4] == '.') {
-    char count[8] = ".counts";
-    outName = realloc(outName, (j + 8) * sizeof(*outName));
-    for (int i = 0; i < 8; i++) {
-      outName[j + i] = count[i];
-    }
-    return outName;
+  //if (inputName[j - 1] == 't' && inputName[j - 2] == 'x' && inputName[j - 3] == 't' &&
+  //     inputName[j - 4] == '.') {
+  char count[8] = ".counts";
+  outName = realloc(outName, (j + 8) * sizeof(*outName));
+  for (int i = 0; i < 8; i++) {
+    outName[j + i] = count[i];
   }
-  free(outName);
-  return NULL;
+  return outName;
+  // }
+  //free(outName);
+  //return NULL;
 }
