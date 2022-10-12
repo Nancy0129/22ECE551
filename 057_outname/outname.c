@@ -21,5 +21,6 @@ char * computeOutputFileName(const char * inputName) {
     }
     return outName;
   }
+  free(outName);
   return NULL;
 }
