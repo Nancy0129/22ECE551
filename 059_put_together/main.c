@@ -19,12 +19,13 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   char * value = NULL;
   while (getline(&data, &data_len, f) >= 0) {
     value = lookupValue(kvPairs, data);
-    // printf("%s", value);
     addCount(counts, value);
     free(data);
-    value = NULL;
+    //value = NULL;
     data = NULL;
+    data_len = 0;
   }
+  free(data);
   fclose(f);
   return counts;
 }
