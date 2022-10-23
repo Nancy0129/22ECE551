@@ -64,7 +64,7 @@ size_t checkPosInt(const char * word);
 
 category_t * initTracker();
 
-const char * getWord(blank_t blank, category_t * tracker, catarray_t * cats, int del);
+const char * getWord(blank_t blank, category_t * tracker, catarray_t * cat);
 
 void updateStory(FILE * story, catarray_t * cats, int del);
 

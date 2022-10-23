@@ -235,7 +235,7 @@ void addTrackOne(category_t * tracker, const char * word) {
   tracker->n_words++;
 }
 
-const char * getWord(blank_t blank, category_t * tracker, catarray_t * cats, int del) {
+const char * getWord(blank_t blank, category_t * tracker, catarray_t * cats) {
   if (cats == NULL) {
     return chooseWord(blank.cat, NULL);
   }
@@ -250,16 +250,14 @@ const char * getWord(blank_t blank, category_t * tracker, catarray_t * cats, int
     return preword;
   }
   else {
-    const char * newword = chooseWord(blank.cat, cats);
-    if (newword == NULL) {
-      fprintf(stderr, "Category %s has no useable words!\n", blank.cat);
-      return NULL;
+    for (size_t i = 0; i < cats->n; i++) {
+      if (strcmp(blank.cat, cats->arr[i].name) == 0 && cats->arr[i].n_words > 0) {
+        const char * newword = chooseWord(blank.cat, cats);
+        addTrackOne(tracker, newword);
+        return newword;
+      }
     }
-    addTrackOne(tracker, newword);
-    if (del > 0) {
-      deleteWord(cats, blank.cat, newword);
-    }
-    return newword;
+    return NULL;
   }
 }
 
@@ -275,13 +273,17 @@ void updateStory(FILE * story, catarray_t * cats, int del) {
       exit(EXIT_FAILURE);
     }
     for (size_t i = 0; i < blanks->n; i++) {  // replace the blanks
-      const char * word = getWord(blanks->arr[i], tracker, cats, del);
+      const char * word = getWord(blanks->arr[i], tracker, cats);
       if (word == NULL) {
         freeblank(blanks);
         freeCloseAll(line, story, tracker, cats);
         exit(EXIT_FAILURE);
       }
       line = replaceWord(line, blanks->arr[i], word);
+      if (del > 0) {
+        deleteWord(cats, blanks->arr[i].cat, word);
+      }
+
       updateBlank(blanks, i + 1, strlen(line) - pre);
       pre = strlen(line);  // print the output line
     }
@@ -295,12 +297,12 @@ void updateStory(FILE * story, catarray_t * cats, int del) {
 
 void deleteWord(catarray_t * cats, const char * category, const char * word) {
   for (size_t i = 0; i < cats->n; i++) {
-    if (strcmp(category, cats->arr[i].name)) {
+    if (strcmp(category, cats->arr[i].name) == 0) {
       for (size_t j = 0; j < cats->arr[i].n_words; j++) {
-        if (strcmp(word, cats->arr[i].words[j])) {
+        if (strcmp(word, cats->arr[i].words[j]) == 0) {
           free(cats->arr[i].words[j]);
           cats->arr[i].words[j] = NULL;
-          for (size_t k = i + 1; k < cats->arr[i].n_words; k++) {
+          for (size_t k = j + 1; k < cats->arr[i].n_words; k++) {
             cats->arr[i].words[k - 1] = cats->arr[i].words[k];
             cats->arr[i].words[k] = NULL;
           }

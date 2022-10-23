@@ -1,5 +1,25 @@
 story-step1 story.txt
+story-step1 story2.txt
+story-step1 badstory.txt
+story-step1 badstory2.txt
+story-step1 badstory3.txt
+story-step1
+
 story-step2 words.txt
+story-step2 mytrickw.txt
+story-step2
+
+story-step3 words.txt story.txt 
 story-step3 words.txt story2.txt
+story-step3 words.txt badstory.txt
+story-step3 words.txt badstory2.txt
+story-step3 words.txt badstory3.txt
+story-step3 mytrickw.txt story.txt 
+story-step3
+
 story-step4 words.txt story2.txt
 story-step4 -n words.txt story2.txt
+story-step4 -o words.txt story2.txt
+story-step4 -o words.txt
+story-step4
+story-step4 words.txt badstory3.txt 
