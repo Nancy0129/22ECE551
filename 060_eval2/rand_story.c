@@ -92,3 +92,73 @@ char * replaceWord(char * line, blank_t blank, const char * word) {
   line = NULL;
   return newline;  // output the newline
 }
+
+void freeCat(catarray_t * cats) {
+  for (size_t i = 0; i < cats->n; i++) {
+    free(cats->arr[i].name);
+    for (size_t j = 0; j < cats->arr[i].n_words; j++) {
+      free(cats->arr[i].words[j]);
+    }
+    free(cats->arr[i].words);
+  }
+  free(cats->arr);
+  free(cats);
+}
+
+catarray_t * generateCat(FILE * f) {
+  catarray_t * cats = malloc(sizeof(*cats));
+  cats->arr = NULL;
+  cats->n = 0;
+  char * line = NULL;
+  size_t size = 0;
+  while (getline(&line, &size, f) != -1) {
+    char * category = NULL;
+    char * word = NULL;
+    for (size_t i = 0; i < strlen(line); i++) {
+      if (line[i] == ':') {
+        category = strndup(line, i);
+        if (line[strlen(line) - 1] == '\n') {
+          word = strndup(line + i + 1, strlen(line) - (i + 2));
+        }
+        else {  // if the line does not end with '\n'
+          word = strndup(line + i + 1, strlen(line) - (i + 1));
+        }
+        break;
+      }
+    }
+    if (category == NULL || word == NULL) {
+      freeCat(cats);
+      fprintf(stderr, "Wrong input in line: %s", line);
+      return NULL;
+    }
+    free(line);
+    line = NULL;
+    addCatOne(cats, category, word);
+  }
+  free(line);
+  return cats;
+}
+
+void addCatOne(catarray_t * cats, char * category, char * word) {
+  int find = 0;
+  for (size_t i = 0; i < cats->n; i++) {
+    if (strcmp(category, cats->arr[i].name) == 0) {
+      cats->arr[i].words = realloc(
+          cats->arr[i].words, (cats->arr[i].n_words + 1) * sizeof(*cats->arr[i].words));
+      cats->arr[i].words[cats->arr[i].n_words] = word;
+      cats->arr[i].n_words++;
+      free(category);
+      category = NULL;
+      find = 1;
+      break;
+    }
+  }
+  if (find != 1) {
+    cats->arr = realloc(cats->arr, (cats->n + 1) * sizeof(*cats->arr));
+    cats->arr[cats->n].n_words = 1;
+    cats->arr[cats->n].name = category;
+    cats->arr[cats->n].words = malloc(1 * sizeof(*cats->arr[cats->n].words));
+    cats->arr[cats->n].words[0] = word;
+    cats->n++;
+  }
+}

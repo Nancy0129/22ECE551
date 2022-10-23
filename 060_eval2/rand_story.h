@@ -44,4 +44,9 @@ blankarr_t * checkStory(char * line);
  */
 char * replaceWord(char * line, blank_t blank, const char * word);
 
+void freeCat(catarray_t * cats);
+
+catarray_t * generateCat(FILE * f);
+
+void addCatOne(catarray_t * cats, char * category, char * word);
 #endif
