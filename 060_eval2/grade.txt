@@ -1,6 +1,6 @@
-Grading at 10/23/2022:23:32:37.807236
-For commit ID 327f61f1d05518a850380170d144d6113a41aa69
-Grading at Sun Oct 23 07:32:24 PM EDT 2022
+Grading at 10/23/2022:23:39:12.698902
+For commit ID f35e8af967172fb886dda7cdcd396dbfe9523714
+Grading at Sun Oct 23 07:38:58 PM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -124,7 +124,9 @@ Valgrind was clean
 
 3.6: Current test is story-step3 mytrickw.txt story.txt 
 -----------------------------
-You exited with a failure status (good) but did not print to stderr (bad)
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
 
 3.7: Current test is story-step3
 -----------------------------
@@ -179,8 +181,8 @@ Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-You have NOT passed your test cases!
-You should go and figure out/understand where thing went wrong
-And fix the problem(s) before the deadline
+You have passed the test cases YOU provided
+If your tests are good, this is great. 
+If your tests are insufficient, you should do much more testing
 
 Overall Grade: NO GRADE YET
