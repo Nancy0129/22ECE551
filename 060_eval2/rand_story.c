@@ -257,6 +257,7 @@ const char * getWord(blank_t blank, category_t * tracker, catarray_t * cats) {
         return newword;
       }
     }
+    fprintf(stderr, "The category %s does not exist or have usable words!", blank.cat);
     return NULL;
   }
 }
