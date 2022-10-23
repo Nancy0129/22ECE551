@@ -6,6 +6,7 @@
 
 void checkArgc(int argc, int expect);
 FILE * OpenCheckFile(const char * name);
+void checkCloseFile(FILE * f);
 
 /* Store information about a blank, including its category, position
  (the index of first _),and the lenth of the blank (include _).
@@ -39,14 +40,34 @@ void updateBlank(blankarr_t * blanks, size_t ind, size_t change);
  */
 blankarr_t * checkStory(char * line);
 
-/*
- Replace a blank in the line with the word returned by chooseWord.
- */
+// Replace a blank in the line with the word returned by chooseWord.
 char * replaceWord(char * line, blank_t blank, const char * word);
 
+catarray_t * initialCat();
+
+// Free all parts of the catarray_t cats
 void freeCat(catarray_t * cats);
 
-catarray_t * generateCat(FILE * f);
+// Generatecat catarray_t according to the input file
+catarray_t * generateCat(const char * fileName);
 
+// Add a category or a word in a category in the catarray_t
 void addCatOne(catarray_t * cats, char * category, char * word);
+
+// Free all allocated memory and close the file to exit
+void freeCloseAll(char * line, FILE * f, category_t * tracker, catarray_t * cats);
+
+/* Check if the input word contains only a positive number.
+   If so, return  a positive number, otherwise return 0.
+ */
+size_t checkPosInt(const char * word);
+
+category_t * initTracker();
+
+const char * getWord(blank_t blank, category_t * tracker, catarray_t * cats, int del);
+
+void updateStory(FILE * story, catarray_t * cats, int del);
+
+void deleteWord(catarray_t * cats, const char * category, const char * word);
+
 #endif

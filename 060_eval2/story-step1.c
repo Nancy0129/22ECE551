@@ -13,7 +13,6 @@ int main(int argc, char ** argv) {
     blankarr_t * blanks = checkStory(line);
     size_t pre = strlen(line);
     if (blanks == NULL) {  // if a line has format error -> exit faliure
-      fprintf(stderr, "Invalid format story format:\n %s ", line);
       free(line);
       fclose(f);
       return EXIT_FAILURE;
@@ -30,9 +29,6 @@ int main(int argc, char ** argv) {
     line = NULL;
   }
   free(line);
-  if (fclose(f) != 0) {
-    perror("Failed to close the input file!\n");
-    return EXIT_FAILURE;
-  }
+  checkCloseFile(f);
   return EXIT_SUCCESS;
 }

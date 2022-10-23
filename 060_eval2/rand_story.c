@@ -17,6 +17,14 @@ FILE * OpenCheckFile(const char * name) {
   }
   return f;
 }
+
+void checkCloseFile(FILE * f) {
+  if (fclose(f) != 0) {
+    perror("Failed to close the input file!\n");
+    exit(EXIT_FAILURE);
+  }
+}
+
 void freeblank(blankarr_t * blanks) {
   for (size_t i = 0; i < blanks->n; i++) {
     free(blanks->arr[i].cat);
@@ -60,7 +68,8 @@ blankarr_t * checkStory(char * line) {
   }
   if (hasLeft == 1) {   // it means there remains an  unmatched _
     freeblank(blanks);  // clear all mallocated values
-    return NULL;        // indicate the faliure
+    fprintf(stderr, "Invalid format story format:\n %s ", line);
+    return NULL;  // indicate the faliure
   }
   return blanks;
 }
@@ -93,6 +102,13 @@ char * replaceWord(char * line, blank_t blank, const char * word) {
   return newline;  // output the newline
 }
 
+catarray_t * initialCat() {
+  catarray_t * cats = malloc(sizeof(*cats));
+  cats->arr = NULL;
+  cats->n = 0;
+  return cats;
+}
+
 void freeCat(catarray_t * cats) {
   for (size_t i = 0; i < cats->n; i++) {
     free(cats->arr[i].name);
@@ -105,10 +121,13 @@ void freeCat(catarray_t * cats) {
   free(cats);
 }
 
-catarray_t * generateCat(FILE * f) {
-  catarray_t * cats = malloc(sizeof(*cats));
-  cats->arr = NULL;
-  cats->n = 0;
+catarray_t * generateCat(const char * fileName) {
+  FILE * f = fopen(fileName, "r");
+  if (f == NULL) {
+    fprintf(stderr, "Cannot open the words file!\n");
+    return NULL;
+  }
+  catarray_t * cats = initialCat();
   char * line = NULL;
   size_t size = 0;
   while (getline(&line, &size, f) != -1) {
@@ -128,7 +147,7 @@ catarray_t * generateCat(FILE * f) {
     }
     if (category == NULL || word == NULL) {
       freeCat(cats);
-      fprintf(stderr, "Wrong input in line: %s", line);
+      fprintf(stderr, "Wrong input in line: %s\n", line);
       return NULL;
     }
     free(line);
@@ -136,23 +155,31 @@ catarray_t * generateCat(FILE * f) {
     addCatOne(cats, category, word);
   }
   free(line);
+  if (fclose(f) != 0) {
+    fprintf(stderr, "File close error!\n");
+    freeCat(cats);
+    return NULL;
+  }
   return cats;
 }
 
 void addCatOne(catarray_t * cats, char * category, char * word) {
   int find = 0;
+  // Find if the category is already exist
   for (size_t i = 0; i < cats->n; i++) {
+    // If so, add the word to its word list
     if (strcmp(category, cats->arr[i].name) == 0) {
       cats->arr[i].words = realloc(
           cats->arr[i].words, (cats->arr[i].n_words + 1) * sizeof(*cats->arr[i].words));
       cats->arr[i].words[cats->arr[i].n_words] = word;
       cats->arr[i].n_words++;
-      free(category);
+      free(category);  // the input category string no longer needed
       category = NULL;
       find = 1;
       break;
     }
   }
+  // If not found, create a new category and put word in it.
   if (find != 1) {
     cats->arr = realloc(cats->arr, (cats->n + 1) * sizeof(*cats->arr));
     cats->arr[cats->n].n_words = 1;
@@ -161,4 +188,107 @@ void addCatOne(catarray_t * cats, char * category, char * word) {
     cats->arr[cats->n].words[0] = word;
     cats->n++;
   }
+}
+
+void freeCloseAll(char * line, FILE * f, category_t * tracker, catarray_t * cats) {
+  free(line);
+  for (size_t i = 0; i < tracker->n_words; i++) {
+    free(tracker->words[i]);
+  }
+  free(tracker->name);
+  free(tracker->words);
+  free(tracker);
+  freeCat(cats);
+  checkCloseFile(f);
+}
+
+size_t checkPosInt(const char * word) {
+  char * endtr;
+  long number = strtol(word, &endtr, 10);
+  if (number > 0) {
+    if (endtr[0] == '\0') {
+      return strtoul(word, NULL, 10);
+    }
+  }
+  return 0;
+}
+
+category_t * initTracker() {
+  category_t * tracker = malloc(sizeof(*tracker));
+  tracker->n_words = 0;
+  tracker->name = NULL;
+  tracker->words = NULL;
+  return tracker;
+}
+
+void addTrackOne(category_t * tracker, const char * word) {
+  tracker->words =
+      realloc(tracker->words, (tracker->n_words + 1) * sizeof(*tracker->words));
+  tracker->words[tracker->n_words] = strdup(word);
+  tracker->n_words++;
+}
+
+const char * getWord(blank_t blank, category_t * tracker, catarray_t * cats, int del) {
+  if (cats == NULL) {
+    return chooseWord(blank.cat, NULL);
+  }
+  size_t number = 0;
+  if ((number = checkPosInt(blank.cat)) > 0) {
+    if (number > tracker->n_words) {
+      fprintf(stderr, "Invalid number of previously used word!\n");
+      return NULL;
+    }
+    char * preword = tracker->words[tracker->n_words - number];
+    addTrackOne(tracker, preword);
+    return preword;
+  }
+  else {
+    const char * newword = chooseWord(blank.cat, cats);
+    if (newword == NULL) {
+      fprintf(stderr, "Category %s has no useable words!\n", blank.cat);
+      return NULL;
+    }
+    addTrackOne(tracker, newword);
+    if (del > 0) {
+      deleteWord(cats, blank.cat, newword);
+    }
+    return newword;
+  }
+}
+
+void updateStory(FILE * story, catarray_t * cats, int del) {
+  char * line = NULL;
+  size_t size = 0;
+  category_t * tracker = initTracker();
+  while (getline(&line, &size, story) != -1) {
+    blankarr_t * blanks = checkStory(line);
+    size_t pre = strlen(line);
+    if (blanks == NULL) {
+      freeCloseAll(line, story, tracker, cats);
+      exit(EXIT_FAILURE);
+    }
+    for (size_t i = 0; i < blanks->n; i++) {  // replace the blanks
+      const char * word = getWord(blanks->arr[i], tracker, cats, del);
+      if (word == NULL) {
+        freeblank(blanks);
+        freeCloseAll(line, story, tracker, cats);
+        exit(EXIT_FAILURE);
+      }
+      line = replaceWord(line, blanks->arr[i], word);
+      updateBlank(blanks, i + 1, strlen(line) - pre);
+      pre = strlen(line);
+    }
+    printf("%s", line);
+    free(line);
+    freeblank(blanks);
+    line = NULL;
+  }
+  freeCloseAll(line, story, tracker, cats);
+}
+
+void deleteWord(catarray_t * cats, const char * category, const char * word) {
+  printf("%ld", cats->n);
+  printf("%s", category);
+  printf("%s", word);
+  return;
 }
