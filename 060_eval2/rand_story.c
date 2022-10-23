@@ -294,8 +294,20 @@ void updateStory(FILE * story, catarray_t * cats, int del) {
 }
 
 void deleteWord(catarray_t * cats, const char * category, const char * word) {
-  printf("%ld", cats->n);
-  printf("%s", category);
-  printf("%s", word);
-  return;
+  for (size_t i = 0; i < cats->n; i++) {
+    if (strcmp(category, cats->arr[i].name)) {
+      for (size_t j = 0; j < cats->arr[i].n_words; j++) {
+        if (strcmp(word, cats->arr[i].words[j])) {
+          free(cats->arr[i].words[j]);
+          cats->arr[i].words[j] = NULL;
+          for (size_t k = i + 1; k < cats->arr[i].n_words; k++) {
+            cats->arr[i].words[k - 1] = cats->arr[i].words[k];
+            cats->arr[i].words[k] = NULL;
+          }
+          cats->arr[i].n_words--;
+          return;
+        }
+      }
+    }
+  }
 }
