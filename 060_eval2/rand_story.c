@@ -26,6 +26,9 @@ void checkCloseFile(FILE * f) {
 }
 
 void freeblank(blankarr_t * blanks) {
+  if (blanks == NULL) {
+    return;
+  }
   for (size_t i = 0; i < blanks->n; i++) {
     free(blanks->arr[i].cat);
   }
@@ -58,6 +61,7 @@ blankarr_t * checkStory(char * line) {
     else {
       if (line[i] == '_') {
         blanks->arr = realloc(blanks->arr, (blanks->n + 1) * sizeof(*blanks->arr));
+        blanks->arr[blanks->n].cat = NULL;
         blanks->arr[blanks->n].ind = i;
         blanks->n++;
         ind = i;      // points to the first _
@@ -110,6 +114,9 @@ catarray_t * initialCat() {
 }
 
 void freeCat(catarray_t * cats) {
+  if (cats == NULL) {
+    return;
+  }
   for (size_t i = 0; i < cats->n; i++) {
     free(cats->arr[i].name);
     for (size_t j = 0; j < cats->arr[i].n_words; j++) {
@@ -260,10 +267,10 @@ void updateStory(FILE * story, catarray_t * cats, int del) {
   char * line = NULL;
   size_t size = 0;
   category_t * tracker = initTracker();
-  while (getline(&line, &size, story) != -1) {
+  while (getline(&line, &size, story) != -1) {  // process line by line
     blankarr_t * blanks = checkStory(line);
     size_t pre = strlen(line);
-    if (blanks == NULL) {
+    if (blanks == NULL) {  // if a line has format error -> exit faliure
       freeCloseAll(line, story, tracker, cats);
       exit(EXIT_FAILURE);
     }
@@ -276,7 +283,7 @@ void updateStory(FILE * story, catarray_t * cats, int del) {
       }
       line = replaceWord(line, blanks->arr[i], word);
       updateBlank(blanks, i + 1, strlen(line) - pre);
-      pre = strlen(line);
+      pre = strlen(line);  // print the output line
     }
     printf("%s", line);
     free(line);
