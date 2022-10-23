@@ -1,7 +1,11 @@
 #ifndef __RAND_STORY_H__
 #define __RAND_STORY_H__
+#include <stdio.h>
 
 #include "provided.h"
+
+void checkArgc(int argc, int expect);
+FILE * OpenCheckFile(const char * name);
 
 /* Store information about a blank, including its category, position
  (the index of first _),and the lenth of the blank (include _).

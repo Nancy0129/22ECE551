@@ -1,6 +1,22 @@
 #include "rand_story.h"
 
 #include <string.h>
+
+void checkArgc(int argc, int expect) {
+  if (argc != expect) {
+    fprintf(stderr, "Invalid number of arguments!\n");
+    exit(EXIT_FAILURE);
+  }
+}
+
+FILE * OpenCheckFile(const char * name) {
+  FILE * f = fopen(name, "r");
+  if (f == NULL) {
+    fprintf(stderr, "Cannot open the file!\n");
+    exit(EXIT_FAILURE);
+  }
+  return f;
+}
 void freeblank(blankarr_t * blanks) {
   for (size_t i = 0; i < blanks->n; i++) {
     free(blanks->arr[i].cat);

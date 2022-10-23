@@ -5,15 +5,8 @@
 #include "rand_story.h"
 
 int main(int argc, char ** argv) {
-  if (argc != 2) {
-    fprintf(stderr, "Invalid number of arguments!\n");
-    return EXIT_FAILURE;
-  }
-  FILE * f = fopen(argv[1], "r");
-  if (f == NULL) {
-    fprintf(stderr, "Cannot open the file!\n");
-    return EXIT_FAILURE;
-  }
+  checkArgc(argc, 2);                 // check the argument number
+  FILE * f = OpenCheckFile(argv[1]);  // open and check if the file is NULL
   char * line = NULL;
   size_t size = 0;
   while (getline(&line, &size, f) != -1) {  // process line by line
