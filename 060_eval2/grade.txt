@@ -1,6 +1,6 @@
-Grading at 10/24/2022:18:51:13.532932
-For commit ID 1121b00de46b87c328c21248d3369ef5717d3af2
-Grading at Mon Oct 24 02:50:39 PM EDT 2022
+Grading at 10/24/2022:19:24:57.807445
+For commit ID 24fd85ce432452cea61ee53d5d5c72d0fb54ea3e
+Grading at Mon Oct 24 03:24:21 PM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -242,7 +242,13 @@ Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-3.16: Current test is story-step3
+3.16: Current test is story-step3 mywords3.txt mystory6.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+3.17: Current test is story-step3
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
@@ -319,19 +325,25 @@ Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-4.11: Current test is story-step4 -n mywords1.txt badstory3.txt
+4.11: Current test is story-step4 mywords3.txt mystory6.txt
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-4.12: Current test is story-step4 words.txt badstory.txt
+4.12: Current test is story-step4 -n mywords1.txt badstory3.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+4.13: Current test is story-step4 words.txt badstory.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-4.13: Current test is story-step4 -n words.txt badstory.txt
+4.14: Current test is story-step4 -n words.txt badstory.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
