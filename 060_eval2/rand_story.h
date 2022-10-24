@@ -4,6 +4,7 @@
 
 #include "provided.h"
 
+//3 tools to check the common errors (argc, open a file ...) in main
 void checkArgc(int argc, int expect);
 FILE * OpenCheckFile(const char * name);
 void checkCloseFile(FILE * f);
@@ -40,9 +41,10 @@ void updateBlank(blankarr_t * blanks, size_t ind, size_t change);
  */
 blankarr_t * checkStory(char * line);
 
-// Replace a blank in the line with the word returned by chooseWord.
+// Replace a blank in the line with the word returned by getWord.
 char * replaceWord(char * line, blank_t blank, const char * word);
 
+// Initialize a catarray object.
 catarray_t * initialCat();
 
 // Free all parts of the catarray_t cats
@@ -57,7 +59,8 @@ void addCatOne(catarray_t * cats, char * category, char * word);
 // Free all allocated memory and close the file to exit
 void freeCloseAll(char * line, FILE * f, category_t * tracker, catarray_t * cats);
 
-/* Check if the input word contains only a positive number.
+/* 
+Check if the input word contains only a positive number.
    If so, return  a positive number, otherwise return 0.
  */
 size_t checkPosInt(const char * word);
