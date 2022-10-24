@@ -62,12 +62,28 @@ void freeCloseAll(char * line, FILE * f, category_t * tracker, catarray_t * cats
  */
 size_t checkPosInt(const char * word);
 
+// Initialize a category object to track used words
 category_t * initTracker();
 
+/*
+Get a word to replace the blank.
+If the type of blank is a number -> use previouly used word.
+  If the number exceed the number of previouly used word -> NULL
+Otherwise, find the type in the category
+If cannot find -> NULL (indicates failure)
+*/
 const char * getWord(blank_t blank, category_t * tracker, catarray_t * cat);
 
+/*
+Process the story file line by line.
+Replace the blanks in each line as corresponging word.
+Initialize a tracker to track the previouly used words.
+The int "del" indicates whether to delete already used words.
+Print each line after processed.
+*/
 void updateStory(FILE * story, catarray_t * cats, int del);
 
+//Delete a used word in the catarray
 void deleteWord(catarray_t * cats, const char * category, const char * word);
 
 #endif
