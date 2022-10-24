@@ -34,6 +34,7 @@ story-step3 mywords2.txt badstory4.txt
 story-step3 badword.txt story.txt
 story-step3 badword2.txt story.txt
 story-step3 mytrickw.txt story.txt 
+story-step3 mywords3.txt mystory6.txt
 story-step3
 
 story-step4 words.txt story2.txt
@@ -46,6 +47,7 @@ story-step4 -n words.txt
 story-step4
 story-step4 words.txt badstory3.txt 
 story-step4 -n words.txt badstory3.txt
+story-step4 mywords3.txt mystory6.txt
 story-step4 -n mywords1.txt badstory3.txt
 story-step4 words.txt badstory.txt
 story-step4 -n words.txt badstory.txt
