@@ -1,6 +1,9 @@
 story-step1 story.txt
 story-step1 story2.txt
 story-step1 mystory1.txt
+story-step1 mystory2.txt
+story-step1 mystory3.txt
+story-step1 mystory4.txt
 story-step1 badstory.txt
 story-step1 badstory2.txt
 story-step1 badstory3.txt
@@ -8,11 +11,15 @@ story-step1 wrongname
 story-step1
 
 story-step2 words.txt
+story-step2 mywords1.txt
 story-step2 mytrickw.txt
+story-step2 badword.txt
+story-step2 mystory4.txt
 story-step2 wrongname
 story-step2
 
 story-step3 words.txt story.txt
+story-step3 wrongname story.txt
 story-step3 words.txt wrongname
 story-step3 words.txt story2.txt
 story-step3 words.txt badstory.txt
@@ -22,8 +29,16 @@ story-step3 mytrickw.txt story.txt
 story-step3
 
 story-step4 words.txt story2.txt
+story-step4 wrongname story.txt
+story-step4 -n words.txt wrongname
+story-step4 -n wrongname story.txt
 story-step4 -n words.txt story2.txt
 story-step4 -o words.txt story2.txt
-story-step4 -o words.txt
+story-step4 -n words.txt
 story-step4
 story-step4 words.txt badstory3.txt 
+story-step4 -n words.txt badstory3.txt
+story-step4 -n mywords1.txt badstory3.txt
+story-step4 words.txt badstory.txt
+story-step4 -n words.txt badstory.txt
+
