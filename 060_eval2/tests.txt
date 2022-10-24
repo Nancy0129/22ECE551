@@ -14,6 +14,7 @@ story-step2 words.txt
 story-step2 mywords1.txt
 story-step2 mytrickw.txt
 story-step2 badword.txt
+story-step2 badword2.txt
 story-step2 mystory4.txt
 story-step2 wrongname
 story-step2
