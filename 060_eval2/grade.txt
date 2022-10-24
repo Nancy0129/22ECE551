@@ -1,6 +1,6 @@
-Grading at 10/24/2022:02:28:17.539112
-For commit ID b75b9e2f0d626df4bd1d181efb93ae2bb3925f94
-Grading at Sun Oct 23 10:28:00 PM EDT 2022
+Grading at 10/24/2022:18:11:53.420738
+For commit ID 885b4b16312c3ba08826ffb571a2594feba7fad0
+Grading at Mon Oct 24 02:11:25 PM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -34,31 +34,49 @@ Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-1.4: Current test is story-step1 badstory.txt
------------------------------
-Great: we both considered this an error
-Lets check if it valgrinds:
-Valgrind was clean
-
-1.5: Current test is story-step1 badstory2.txt
+1.4: Current test is story-step1 mystory2.txt
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-1.6: Current test is story-step1 badstory3.txt
+1.5: Current test is story-step1 mystory3.txt
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-1.7: Current test is story-step1 wrongname
+1.6: Current test is story-step1 mystory4.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+1.7: Current test is story-step1 badstory.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-1.8: Current test is story-step1
+1.8: Current test is story-step1 badstory2.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+1.9: Current test is story-step1 badstory3.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+1.10: Current test is story-step1 wrongname
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+1.11: Current test is story-step1
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
@@ -81,19 +99,37 @@ Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-2.2: Current test is story-step2 mytrickw.txt
+2.2: Current test is story-step2 mywords1.txt
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-2.3: Current test is story-step2 wrongname
+2.3: Current test is story-step2 mytrickw.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+2.4: Current test is story-step2 badword.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-2.4: Current test is story-step2
+2.5: Current test is story-step2 mystory4.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+2.6: Current test is story-step2 wrongname
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+2.7: Current test is story-step2
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
@@ -116,43 +152,49 @@ Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-3.2: Current test is story-step3 words.txt wrongname
+3.2: Current test is story-step3 wrongname story.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-3.3: Current test is story-step3 words.txt story2.txt
+3.3: Current test is story-step3 words.txt wrongname
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+3.4: Current test is story-step3 words.txt story2.txt
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-3.4: Current test is story-step3 words.txt badstory.txt
+3.5: Current test is story-step3 words.txt badstory.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-3.5: Current test is story-step3 words.txt badstory2.txt
+3.6: Current test is story-step3 words.txt badstory2.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-3.6: Current test is story-step3 words.txt badstory3.txt
+3.7: Current test is story-step3 words.txt badstory3.txt
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-3.7: Current test is story-step3 mytrickw.txt story.txt 
+3.8: Current test is story-step3 mytrickw.txt story.txt 
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-3.8: Current test is story-step3
+3.9: Current test is story-step3
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
@@ -175,34 +217,76 @@ Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-4.2: Current test is story-step4 -n words.txt story2.txt
+4.2: Current test is story-step4 wrongname story.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+4.3: Current test is story-step4 -n words.txt wrongname
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+4.4: Current test is story-step4 -n wrongname story.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+4.5: Current test is story-step4 -n words.txt story2.txt
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-4.3: Current test is story-step4 -o words.txt story2.txt
+4.6: Current test is story-step4 -o words.txt story2.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-4.4: Current test is story-step4 -o words.txt
+4.7: Current test is story-step4 -n words.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-4.5: Current test is story-step4
+4.8: Current test is story-step4
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-4.6: Current test is story-step4 words.txt badstory3.txt 
+4.9: Current test is story-step4 words.txt badstory3.txt 
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+4.10: Current test is story-step4 -n words.txt badstory3.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+4.11: Current test is story-step4 -n mywords1.txt badstory3.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+4.12: Current test is story-step4 words.txt badstory.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+4.13: Current test is story-step4 -n words.txt badstory.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
 Valgrind was clean
 
 You have passed the test cases YOU provided
