@@ -1,6 +1,6 @@
-Grading at 10/24/2022:18:11:53.420738
-For commit ID 885b4b16312c3ba08826ffb571a2594feba7fad0
-Grading at Mon Oct 24 02:11:25 PM EDT 2022
+Grading at 10/24/2022:18:16:32.687181
+For commit ID 9b4ecc7503646c320b0b319e4ab008269317684c
+Grading at Mon Oct 24 02:16:02 PM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -117,19 +117,25 @@ Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-2.5: Current test is story-step2 mystory4.txt
------------------------------
-Your output looks good. Lets check valgrind
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean
-
-2.6: Current test is story-step2 wrongname
+2.5: Current test is story-step2 badword2.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-2.7: Current test is story-step2
+2.6: Current test is story-step2 mystory4.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+2.7: Current test is story-step2 wrongname
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+2.8: Current test is story-step2
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
