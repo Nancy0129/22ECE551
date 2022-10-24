@@ -28,6 +28,7 @@ story-step3 words.txt story2.txt
 story-step3 words.txt badstory.txt
 story-step3 words.txt badstory2.txt
 story-step3 words.txt badstory3.txt
+story-step3 words.txt badstory4.txt
 story-step3 badword.txt story.txt
 story-step3 badword2.txt story.txt
 story-step3 mytrickw.txt story.txt 
