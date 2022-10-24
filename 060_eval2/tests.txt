@@ -1,15 +1,19 @@
 story-step1 story.txt
 story-step1 story2.txt
+story-step1 mystory1.txt
 story-step1 badstory.txt
 story-step1 badstory2.txt
 story-step1 badstory3.txt
+story-step1 wrongname
 story-step1
 
 story-step2 words.txt
 story-step2 mytrickw.txt
+story-step2 wrongname
 story-step2
 
-story-step3 words.txt story.txt 
+story-step3 words.txt story.txt
+story-step3 words.txt wrongname
 story-step3 words.txt story2.txt
 story-step3 words.txt badstory.txt
 story-step3 words.txt badstory2.txt

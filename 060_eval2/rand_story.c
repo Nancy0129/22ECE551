@@ -3,7 +3,7 @@
 #include <string.h>
 
 void checkArgc(int argc, int expect) {
-  if (argc != expect) {
+  if (argc != expect) {  //check the number of arguments
     fprintf(stderr, "Invalid number of arguments!\n");
     exit(EXIT_FAILURE);
   }
@@ -11,7 +11,7 @@ void checkArgc(int argc, int expect) {
 
 FILE * OpenCheckFile(const char * name) {
   FILE * f = fopen(name, "r");
-  if (f == NULL) {
+  if (f == NULL) {  //if cannot open the file->exit failure
     fprintf(stderr, "Cannot open the file!\n");
     exit(EXIT_FAILURE);
   }
@@ -19,14 +19,14 @@ FILE * OpenCheckFile(const char * name) {
 }
 
 void checkCloseFile(FILE * f) {
-  if (fclose(f) != 0) {
+  if (fclose(f) != 0) {  //try closing the file, if cannot -> exit failure
     perror("Failed to close the input file!\n");
     exit(EXIT_FAILURE);
   }
 }
 
 void freeblank(blankarr_t * blanks) {
-  if (blanks == NULL) {
+  if (blanks == NULL) {  //if the blanks is NULL -> do not need to free
     return;
   }
   for (size_t i = 0; i < blanks->n; i++) {
@@ -59,7 +59,7 @@ blankarr_t * checkStory(char * line) {
       }
     }
     else {
-      if (line[i] == '_') {
+      if (line[i] == '_') {  // find a new unmatched _
         blanks->arr = realloc(blanks->arr, (blanks->n + 1) * sizeof(*blanks->arr));
         blanks->arr[blanks->n].cat = NULL;
         blanks->arr[blanks->n].ind = i;
@@ -81,7 +81,7 @@ blankarr_t * checkStory(char * line) {
 void updateBlank(blankarr_t * blanks, size_t ind, size_t change) {
   for (size_t i = ind; i < blanks->n; i++) {
     blanks->arr[i].ind += change;
-  }
+  }  //update the ind in each block based on the change of its position
   return;
 }
 
@@ -106,7 +106,7 @@ char * replaceWord(char * line, blank_t blank, const char * word) {
   return newline;  // output the newline
 }
 
-catarray_t * initialCat() {
+catarray_t * initialCat() {  //initialize a catarray_t object
   catarray_t * cats = malloc(sizeof(*cats));
   cats->arr = NULL;
   cats->n = 0;
@@ -118,14 +118,14 @@ void freeCat(catarray_t * cats) {
     return;
   }
   for (size_t i = 0; i < cats->n; i++) {
-    free(cats->arr[i].name);
+    free(cats->arr[i].name);  // free the category name
     for (size_t j = 0; j < cats->arr[i].n_words; j++) {
-      free(cats->arr[i].words[j]);
+      free(cats->arr[i].words[j]);  // free all words in this category
     }
-    free(cats->arr[i].words);
+    free(cats->arr[i].words);  // free the category object
   }
-  free(cats->arr);
-  free(cats);
+  free(cats->arr);  // free the array of categories
+  free(cats);       // free the catarray_t object
 }
 
 catarray_t * generateCat(const char * fileName) {
@@ -141,31 +141,31 @@ catarray_t * generateCat(const char * fileName) {
     char * category = NULL;
     char * word = NULL;
     for (size_t i = 0; i < strlen(line); i++) {
-      if (line[i] == ':') {
+      if (line[i] == ':') {  // get the category name before ':'
         category = strndup(line, i);
-        if (line[strlen(line) - 1] == '\n') {
+        if (line[strlen(line) - 1] == '\n') {  // do not copy '\n'
           word = strndup(line + i + 1, strlen(line) - (i + 2));
         }
-        else {  // if the line does not end with '\n'
+        else {  // if the line does not end with '\n'-> copy all
           word = strndup(line + i + 1, strlen(line) - (i + 1));
         }
         break;
       }
     }
-    if (category == NULL || word == NULL) {
+    if (category == NULL || word == NULL) {  // did not find ':'
       freeCat(cats);
       fprintf(stderr, "Wrong input in line: %s\n", line);
-      return NULL;
+      return NULL;  // indicate failure
     }
     free(line);
     line = NULL;
-    addCatOne(cats, category, word);
+    addCatOne(cats, category, word);  // update the catarray
   }
   free(line);
   if (fclose(f) != 0) {
     fprintf(stderr, "File close error!\n");
     freeCat(cats);
-    return NULL;
+    return NULL;  // indicate failure
   }
   return cats;
 }
@@ -199,28 +199,29 @@ void addCatOne(catarray_t * cats, char * category, char * word) {
 
 void freeCloseAll(char * line, FILE * f, category_t * tracker, catarray_t * cats) {
   free(line);
+  // free the tracker (category object)
   for (size_t i = 0; i < tracker->n_words; i++) {
     free(tracker->words[i]);
   }
   free(tracker->name);
   free(tracker->words);
   free(tracker);
-  freeCat(cats);
-  checkCloseFile(f);
+  freeCat(cats);      // free the cats
+  checkCloseFile(f);  //now all is free -> try and close file
 }
 
 size_t checkPosInt(const char * word) {
-  char * endtr;
+  char * endtr;  // store the non-number characters
   long number = strtol(word, &endtr, 10);
-  if (number > 0) {
-    if (endtr[0] == '\0') {
-      return strtoul(word, NULL, 10);
+  if (number > 0) {                    // It is positive number
+    if (endtr[0] == '\0') {            //The string contains only numbers
+      return strtoul(word, NULL, 10);  // return the unsigned value
     }
   }
-  return 0;
+  return 0;  // indicates it is not a postive number
 }
 
-category_t * initTracker() {
+category_t * initTracker() {  //initialize a categories object as tracker
   category_t * tracker = malloc(sizeof(*tracker));
   tracker->n_words = 0;
   tracker->name = NULL;
@@ -228,6 +229,7 @@ category_t * initTracker() {
   return tracker;
 }
 
+// Update tracker
 void addTrackOne(category_t * tracker, const char * word) {
   tracker->words =
       realloc(tracker->words, (tracker->n_words + 1) * sizeof(*tracker->words));
@@ -236,29 +238,30 @@ void addTrackOne(category_t * tracker, const char * word) {
 }
 
 const char * getWord(blank_t blank, category_t * tracker, catarray_t * cats) {
-  if (cats == NULL) {
+  if (cats == NULL) {  // for step 1
     return chooseWord(blank.cat, NULL);
   }
-  size_t number = 0;
+  size_t number = 0;  // whether the value in the blank is number
   if ((number = checkPosInt(blank.cat)) > 0) {
-    if (number > tracker->n_words) {
+    if (number > tracker->n_words) {  //exceed the #pre-used words
       fprintf(stderr, "Invalid number of previously used word!\n");
-      return NULL;
+      return NULL;  // indicate faliure
     }
     char * preword = tracker->words[tracker->n_words - number];
     addTrackOne(tracker, preword);
     return preword;
   }
-  else {
+  else {  // the value in the blank is not a valid number
     for (size_t i = 0; i < cats->n; i++) {
-      if (strcmp(blank.cat, cats->arr[i].name) == 0 && cats->arr[i].n_words > 0) {
+      if (strcmp(blank.cat, cats->arr[i].name) == 0 &&
+          cats->arr[i].n_words > 0) {  // whether it is in the catarray
         const char * newword = chooseWord(blank.cat, cats);
         addTrackOne(tracker, newword);
         return newword;
       }
     }
     fprintf(stderr, "The category %s does not exist or have usable words!", blank.cat);
-    return NULL;
+    return NULL;  // the value is not in the catarray
   }
 }
 
@@ -275,20 +278,20 @@ void updateStory(FILE * story, catarray_t * cats, int del) {
     }
     for (size_t i = 0; i < blanks->n; i++) {  // replace the blanks
       const char * word = getWord(blanks->arr[i], tracker, cats);
-      if (word == NULL) {
+      if (word == NULL) {  // NULL indicates faliure
         freeblank(blanks);
         freeCloseAll(line, story, tracker, cats);
-        exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);  // The error has already printed, just exit
       }
-      line = replaceWord(line, blanks->arr[i], word);
+      line = replaceWord(line, blanks->arr[i], word);  //replace a blank
       if (del > 0) {
         deleteWord(cats, blanks->arr[i].cat, word);
       }
-
+      // Update the position in the following blanks in the new line
       updateBlank(blanks, i + 1, strlen(line) - pre);
-      pre = strlen(line);  // print the output line
+      pre = strlen(line);  // update the length of the new line
     }
-    printf("%s", line);
+    printf("%s", line);  // print the output line
     free(line);
     freeblank(blanks);
     line = NULL;
@@ -297,18 +300,21 @@ void updateStory(FILE * story, catarray_t * cats, int del) {
 }
 
 void deleteWord(catarray_t * cats, const char * category, const char * word) {
+  // Find the corresponding category
   for (size_t i = 0; i < cats->n; i++) {
     if (strcmp(category, cats->arr[i].name) == 0) {
+      // Find the corresponding word
       for (size_t j = 0; j < cats->arr[i].n_words; j++) {
         if (strcmp(word, cats->arr[i].words[j]) == 0) {
-          free(cats->arr[i].words[j]);
+          free(cats->arr[i].words[j]);  //delete the word
           cats->arr[i].words[j] = NULL;
+          // Move the words behind it forward
           for (size_t k = j + 1; k < cats->arr[i].n_words; k++) {
             cats->arr[i].words[k - 1] = cats->arr[i].words[k];
             cats->arr[i].words[k] = NULL;
-          }
-          cats->arr[i].n_words--;
-          return;
+          }                        //last element  becomes NULL
+          cats->arr[i].n_words--;  //decreases the length of word list
+          return;                  // break the loop by return
         }
       }
     }
