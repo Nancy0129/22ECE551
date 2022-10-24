@@ -22,6 +22,7 @@ story-step2
 story-step3 words.txt story.txt
 story-step3 words.txt mystory4.txt
 story-step3 words.txt mystory3.txt
+story-step3 words.txt mystory5.txt
 story-step3 wrongname story.txt
 story-step3 words.txt wrongname
 story-step3 words.txt story2.txt
