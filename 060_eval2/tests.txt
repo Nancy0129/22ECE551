@@ -20,12 +20,16 @@ story-step2 wrongname
 story-step2
 
 story-step3 words.txt story.txt
+story-step3 words.txt mystory4.txt
+story-step3 words.txt mystory3.txt
 story-step3 wrongname story.txt
 story-step3 words.txt wrongname
 story-step3 words.txt story2.txt
 story-step3 words.txt badstory.txt
 story-step3 words.txt badstory2.txt
 story-step3 words.txt badstory3.txt
+story-step3 badword.txt story.txt
+story-step3 badword2.txt story.txt
 story-step3 mytrickw.txt story.txt 
 story-step3
 

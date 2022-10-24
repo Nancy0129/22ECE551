@@ -155,6 +155,8 @@ catarray_t * generateCat(const char * fileName) {
     if (category == NULL || word == NULL) {  // did not find ':'
       freeCat(cats);
       fprintf(stderr, "Wrong input in line: %s\n", line);
+      free(line);
+      fclose(f);
       return NULL;  // indicate failure
     }
     free(line);
