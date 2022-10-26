@@ -4,18 +4,13 @@
 
 #include <ostream>
 
-IntArray::IntArray() {
-  data = NULL;
-  numElements = 0;
+IntArray::IntArray() : data(NULL), numElements(0) {
 }
-IntArray::IntArray(int n) {
-  numElements = n;
-  data = new int[n];
+IntArray::IntArray(int n) : data(new int[n]), numElements(n) {
 }
 
-IntArray::IntArray(const IntArray & rhs) {
-  numElements = rhs.numElements;
-  data = new int[rhs.numElements];
+IntArray::IntArray(const IntArray & rhs) :
+    data(new int[rhs.numElements]), numElements(rhs.numElements) {
   for (int i = 0; i < numElements; i++) {
     data[i] = rhs.data[i];
   }
