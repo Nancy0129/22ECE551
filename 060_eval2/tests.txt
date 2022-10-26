@@ -7,6 +7,8 @@ story-step1 mystory4.txt
 story-step1 badstory.txt
 story-step1 badstory2.txt
 story-step1 badstory3.txt
+story-step1 badstory4.txt
+story-step1 badstory5.txt
 story-step1 wrongname
 story-step1
 
@@ -35,6 +37,8 @@ story-step3 badword.txt story.txt
 story-step3 badword2.txt story.txt
 story-step3 mytrickw.txt story.txt 
 story-step3 mywords3.txt mystory6.txt
+story-step3 words.txt badstory5.txt
+story-step3 mywords4.txt badstory5.txt
 story-step3
 
 story-step4 words.txt story2.txt
