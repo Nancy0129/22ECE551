@@ -1,0 +1,14 @@
+Read expression: (+ 9 invalid input)
+Could not parse expression, please try again.
+Read expression: an invalid line
+Could not parse expression, please try again.
+Read expression: (+ invalid 9)
+Could not parse expression, please try again.
+Read expression: 
+Could not parse expression, please try again.
+Read expression: ( / ( + ( * ( - 4    5  )  (* (+ 1 2) 42 )  ) (* -77 -11)) (  -  3  2 )
+Could not parse expression, please try again.
+Read expression: ( / ( + ( * ( - 4    5  )  (* (+ 1 2) 42 )  ) (* -77 -11) (  -  3  2 ))
+Could not parse expression, please try again.
+Read expression: ( / ( + ( * ( - 4    5  )  (x (+ 1 2) 42 )  ) (* -77 -11)) (  -  3  2 ))
+Could not parse expression, please try again.
