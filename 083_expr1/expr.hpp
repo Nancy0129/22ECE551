@@ -35,5 +35,8 @@ class PlusExpression : public Expression {
     expr << ")";
     return expr.str();
   }
-  ~PlusExpression(){};
+  ~PlusExpression() {
+    delete left;
+    delete right;
+  }
 };
