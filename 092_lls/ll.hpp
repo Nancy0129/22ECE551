@@ -45,7 +45,7 @@ class LinkedList {
     Node toAdd(item);
     if (head != NULL) {
       toAdd.next = head;
-      head->pre = &toAdd;
+      head->prev = &toAdd;
     }
     head = &toAdd;
     if (tail == NULL) {
@@ -74,7 +74,7 @@ class LinkedList {
     size--;
     return true;
   }
-  T & operator[](int index) {
+  T & operator[](int index) const {
     assert(index >= 0 && index < size);
     Node * curr = head;
     for (int i = 0; i < index; i++) {
@@ -112,7 +112,7 @@ class LinkedList {
   }
 
   LinkedList & operator=(const LinkedList & rhs) {
-    if (this != rhs) {
+    if (this != &rhs) {
       Node h(rhs.head->data);
       Node * rCurr = rhs.head->next;
       Node * tCurr = &h;
