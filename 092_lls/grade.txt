@@ -1,32 +1,26 @@
-Grading at 11/07/2022:04:14:44.108371
-For commit ID 9b862cf0020f7995ead5b2f9e2c5a38ed90e6e53
-Grading at Sun Nov  6 11:14:43 PM EST 2022
+Grading at 11/07/2022:04:16:57.495196
+For commit ID 243540c11d99dd76b8a7d2bd97e1b85dfd36c1b8
+Grading at Sun Nov  6 11:16:54 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with LinkedList<int>
 ...compiling...
-In file included from tester.cpp:1:
-ll.hpp:142:3: error: in C++03 a class-key must be used when declaring a friend [-Werror=pedantic]
-  142 |   friend Tester;
-      |   ^~~~~~
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 2 : Testing with LinkedList<std::string>
 ...compiling...
-In file included from tester.cpp:1:
-ll.hpp:142:3: error: in C++03 a class-key must be used when declaring a friend [-Werror=pedantic]
-  142 |   friend Tester;
-      |   ^~~~~~
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 3 : Testing with LinkedList<(a custom class we wrote)>
 ...compiling...
-In file included from tester.cpp:1:
-ll.hpp:142:3: error: in C++03 a class-key must be used when declaring a friend [-Werror=pedantic]
-  142 |   friend Tester;
-      |   ^~~~~~
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
