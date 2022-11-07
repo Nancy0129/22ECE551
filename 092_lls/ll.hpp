@@ -5,6 +5,9 @@
 
 #include <cstdlib>
 #include <exception>
+
+class Tester;
+
 template<typename T>
 class LinkedList {
  private:
@@ -33,6 +36,7 @@ class LinkedList {
         current->next->prev = current->prev;
       }
       delete current;
+      size--;
       return ans;
     }
     current->next = remove(data, current->next);
@@ -42,36 +46,32 @@ class LinkedList {
  public:
   LinkedList() : head(NULL), tail(NULL), size(0) {}
   void addFront(const T & item) {
-    Node toAdd(item);
-    if (head != NULL) {
-      toAdd.next = head;
-      head->prev = &toAdd;
-    }
-    head = &toAdd;
+    head = new Node(item, head, NULL);
     if (tail == NULL) {
-      tail = &toAdd;
+      tail = head;
+    }
+    else {
+      head->next->prev = head;
     }
     size++;
   }
   void addBack(const T & item) {
-    Node toAdd(item);
-    if (tail != NULL) {
-      toAdd.prev = tail;
-      tail->next = &toAdd;
-    }
-    tail = &toAdd;
+    tail = new Node(item, NULL, tail);
     if (head == NULL) {
-      head = &toAdd;
+      head = tail;
+    }
+    else {
+      tail->prev->next = tail;
     }
     size++;
   }
   bool remove(const T & item) {
+    int pre = size;
     Node * res = remove(item, head);
-    if (res == NULL) {
+    head = res;
+    if (pre == size) {
       return false;
     }
-    head = res;
-    size--;
     return true;
   }
   T & operator[](int index) const {
@@ -101,7 +101,7 @@ class LinkedList {
       head = temp;
     }
   }
-  LinkedList(const LinkedList & rhs) : head(NULL), tail(NULL), size(rhs.size) {
+  LinkedList(const LinkedList & rhs) : head(NULL), tail(NULL), size(0) {
     if (rhs.size > 0) {
       Node * curr = rhs.head;
       while (curr != NULL) {
@@ -113,14 +113,17 @@ class LinkedList {
 
   LinkedList & operator=(const LinkedList & rhs) {
     if (this != &rhs) {
-      Node h(rhs.head->data);
-      Node * rCurr = rhs.head->next;
-      Node * tCurr = &h;
+      Node * h = NULL;
+      Node * t = NULL;
+      Node * rCurr = rhs.head;
       while (rCurr != NULL) {
-        Node n(rCurr->data);
-        tCurr->next = &n;
-        n.prev = tCurr;
-        tCurr = &n;
+        t = new Node(rCurr->data, NULL, t);
+        if (h == NULL) {
+          h = t;
+        }
+        else {
+          t->prev->next = t;
+        }
         rCurr = rCurr->next;
       }
       while (head != NULL) {
@@ -128,14 +131,15 @@ class LinkedList {
         delete head;
         head = temp;
       }
-      head = &h;
-      tail = tCurr;
+      head = h;
+      tail = t;
       size = rhs.size;
     }
     return *this;
   }
 
   int getSize() const { return size; }
+  friend Tester;
 };
 
 #endif
