@@ -139,7 +139,7 @@ class LinkedList {
   }
 
   int getSize() const { return size; }
-  friend Tester;
+  friend class Tester;
 };
 
 #endif
