@@ -16,6 +16,9 @@ class BstMap : public Map<K, V> {
   };
   Node * root;
   void findAdd(Node * curr, const K & key, const V & value) {
+    if (curr == NULL) {
+      curr = new Node(key, value);
+    }
     if (curr->name == key) {
       curr->value = value;
     }
