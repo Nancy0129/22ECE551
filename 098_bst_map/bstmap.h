@@ -17,7 +17,7 @@ class BstMap : public Map<K, V> {
   };
   Node * root;
   void findAdd(Node * curr, const K & key, const V & value) {
-    std::cout << key << "\n";
+    //std::cout << key << "\n";
     if (curr == NULL) {
       curr = new Node(key, value);
       return;
@@ -43,7 +43,7 @@ class BstMap : public Map<K, V> {
       }
     }
   }
-  const V & find(Node * curr, const K & key) const {
+  const V & find(Node * curr, const K & key) const throw(std::invalid_argument) {
     if (curr == NULL) {
       throw std::exception();
     }
