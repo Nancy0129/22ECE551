@@ -55,8 +55,8 @@ int main(void) {
   a.remove(1);
   a.print_tree();
   */
-  const int & b = a.lookup(30);
-  a.remove(30);
+  const int & b = a.lookup(16);
+  a.remove(9);
   a.print_tree();
   std::cout << "b is " << b << "\n";
   // b = a.lookup(12);

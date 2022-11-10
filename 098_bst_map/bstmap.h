@@ -7,13 +7,14 @@ class BstMap : public Map<K, V> {
  private:
   class Node {
    public:
-    K name;
-    V value;
+    K * name;
+    V * value;
     Node * left;
     Node * right;
-    Node(const K & n, const V & v) : name(n), value(v), left(NULL), right(NULL) {}
+    Node(const K & n, const V & v) :
+        name(new K(n)), value(new V(v)), left(NULL), right(NULL) {}
     Node(const K & n, const V & v, Node * l, Node * r) :
-        name(n), value(v), left(l), right(r) {}
+        name(new K(n)), value(new V(v)), left(l), right(r) {}
   };
   Node * root;
   Node * findAdd(Node * curr, const K & key, const V & value) {
@@ -23,11 +24,11 @@ class BstMap : public Map<K, V> {
       return new Node(key, value);
       //return;
     }
-    if (curr->name == key) {
-      curr->value = value;
+    if (*(curr->name) == key) {
+      *(curr->value) = value;
       return curr;
     }
-    else if (curr->name < key) {
+    else if (*(curr->name) < key) {
       curr->right = findAdd(curr->right, key, value);
       return curr;
     }
@@ -42,11 +43,12 @@ class BstMap : public Map<K, V> {
     if (curr == NULL) {
       throw std::invalid_argument("No items!");
     }
-    if (curr->name == key) {
-      V * res = new V(curr->value);
-      return *res;
+    if (*(curr->name) == key) {
+      //V * res = new V(curr->value);
+      //return *res;
+      return *curr->value;
     }
-    if (curr->name < key) {
+    if (*(curr->name) < key) {
       if (curr->right == NULL) {
         throw std::invalid_argument("wrong input key");
       }
@@ -67,35 +69,51 @@ class BstMap : public Map<K, V> {
     return temp;
   }
 
-  Node * findRm(Node * curr, const K & key) {
+  Node * findRm(Node * curr, const K & key, bool clean) {
     if (curr != NULL) {
-      if (key > curr->name) {
-        curr->right = findRm(curr->right, key);
+      if (key > *(curr->name)) {
+        curr->right = findRm(curr->right, key, clean);
       }
-      else if (curr->name > key) {
-        curr->left = findRm(curr->left, key);
+      else if (*(curr->name) > key) {
+        curr->left = findRm(curr->left, key, clean);
       }
       else {
         if (curr->left == NULL && curr->right == NULL) {
+          if (clean) {
+            delete curr->name;
+            delete curr->value;
+          }
           delete curr;
           return NULL;
         }
         if (curr->left == NULL && curr->right != NULL) {
           Node * temp = curr->right;
+          if (clean) {
+            delete curr->name;
+            delete curr->value;
+          }
           delete curr;
           return temp;
         }
         if (curr->left != NULL && curr->right == NULL) {
           Node * temp = curr->left;
+          if (clean) {
+            delete curr->name;
+            delete curr->value;
+          }
           delete curr;
           return temp;
         }
         if (curr->left != NULL && curr->right != NULL) {
           Node * minNode = findMin(curr->right);
+          if (clean) {
+            delete curr->name;
+            delete curr->value;
+          }
           curr->name = minNode->name;
           curr->value = minNode->value;
 
-          curr->right = findRm(curr->right, curr->name);
+          curr->right = findRm(curr->right, *(curr->name), false);
           return curr;
         }
       }
@@ -106,6 +124,8 @@ class BstMap : public Map<K, V> {
     if (curr != NULL) {
       postRM(curr->left);
       postRM(curr->right);
+      delete curr->name;
+      delete curr->value;
       delete curr;
     }
   }
@@ -133,7 +153,7 @@ class BstMap : public Map<K, V> {
   }
   virtual void remove(const K & key) {
     //std::cout << "remove " << key << "\n";
-    root = this->findRm(root, key);
+    root = this->findRm(root, key, true);
   }
   virtual ~BstMap() { this->postRM(root); }
 
