@@ -84,21 +84,24 @@ class BstMap : public Map<K, V> {
 
   Node * findRm(Node * curr, const K & key) {
     if (curr == NULL) {
-      return NULL;
+      return curr;
     }
     if (curr->name == key) {
       if (curr->left == NULL && curr->right == NULL) {
         delete curr;
+        curr = NULL;
         return NULL;
       }
       if (curr->left == NULL && curr->right != NULL) {
         Node * temp = curr->right;
         delete curr;
+        curr = NULL;
         return temp;
       }
       if (curr->left != NULL && curr->right == NULL) {
         Node * temp = curr->left;
         delete curr;
+        curr = NULL;
         return temp;
       }
       if (curr->left != NULL && curr->right != NULL) {
@@ -112,11 +115,9 @@ class BstMap : public Map<K, V> {
     }
     else if (curr->name < key) {
       curr->right = findRm(curr->right, key);
-      return curr;
     }
     else {
       curr->left = findRm(curr->left, key);
-      return curr;
     }
     return curr;
   }
