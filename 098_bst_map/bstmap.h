@@ -43,7 +43,7 @@ class BstMap : public Map<K, V> {
       throw std::invalid_argument("No items!");
     }
     if (curr->name == key) {
-      return *new V(curr->value);
+      return curr->value;
     }
     if (curr->name < key) {
       if (curr->right == NULL) {
