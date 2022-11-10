@@ -36,7 +36,7 @@ class BstMap : public Map<K, V> {
       }
     }
   }
-  const V & find(Node * curr, const K & key) {
+  const V & find(Node * curr, const K & key) const {
     if (curr == NULL) {
       throw std::exception();
     }
