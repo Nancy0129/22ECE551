@@ -23,7 +23,7 @@ int main(void) {
   a.add(20, 20);
   a.add(30, 35);
   a.print_tree();
-  /*
+
   a.remove(9);
   a.remove(9);
   a.add(9, 6);
@@ -54,7 +54,8 @@ int main(void) {
   a.print_tree();
   a.remove(1);
   a.print_tree();
-  */
+  a.add(9, 9);
+  a.add(16, 16);
   const int & b = a.lookup(16);
   a.remove(9);
   a.print_tree();

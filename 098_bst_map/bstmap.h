@@ -43,22 +43,20 @@ class BstMap : public Map<K, V> {
     if (curr == NULL) {
       throw std::invalid_argument("No items!");
     }
-    if (*(curr->name) == key) {
-      //V * res = new V(curr->value);
-      //return *res;
-      return *curr->value;
-    }
-    if (*(curr->name) < key) {
+    if (key > *(curr->name)) {
       if (curr->right == NULL) {
         throw std::invalid_argument("wrong input key");
       }
       return find(curr->right, key);
     }
-    else {
+    else if (*(curr->name) > key) {
       if (curr->left == NULL) {
         throw std::invalid_argument("wrong input key");
       }
       return find(curr->left, key);
+    }
+    else {
+      return *curr->value;
     }
   }
   Node * findMin(Node * curr) {
@@ -78,38 +76,27 @@ class BstMap : public Map<K, V> {
         curr->left = findRm(curr->left, key, clean);
       }
       else {
+        if (clean) {
+          delete curr->name;
+          delete curr->value;
+        }
+
         if (curr->left == NULL && curr->right == NULL) {
-          if (clean) {
-            delete curr->name;
-            delete curr->value;
-          }
           delete curr;
           return NULL;
         }
         if (curr->left == NULL && curr->right != NULL) {
           Node * temp = curr->right;
-          if (clean) {
-            delete curr->name;
-            delete curr->value;
-          }
           delete curr;
           return temp;
         }
         if (curr->left != NULL && curr->right == NULL) {
           Node * temp = curr->left;
-          if (clean) {
-            delete curr->name;
-            delete curr->value;
-          }
           delete curr;
           return temp;
         }
         if (curr->left != NULL && curr->right != NULL) {
           Node * minNode = findMin(curr->right);
-          if (clean) {
-            delete curr->name;
-            delete curr->value;
-          }
           curr->name = minNode->name;
           curr->value = minNode->value;
 
@@ -131,7 +118,7 @@ class BstMap : public Map<K, V> {
   }
   void preOrder(Node * curr) {
     if (curr != NULL) {
-      std::cout << curr->name << " (";
+      std::cout << *curr->name << " (";
       preOrder(curr->left);
       std::cout << ") (";
       preOrder(curr->right);
