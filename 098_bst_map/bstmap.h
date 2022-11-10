@@ -112,11 +112,18 @@ class BstMap : public Map<K, V> {
   }
 
  public:
-  BstMap() : root(NULL) {}
-  virtual void add(const K & key, const V & value) { this->findAdd(root, key, value); }
+  BstMap() : root(NULL) { std::cout << "begin\n"; }
+  virtual void add(const K & key, const V & value) {
+    std::cout << key << "\n";
+    this->findAdd(root, key, value);
+  }
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
+    std::cout << "find " << key << "\n";
     return this->find(root, key);
   }
-  virtual void remove(const K & key) { root = this->findRm(root, key); }
+  virtual void remove(const K & key) {
+    std::cout << "remove " << key << "\n";
+    root = this->findRm(root, key);
+  }
   virtual ~BstMap() { this->postRM(root); }
 };
