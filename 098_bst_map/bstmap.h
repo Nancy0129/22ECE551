@@ -51,7 +51,7 @@ class BstMap : public Map<K, V> {
       throw std::invalid_argument("No items!");
     }
     if (curr->name == key) {
-      return curr->value;
+      return *new V(curr->value);
     }
     if (curr->name < key) {
       if (curr->right == NULL) {
@@ -109,8 +109,8 @@ class BstMap : public Map<K, V> {
           Node * minNode = findMin(curr->right);
           curr->name = minNode->name;
           curr->value = minNode->value;
-          K minName = minNode->name;
-          curr->right = findRm(curr->right, minName);
+
+          curr->right = findRm(curr->right, curr->name);
           return curr;
         }
       }
