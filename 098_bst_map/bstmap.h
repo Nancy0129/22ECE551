@@ -44,18 +44,24 @@ class BstMap : public Map<K, V> {
       }
     }
   }
-  const V & find(Node * curr, const K & key) const throw(std::invalid_argument) {
+  V & find(Node * curr, const K & key) const throw(std::invalid_argument) {
     //std::cout << "Findding " << key << "\n";
-    if (curr == NULL) {
-      throw std::exception();
-    }
+    // if (curr == NULL) {
+    //throw std::exception();
+    // }
     if (curr->name == key) {
       return curr->value;
     }
     if (curr->name < key) {
+      if (curr->right == NULL) {
+        throw;
+      }
       return find(curr->right, key);
     }
     else {
+      if (curr->left == NULL) {
+        throw;
+      }
       return find(curr->left, key);
     }
   }
@@ -105,12 +111,11 @@ class BstMap : public Map<K, V> {
     return curr;
   }
   void postRM(Node * curr) {
-    if (curr == NULL) {
-      return;
+    if (curr != NULL) {
+      postRM(curr->left);
+      postRM(curr->right);
+      delete curr;
     }
-    postRM(curr->left);
-    postRM(curr->right);
-    delete curr;
   }
 
  public:
@@ -126,13 +131,12 @@ class BstMap : public Map<K, V> {
     }
   }
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    try {
-      //std::cout << "find " << key << "\n";
-      return this->find(root, key);
-    }
-    catch (std::exception & e) {
+    if (root == NULL) {
       throw;
     }
+
+    //std::cout << "find " << key << "\n";
+    return this->find(root, key);
   }
   virtual void remove(const K & key) {
     //std::cout << "remove " << key << "\n";
