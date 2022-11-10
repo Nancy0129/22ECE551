@@ -18,11 +18,11 @@ class BstMap : public Map<K, V> {
   Node * root;
   void findAdd(Node * curr, const K & key, const V & value) {
     //std::cout << key << "\n";
-    if (curr == NULL) {
-      // std::cout << "aaa\n";
-      curr = new Node(key, value);
-      return;
-    }
+    // if (curr == NULL) {
+    //std::cout << "aaa\n";
+    //curr = new Node(key, value);
+    //return;
+    // }
     if (curr->name == key) {
       curr->value = value;
       return;
@@ -66,13 +66,21 @@ class BstMap : public Map<K, V> {
       return find(curr->left, key);
     }
   }
-
   Node * findMin(Node * curr) {
-    if (curr->left == NULL) {
-      return curr;
+    Node * temp = curr;
+    while (temp->left != NULL) {
+      temp = temp->left;
     }
-    return findMin(curr->left);
+    return temp;
   }
+
+  // Node * findMin(Node * curr) {
+
+  //if (curr->left == NULL) {
+  //  return curr;
+  //}
+  //return findMin(curr->left);
+  // }
 
   Node * findRm(Node * curr, const K & key) {
     if (curr == NULL) {
@@ -97,7 +105,8 @@ class BstMap : public Map<K, V> {
         Node * minNode = findMin(curr->right);
         curr->name = minNode->name;
         curr->value = minNode->value;
-        curr->right = findRm(curr->right, curr->name);
+        K minName = minNode->name;
+        curr->right = findRm(curr->right, minName);
         return curr;
       }
     }
@@ -118,11 +127,22 @@ class BstMap : public Map<K, V> {
       delete curr;
     }
   }
+  void preOrder(Node * curr) {
+    if (curr != NULL) {
+      std::cout << curr->name << " (";
+      preOrder(curr->left);
+      std::cout << ") (";
+      preOrder(curr->right);
+      std::cout << ")";
+    }
+  }
 
  public:
-  BstMap() : root(NULL) { std::cout << "begin\n"; }
+  BstMap() : root(NULL) { /*std::cout << "begin\n"; */
+  }
+
   virtual void add(const K & key, const V & value) {
-    std::cout << key << "\n";
+    // std::cout << key << "\n";
     if (root == NULL) {
       root = new Node(key, value);
     }
@@ -147,4 +167,9 @@ class BstMap : public Map<K, V> {
     root = this->findRm(root, key);
   }
   virtual ~BstMap() { this->postRM(root); }
+
+  void print_tree() {
+    this->preOrder(root);
+    std::cout << "\n";
+  };
 };
