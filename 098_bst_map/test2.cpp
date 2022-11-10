@@ -27,6 +27,7 @@ int main(void) {
   a.remove(9);
   a.add(9, 6);
   a.add(9, 7);
+  a.remove(9);
   a.print_tree();
   a.remove(16);
   a.print_tree();

@@ -16,32 +16,24 @@ class BstMap : public Map<K, V> {
         name(n), value(v), left(l), right(r) {}
   };
   Node * root;
-  void findAdd(Node * curr, const K & key, const V & value) {
+  Node * findAdd(Node * curr, const K & key, const V & value) {
     //std::cout << key << "\n";
-    // if (curr == NULL) {
-    //std::cout << "aaa\n";
-    //curr = new Node(key, value);
-    //return;
-    // }
+    if (curr == NULL) {
+      //std::cout << "aaa\n";
+      return new Node(key, value);
+      //return;
+    }
     if (curr->name == key) {
       curr->value = value;
-      return;
+      return curr;
     }
     else if (curr->name < key) {
-      if (curr->right == NULL) {
-        curr->right = new Node(key, value);
-      }
-      else {
-        findAdd(curr->right, key, value);
-      }
+      curr->right = findAdd(curr->right, key, value);
+      return curr;
     }
     else {
-      if (curr->left == NULL) {
-        curr->left = new Node(key, value);
-      }
-      else {
-        findAdd(curr->left, key, value);
-      }
+      curr->left = findAdd(curr->left, key, value);
+      return curr;
     }
   }
 
@@ -74,14 +66,6 @@ class BstMap : public Map<K, V> {
     return temp;
   }
 
-  // Node * findMin(Node * curr) {
-
-  //if (curr->left == NULL) {
-  //  return curr;
-  //}
-  //return findMin(curr->left);
-  // }
-
   Node * findRm(Node * curr, const K & key) {
     if (curr != NULL) {
       if (key > curr->name) {
@@ -107,10 +91,11 @@ class BstMap : public Map<K, V> {
         }
         if (curr->left != NULL && curr->right != NULL) {
           Node * minNode = findMin(curr->right);
-          Node * temp = new Node(minNode->name, minNode->value, curr->left, curr->right);
-          temp->right = findRm(temp->right, temp->name);
-          delete curr;
-          return temp;
+          curr->name = minNode->name;
+          curr->value = minNode->value;
+
+          curr->right = findRm(curr->right, curr->name);
+          return curr;
         }
       }
     }
@@ -139,23 +124,10 @@ class BstMap : public Map<K, V> {
 
   virtual void add(const K & key, const V & value) {
     // std::cout << key << "\n";
-    if (root == NULL) {
-      root = new Node(key, value);
-    }
-    else {
-      this->findAdd(root, key, value);
-    }
+    root = findAdd(root, key, value);
   }
 
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    //try {
-    //std::cout << "find " << key << "\n";
-    //return this->find(root, key);
-    // }
-    //catch (std::invalid_argument const & ex) {
-    //std::cout << "Invalid: " << ex.what() << '\n';
-    //   exit(EXIT_FAILURE);
-    // }
     return this->find(root, key);
   }
   virtual void remove(const K & key) {
