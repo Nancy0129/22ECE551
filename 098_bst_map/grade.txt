@@ -1,515 +1,515 @@
-Grading at 11/10/2022:07:37:01.855896
-For commit ID dd5d99d8d9cbdfcb838191665d270a1c4cb250d7
-Grading at Thu Nov 10 02:36:50 AM EST 2022
+Grading at 11/10/2022:07:45:42.855875
+For commit ID b26cbd9ca78043606000d5de6885161bbda924c1
+Grading at Thu Nov 10 02:45:32 AM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==2635202== Memcheck, a memory error detector
-==2635202== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2635202== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2635202== Command: ./test.1
-==2635202== Parent PID: 2635201
-==2635202== 
-==2635202== 
-==2635202== Process terminating with default action of signal 6 (SIGABRT)
-==2635202==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
-==2635202==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
-==2635202==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
-==2635202==    by 0x4AEF475: raise (raise.c:26)
-==2635202==    by 0x4AD57F2: abort (abort.c:79)
-==2635202==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635202==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635202==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635202==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635202==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635202==    by 0x10B985: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202== 
-==2635202== HEAP SUMMARY:
-==2635202==     in use at exit: 77,552 bytes in 29 blocks
-==2635202==   total heap usage: 30 allocs, 1 frees, 77,568 bytes allocated
-==2635202== 
-==2635202== 136 bytes in 1 blocks are possibly lost in loss record 23 of 25
-==2635202==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2635202==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635202==    by 0x10B8DF: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.1)
-==2635202== 
-==2635202== LEAK SUMMARY:
-==2635202==    definitely lost: 0 bytes in 0 blocks
-==2635202==    indirectly lost: 0 bytes in 0 blocks
-==2635202==      possibly lost: 136 bytes in 1 blocks
-==2635202==    still reachable: 77,416 bytes in 28 blocks
-==2635202==         suppressed: 0 bytes in 0 blocks
-==2635202== Reachable blocks (those to which a pointer was found) are not shown.
-==2635202== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==2635202== 
-==2635202== For lists of detected and suppressed errors, rerun with: -s
-==2635202== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2636833== Memcheck, a memory error detector
+==2636833== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2636833== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2636833== Command: ./test.1
+==2636833== Parent PID: 2636832
+==2636833== 
+==2636833== 
+==2636833== Process terminating with default action of signal 6 (SIGABRT)
+==2636833==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
+==2636833==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
+==2636833==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
+==2636833==    by 0x4AEF475: raise (raise.c:26)
+==2636833==    by 0x4AD57F2: abort (abort.c:79)
+==2636833==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636833==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636833==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636833==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636833==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636833==    by 0x10B985: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833== 
+==2636833== HEAP SUMMARY:
+==2636833==     in use at exit: 77,552 bytes in 29 blocks
+==2636833==   total heap usage: 30 allocs, 1 frees, 77,568 bytes allocated
+==2636833== 
+==2636833== 136 bytes in 1 blocks are possibly lost in loss record 23 of 25
+==2636833==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2636833==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636833==    by 0x10B8DF: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833==    by 0x10B968: BstMap<int, int>::find(BstMap<int, int>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.1)
+==2636833== 
+==2636833== LEAK SUMMARY:
+==2636833==    definitely lost: 0 bytes in 0 blocks
+==2636833==    indirectly lost: 0 bytes in 0 blocks
+==2636833==      possibly lost: 136 bytes in 1 blocks
+==2636833==    still reachable: 77,416 bytes in 28 blocks
+==2636833==         suppressed: 0 bytes in 0 blocks
+==2636833== Reachable blocks (those to which a pointer was found) are not shown.
+==2636833== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2636833== 
+==2636833== For lists of detected and suppressed errors, rerun with: -s
+==2636833== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==2635246== Memcheck, a memory error detector
-==2635246== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2635246== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2635246== Command: ./test.2
-==2635246== Parent PID: 2635245
-==2635246== 
-==2635246== 
-==2635246== Process terminating with default action of signal 6 (SIGABRT)
-==2635246==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
-==2635246==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
-==2635246==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
-==2635246==    by 0x4AEF475: raise (raise.c:26)
-==2635246==    by 0x4AD57F2: abort (abort.c:79)
-==2635246==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635246==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635246==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635246==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635246==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635246==    by 0x10BB91: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246== 
-==2635246== HEAP SUMMARY:
-==2635246==     in use at exit: 78,752 bytes in 49 blocks
-==2635246==   total heap usage: 70 allocs, 21 frees, 79,168 bytes allocated
-==2635246== 
-==2635246== 136 bytes in 1 blocks are possibly lost in loss record 34 of 38
-==2635246==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2635246==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635246==    by 0x10BAEB: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.2)
-==2635246== 
-==2635246== LEAK SUMMARY:
-==2635246==    definitely lost: 0 bytes in 0 blocks
-==2635246==    indirectly lost: 0 bytes in 0 blocks
-==2635246==      possibly lost: 136 bytes in 1 blocks
-==2635246==    still reachable: 78,616 bytes in 48 blocks
-==2635246==         suppressed: 0 bytes in 0 blocks
-==2635246== Reachable blocks (those to which a pointer was found) are not shown.
-==2635246== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==2635246== 
-==2635246== For lists of detected and suppressed errors, rerun with: -s
-==2635246== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2636844== Memcheck, a memory error detector
+==2636844== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2636844== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2636844== Command: ./test.2
+==2636844== Parent PID: 2636843
+==2636844== 
+==2636844== 
+==2636844== Process terminating with default action of signal 6 (SIGABRT)
+==2636844==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
+==2636844==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
+==2636844==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
+==2636844==    by 0x4AEF475: raise (raise.c:26)
+==2636844==    by 0x4AD57F2: abort (abort.c:79)
+==2636844==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636844==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636844==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636844==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636844==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636844==    by 0x10BB91: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844== 
+==2636844== HEAP SUMMARY:
+==2636844==     in use at exit: 78,752 bytes in 49 blocks
+==2636844==   total heap usage: 70 allocs, 21 frees, 79,168 bytes allocated
+==2636844== 
+==2636844== 136 bytes in 1 blocks are possibly lost in loss record 34 of 38
+==2636844==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2636844==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636844==    by 0x10BAEB: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844==    by 0x10BB74: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.2)
+==2636844== 
+==2636844== LEAK SUMMARY:
+==2636844==    definitely lost: 0 bytes in 0 blocks
+==2636844==    indirectly lost: 0 bytes in 0 blocks
+==2636844==      possibly lost: 136 bytes in 1 blocks
+==2636844==    still reachable: 78,616 bytes in 48 blocks
+==2636844==         suppressed: 0 bytes in 0 blocks
+==2636844== Reachable blocks (those to which a pointer was found) are not shown.
+==2636844== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2636844== 
+==2636844== For lists of detected and suppressed errors, rerun with: -s
+==2636844== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==2635287== Memcheck, a memory error detector
-==2635287== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2635287== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2635287== Command: ./test.3
-==2635287== Parent PID: 2635286
-==2635287== 
-==2635287== 
-==2635287== Process terminating with default action of signal 6 (SIGABRT)
-==2635287==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
-==2635287==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
-==2635287==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
-==2635287==    by 0x4AEF475: raise (raise.c:26)
-==2635287==    by 0x4AD57F2: abort (abort.c:79)
-==2635287==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635287==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635287==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635287==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635287==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635287==    by 0x10BBCF: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287== 
-==2635287== HEAP SUMMARY:
-==2635287==     in use at exit: 78,952 bytes in 49 blocks
-==2635287==   total heap usage: 90 allocs, 41 frees, 79,768 bytes allocated
-==2635287== 
-==2635287== 136 bytes in 1 blocks are possibly lost in loss record 33 of 37
-==2635287==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2635287==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635287==    by 0x10BB29: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.3)
-==2635287== 
-==2635287== LEAK SUMMARY:
-==2635287==    definitely lost: 0 bytes in 0 blocks
-==2635287==    indirectly lost: 0 bytes in 0 blocks
-==2635287==      possibly lost: 136 bytes in 1 blocks
-==2635287==    still reachable: 78,816 bytes in 48 blocks
-==2635287==         suppressed: 0 bytes in 0 blocks
-==2635287== Reachable blocks (those to which a pointer was found) are not shown.
-==2635287== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==2635287== 
-==2635287== For lists of detected and suppressed errors, rerun with: -s
-==2635287== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2636856== Memcheck, a memory error detector
+==2636856== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2636856== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2636856== Command: ./test.3
+==2636856== Parent PID: 2636855
+==2636856== 
+==2636856== 
+==2636856== Process terminating with default action of signal 6 (SIGABRT)
+==2636856==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
+==2636856==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
+==2636856==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
+==2636856==    by 0x4AEF475: raise (raise.c:26)
+==2636856==    by 0x4AD57F2: abort (abort.c:79)
+==2636856==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636856==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636856==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636856==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636856==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636856==    by 0x10BBCF: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856== 
+==2636856== HEAP SUMMARY:
+==2636856==     in use at exit: 78,952 bytes in 49 blocks
+==2636856==   total heap usage: 90 allocs, 41 frees, 79,768 bytes allocated
+==2636856== 
+==2636856== 136 bytes in 1 blocks are possibly lost in loss record 33 of 37
+==2636856==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2636856==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636856==    by 0x10BB29: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856==    by 0x10BBB2: BstMap<int, Tester>::find(BstMap<int, Tester>::Node*, int const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.3)
+==2636856== 
+==2636856== LEAK SUMMARY:
+==2636856==    definitely lost: 0 bytes in 0 blocks
+==2636856==    indirectly lost: 0 bytes in 0 blocks
+==2636856==      possibly lost: 136 bytes in 1 blocks
+==2636856==    still reachable: 78,816 bytes in 48 blocks
+==2636856==         suppressed: 0 bytes in 0 blocks
+==2636856== Reachable blocks (those to which a pointer was found) are not shown.
+==2636856== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2636856== 
+==2636856== For lists of detected and suppressed errors, rerun with: -s
+==2636856== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==2635314== Memcheck, a memory error detector
-==2635314== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2635314== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2635314== Command: ./test.4
-==2635314== Parent PID: 2635313
-==2635314== 
-==2635314== 
-==2635314== Process terminating with default action of signal 6 (SIGABRT)
-==2635314==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
-==2635314==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
-==2635314==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
-==2635314==    by 0x4AEF475: raise (raise.c:26)
-==2635314==    by 0x4AD57F2: abort (abort.c:79)
-==2635314==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635314==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635314==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635314==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635314==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635314==    by 0x10BBBD: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.4)
-==2635314==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.4)
-==2635314==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.4)
-==2635314==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.4)
-==2635314== 
-==2635314== HEAP SUMMARY:
-==2635314==     in use at exit: 78,352 bytes in 29 blocks
-==2635314==   total heap usage: 30 allocs, 1 frees, 78,368 bytes allocated
-==2635314== 
-==2635314== 136 bytes in 1 blocks are possibly lost in loss record 27 of 29
-==2635314==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2635314==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635314==    by 0x10BB09: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.4)
-==2635314==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.4)
-==2635314==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.4)
-==2635314==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.4)
-==2635314==    by 0x10B9DA: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::lookup(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.4)
-==2635314==    by 0x10A845: main (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.4)
-==2635314== 
-==2635314== LEAK SUMMARY:
-==2635314==    definitely lost: 0 bytes in 0 blocks
-==2635314==    indirectly lost: 0 bytes in 0 blocks
-==2635314==      possibly lost: 136 bytes in 1 blocks
-==2635314==    still reachable: 78,216 bytes in 28 blocks
-==2635314==         suppressed: 0 bytes in 0 blocks
-==2635314== Reachable blocks (those to which a pointer was found) are not shown.
-==2635314== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==2635314== 
-==2635314== For lists of detected and suppressed errors, rerun with: -s
-==2635314== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2636867== Memcheck, a memory error detector
+==2636867== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2636867== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2636867== Command: ./test.4
+==2636867== Parent PID: 2636866
+==2636867== 
+==2636867== 
+==2636867== Process terminating with default action of signal 6 (SIGABRT)
+==2636867==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
+==2636867==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
+==2636867==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
+==2636867==    by 0x4AEF475: raise (raise.c:26)
+==2636867==    by 0x4AD57F2: abort (abort.c:79)
+==2636867==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636867==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636867==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636867==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636867==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636867==    by 0x10BBBD: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.4)
+==2636867==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.4)
+==2636867==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.4)
+==2636867==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.4)
+==2636867== 
+==2636867== HEAP SUMMARY:
+==2636867==     in use at exit: 78,352 bytes in 29 blocks
+==2636867==   total heap usage: 30 allocs, 1 frees, 78,368 bytes allocated
+==2636867== 
+==2636867== 136 bytes in 1 blocks are possibly lost in loss record 27 of 29
+==2636867==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2636867==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636867==    by 0x10BB09: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.4)
+==2636867==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.4)
+==2636867==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.4)
+==2636867==    by 0x10BB83: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.4)
+==2636867==    by 0x10B9DA: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::lookup(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.4)
+==2636867==    by 0x10A845: main (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.4)
+==2636867== 
+==2636867== LEAK SUMMARY:
+==2636867==    definitely lost: 0 bytes in 0 blocks
+==2636867==    indirectly lost: 0 bytes in 0 blocks
+==2636867==      possibly lost: 136 bytes in 1 blocks
+==2636867==    still reachable: 78,216 bytes in 28 blocks
+==2636867==         suppressed: 0 bytes in 0 blocks
+==2636867== Reachable blocks (those to which a pointer was found) are not shown.
+==2636867== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2636867== 
+==2636867== For lists of detected and suppressed errors, rerun with: -s
+==2636867== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==2635325== Memcheck, a memory error detector
-==2635325== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2635325== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2635325== Command: ./test.5
-==2635325== Parent PID: 2635324
-==2635325== 
-==2635325== 
-==2635325== Process terminating with default action of signal 6 (SIGABRT)
-==2635325==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
-==2635325==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
-==2635325==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
-==2635325==    by 0x4AEF475: raise (raise.c:26)
-==2635325==    by 0x4AD57F2: abort (abort.c:79)
-==2635325==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635325==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635325==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635325==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635325==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635325==    by 0x10BD73: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.5)
-==2635325==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.5)
-==2635325==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.5)
-==2635325==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.5)
-==2635325== 
-==2635325== HEAP SUMMARY:
-==2635325==     in use at exit: 79,352 bytes in 49 blocks
-==2635325==   total heap usage: 70 allocs, 21 frees, 79,768 bytes allocated
-==2635325== 
-==2635325== 136 bytes in 1 blocks are possibly lost in loss record 47 of 49
-==2635325==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2635325==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635325==    by 0x10BCBF: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.5)
-==2635325==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.5)
-==2635325==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.5)
-==2635325==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.5)
-==2635325==    by 0x10BB90: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::lookup(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.5)
-==2635325==    by 0x10A84D: main (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.5)
-==2635325== 
-==2635325== LEAK SUMMARY:
-==2635325==    definitely lost: 0 bytes in 0 blocks
-==2635325==    indirectly lost: 0 bytes in 0 blocks
-==2635325==      possibly lost: 136 bytes in 1 blocks
-==2635325==    still reachable: 79,216 bytes in 48 blocks
-==2635325==         suppressed: 0 bytes in 0 blocks
-==2635325== Reachable blocks (those to which a pointer was found) are not shown.
-==2635325== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==2635325== 
-==2635325== For lists of detected and suppressed errors, rerun with: -s
-==2635325== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2636877== Memcheck, a memory error detector
+==2636877== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2636877== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2636877== Command: ./test.5
+==2636877== Parent PID: 2636876
+==2636877== 
+==2636877== 
+==2636877== Process terminating with default action of signal 6 (SIGABRT)
+==2636877==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
+==2636877==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
+==2636877==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
+==2636877==    by 0x4AEF475: raise (raise.c:26)
+==2636877==    by 0x4AD57F2: abort (abort.c:79)
+==2636877==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636877==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636877==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636877==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636877==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636877==    by 0x10BD73: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.5)
+==2636877==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.5)
+==2636877==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.5)
+==2636877==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.5)
+==2636877== 
+==2636877== HEAP SUMMARY:
+==2636877==     in use at exit: 79,352 bytes in 49 blocks
+==2636877==   total heap usage: 70 allocs, 21 frees, 79,768 bytes allocated
+==2636877== 
+==2636877== 136 bytes in 1 blocks are possibly lost in loss record 47 of 49
+==2636877==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2636877==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636877==    by 0x10BCBF: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.5)
+==2636877==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.5)
+==2636877==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.5)
+==2636877==    by 0x10BD39: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.5)
+==2636877==    by 0x10BB90: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::lookup(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.5)
+==2636877==    by 0x10A84D: main (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.5)
+==2636877== 
+==2636877== LEAK SUMMARY:
+==2636877==    definitely lost: 0 bytes in 0 blocks
+==2636877==    indirectly lost: 0 bytes in 0 blocks
+==2636877==      possibly lost: 136 bytes in 1 blocks
+==2636877==    still reachable: 79,216 bytes in 48 blocks
+==2636877==         suppressed: 0 bytes in 0 blocks
+==2636877== Reachable blocks (those to which a pointer was found) are not shown.
+==2636877== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2636877== 
+==2636877== For lists of detected and suppressed errors, rerun with: -s
+==2636877== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==2635335== Memcheck, a memory error detector
-==2635335== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2635335== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2635335== Command: ./test.6
-==2635335== Parent PID: 2635334
-==2635335== 
-==2635335== 
-==2635335== Process terminating with default action of signal 6 (SIGABRT)
-==2635335==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
-==2635335==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
-==2635335==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
-==2635335==    by 0x4AEF475: raise (raise.c:26)
-==2635335==    by 0x4AD57F2: abort (abort.c:79)
-==2635335==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635335==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635335==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635335==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635335==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635335==    by 0x10BDB1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.6)
-==2635335==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.6)
-==2635335==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.6)
-==2635335==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.6)
-==2635335== 
-==2635335== HEAP SUMMARY:
-==2635335==     in use at exit: 79,552 bytes in 49 blocks
-==2635335==   total heap usage: 90 allocs, 41 frees, 80,368 bytes allocated
-==2635335== 
-==2635335== 136 bytes in 1 blocks are possibly lost in loss record 47 of 49
-==2635335==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2635335==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635335==    by 0x10BCFD: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.6)
-==2635335==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.6)
-==2635335==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.6)
-==2635335==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.6)
-==2635335==    by 0x10BBCE: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::lookup(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.6)
-==2635335==    by 0x10A84D: main (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.6)
-==2635335== 
-==2635335== LEAK SUMMARY:
-==2635335==    definitely lost: 0 bytes in 0 blocks
-==2635335==    indirectly lost: 0 bytes in 0 blocks
-==2635335==      possibly lost: 136 bytes in 1 blocks
-==2635335==    still reachable: 79,416 bytes in 48 blocks
-==2635335==         suppressed: 0 bytes in 0 blocks
-==2635335== Reachable blocks (those to which a pointer was found) are not shown.
-==2635335== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==2635335== 
-==2635335== For lists of detected and suppressed errors, rerun with: -s
-==2635335== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2636887== Memcheck, a memory error detector
+==2636887== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2636887== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2636887== Command: ./test.6
+==2636887== Parent PID: 2636886
+==2636887== 
+==2636887== 
+==2636887== Process terminating with default action of signal 6 (SIGABRT)
+==2636887==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
+==2636887==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
+==2636887==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
+==2636887==    by 0x4AEF475: raise (raise.c:26)
+==2636887==    by 0x4AD57F2: abort (abort.c:79)
+==2636887==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636887==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636887==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636887==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636887==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636887==    by 0x10BDB1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.6)
+==2636887==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.6)
+==2636887==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.6)
+==2636887==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.6)
+==2636887== 
+==2636887== HEAP SUMMARY:
+==2636887==     in use at exit: 79,552 bytes in 49 blocks
+==2636887==   total heap usage: 90 allocs, 41 frees, 80,368 bytes allocated
+==2636887== 
+==2636887== 136 bytes in 1 blocks are possibly lost in loss record 47 of 49
+==2636887==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2636887==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636887==    by 0x10BCFD: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.6)
+==2636887==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.6)
+==2636887==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.6)
+==2636887==    by 0x10BD77: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::find(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.6)
+==2636887==    by 0x10BBCE: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::lookup(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.6)
+==2636887==    by 0x10A84D: main (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.6)
+==2636887== 
+==2636887== LEAK SUMMARY:
+==2636887==    definitely lost: 0 bytes in 0 blocks
+==2636887==    indirectly lost: 0 bytes in 0 blocks
+==2636887==      possibly lost: 136 bytes in 1 blocks
+==2636887==    still reachable: 79,416 bytes in 48 blocks
+==2636887==         suppressed: 0 bytes in 0 blocks
+==2636887== Reachable blocks (those to which a pointer was found) are not shown.
+==2636887== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2636887== 
+==2636887== For lists of detected and suppressed errors, rerun with: -s
+==2636887== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==2635345== Memcheck, a memory error detector
-==2635345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2635345== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2635345== Command: ./test.7
-==2635345== Parent PID: 2635344
-==2635345== 
-==2635345== 
-==2635345== Process terminating with default action of signal 6 (SIGABRT)
-==2635345==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
-==2635345==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
-==2635345==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
-==2635345==    by 0x4AEF475: raise (raise.c:26)
-==2635345==    by 0x4AD57F2: abort (abort.c:79)
-==2635345==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635345==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635345==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635345==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635345==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635345==    by 0x10BC51: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345== 
-==2635345== HEAP SUMMARY:
-==2635345==     in use at exit: 78,552 bytes in 29 blocks
-==2635345==   total heap usage: 30 allocs, 1 frees, 78,568 bytes allocated
-==2635345== 
-==2635345== 136 bytes in 1 blocks are possibly lost in loss record 22 of 25
-==2635345==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2635345==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635345==    by 0x10BB9D: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.7)
-==2635345== 
-==2635345== LEAK SUMMARY:
-==2635345==    definitely lost: 0 bytes in 0 blocks
-==2635345==    indirectly lost: 0 bytes in 0 blocks
-==2635345==      possibly lost: 136 bytes in 1 blocks
-==2635345==    still reachable: 78,416 bytes in 28 blocks
-==2635345==         suppressed: 0 bytes in 0 blocks
-==2635345== Reachable blocks (those to which a pointer was found) are not shown.
-==2635345== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==2635345== 
-==2635345== For lists of detected and suppressed errors, rerun with: -s
-==2635345== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2636897== Memcheck, a memory error detector
+==2636897== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2636897== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2636897== Command: ./test.7
+==2636897== Parent PID: 2636896
+==2636897== 
+==2636897== 
+==2636897== Process terminating with default action of signal 6 (SIGABRT)
+==2636897==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
+==2636897==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
+==2636897==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
+==2636897==    by 0x4AEF475: raise (raise.c:26)
+==2636897==    by 0x4AD57F2: abort (abort.c:79)
+==2636897==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636897==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636897==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636897==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636897==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636897==    by 0x10BC51: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897== 
+==2636897== HEAP SUMMARY:
+==2636897==     in use at exit: 78,552 bytes in 29 blocks
+==2636897==   total heap usage: 30 allocs, 1 frees, 78,568 bytes allocated
+==2636897== 
+==2636897== 136 bytes in 1 blocks are possibly lost in loss record 22 of 25
+==2636897==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2636897==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636897==    by 0x10BB9D: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897==    by 0x10BC34: BstMap<Tester, int>::find(BstMap<Tester, int>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.7)
+==2636897== 
+==2636897== LEAK SUMMARY:
+==2636897==    definitely lost: 0 bytes in 0 blocks
+==2636897==    indirectly lost: 0 bytes in 0 blocks
+==2636897==      possibly lost: 136 bytes in 1 blocks
+==2636897==    still reachable: 78,416 bytes in 28 blocks
+==2636897==         suppressed: 0 bytes in 0 blocks
+==2636897== Reachable blocks (those to which a pointer was found) are not shown.
+==2636897== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2636897== 
+==2636897== For lists of detected and suppressed errors, rerun with: -s
+==2636897== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==2635360== Memcheck, a memory error detector
-==2635360== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2635360== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2635360== Command: ./test.8
-==2635360== Parent PID: 2635359
-==2635360== 
-==2635360== 
-==2635360== Process terminating with default action of signal 6 (SIGABRT)
-==2635360==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
-==2635360==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
-==2635360==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
-==2635360==    by 0x4AEF475: raise (raise.c:26)
-==2635360==    by 0x4AD57F2: abort (abort.c:79)
-==2635360==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635360==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635360==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635360==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635360==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635360==    by 0x10BE07: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360== 
-==2635360== HEAP SUMMARY:
-==2635360==     in use at exit: 79,552 bytes in 49 blocks
-==2635360==   total heap usage: 70 allocs, 21 frees, 79,968 bytes allocated
-==2635360== 
-==2635360== 136 bytes in 1 blocks are possibly lost in loss record 34 of 38
-==2635360==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2635360==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635360==    by 0x10BD53: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.8)
-==2635360== 
-==2635360== LEAK SUMMARY:
-==2635360==    definitely lost: 0 bytes in 0 blocks
-==2635360==    indirectly lost: 0 bytes in 0 blocks
-==2635360==      possibly lost: 136 bytes in 1 blocks
-==2635360==    still reachable: 79,416 bytes in 48 blocks
-==2635360==         suppressed: 0 bytes in 0 blocks
-==2635360== Reachable blocks (those to which a pointer was found) are not shown.
-==2635360== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==2635360== 
-==2635360== For lists of detected and suppressed errors, rerun with: -s
-==2635360== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2636907== Memcheck, a memory error detector
+==2636907== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2636907== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2636907== Command: ./test.8
+==2636907== Parent PID: 2636906
+==2636907== 
+==2636907== 
+==2636907== Process terminating with default action of signal 6 (SIGABRT)
+==2636907==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
+==2636907==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
+==2636907==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
+==2636907==    by 0x4AEF475: raise (raise.c:26)
+==2636907==    by 0x4AD57F2: abort (abort.c:79)
+==2636907==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636907==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636907==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636907==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636907==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636907==    by 0x10BE07: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907== 
+==2636907== HEAP SUMMARY:
+==2636907==     in use at exit: 79,552 bytes in 49 blocks
+==2636907==   total heap usage: 70 allocs, 21 frees, 79,968 bytes allocated
+==2636907== 
+==2636907== 136 bytes in 1 blocks are possibly lost in loss record 34 of 38
+==2636907==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2636907==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636907==    by 0x10BD53: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907==    by 0x10BDEA: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::find(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.8)
+==2636907== 
+==2636907== LEAK SUMMARY:
+==2636907==    definitely lost: 0 bytes in 0 blocks
+==2636907==    indirectly lost: 0 bytes in 0 blocks
+==2636907==      possibly lost: 136 bytes in 1 blocks
+==2636907==    still reachable: 79,416 bytes in 48 blocks
+==2636907==         suppressed: 0 bytes in 0 blocks
+==2636907== Reachable blocks (those to which a pointer was found) are not shown.
+==2636907== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2636907== 
+==2636907== For lists of detected and suppressed errors, rerun with: -s
+==2636907== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==2635370== Memcheck, a memory error detector
-==2635370== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2635370== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2635370== Command: ./test.9
-==2635370== Parent PID: 2635369
-==2635370== 
-==2635370== 
-==2635370== Process terminating with default action of signal 6 (SIGABRT)
-==2635370==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
-==2635370==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
-==2635370==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
-==2635370==    by 0x4AEF475: raise (raise.c:26)
-==2635370==    by 0x4AD57F2: abort (abort.c:79)
-==2635370==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635370==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635370==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635370==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635370==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635370==    by 0x10BE19: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370== 
-==2635370== HEAP SUMMARY:
-==2635370==     in use at exit: 79,752 bytes in 49 blocks
-==2635370==   total heap usage: 90 allocs, 41 frees, 80,568 bytes allocated
-==2635370== 
-==2635370== 136 bytes in 1 blocks are possibly lost in loss record 33 of 37
-==2635370==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2635370==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
-==2635370==    by 0x10BD65: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.mQRGjX/test.9)
-==2635370== 
-==2635370== LEAK SUMMARY:
-==2635370==    definitely lost: 0 bytes in 0 blocks
-==2635370==    indirectly lost: 0 bytes in 0 blocks
-==2635370==      possibly lost: 136 bytes in 1 blocks
-==2635370==    still reachable: 79,616 bytes in 48 blocks
-==2635370==         suppressed: 0 bytes in 0 blocks
-==2635370== Reachable blocks (those to which a pointer was found) are not shown.
-==2635370== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==2635370== 
-==2635370== For lists of detected and suppressed errors, rerun with: -s
-==2635370== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2636918== Memcheck, a memory error detector
+==2636918== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2636918== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2636918== Command: ./test.9
+==2636918== Parent PID: 2636917
+==2636918== 
+==2636918== 
+==2636918== Process terminating with default action of signal 6 (SIGABRT)
+==2636918==    at 0x4B43A7C: __pthread_kill_implementation (pthread_kill.c:44)
+==2636918==    by 0x4B43A7C: __pthread_kill_internal (pthread_kill.c:78)
+==2636918==    by 0x4B43A7C: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
+==2636918==    by 0x4AEF475: raise (raise.c:26)
+==2636918==    by 0x4AD57F2: abort (abort.c:79)
+==2636918==    by 0x4905BBD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636918==    by 0x491124B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636918==    by 0x49112B6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636918==    by 0x49112CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636918==    by 0x4910F15: __cxa_call_unexpected (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636918==    by 0x10BE19: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918== 
+==2636918== HEAP SUMMARY:
+==2636918==     in use at exit: 79,752 bytes in 49 blocks
+==2636918==   total heap usage: 90 allocs, 41 frees, 80,568 bytes allocated
+==2636918== 
+==2636918== 136 bytes in 1 blocks are possibly lost in loss record 33 of 37
+==2636918==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2636918==    by 0x49100B3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==2636918==    by 0x10BD65: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918==    by 0x10BDFC: BstMap<Tester, Tester>::find(BstMap<Tester, Tester>::Node*, Tester const&) const (in /home/ece551db/graderbase/work/xc139.098_bst_map.7IiFvN/test.9)
+==2636918== 
+==2636918== LEAK SUMMARY:
+==2636918==    definitely lost: 0 bytes in 0 blocks
+==2636918==    indirectly lost: 0 bytes in 0 blocks
+==2636918==      possibly lost: 136 bytes in 1 blocks
+==2636918==    still reachable: 79,616 bytes in 48 blocks
+==2636918==         suppressed: 0 bytes in 0 blocks
+==2636918== Reachable blocks (those to which a pointer was found) are not shown.
+==2636918== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2636918== 
+==2636918== For lists of detected and suppressed errors, rerun with: -s
+==2636918== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
