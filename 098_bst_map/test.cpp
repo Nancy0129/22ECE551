@@ -15,7 +15,8 @@ int main(void) {
   int b = a.lookup(0);
   std::cout << "b is " << b << "\n";
   a.remove(2);
-  b = a.lookup(1);
+  a.add(2, 77);
+  b = a.lookup(9);
   std::cout << "b is " << b << "\n";
   return 0;
 }

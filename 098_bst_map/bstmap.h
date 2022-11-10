@@ -126,8 +126,13 @@ class BstMap : public Map<K, V> {
     }
   }
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    //std::cout << "find " << key << "\n";
-    return this->find(root, key);
+    try {
+      //std::cout << "find " << key << "\n";
+      return this->find(root, key);
+    }
+    catch (std::exception & e) {
+      throw;
+    }
   }
   virtual void remove(const K & key) {
     //std::cout << "remove " << key << "\n";
