@@ -83,44 +83,37 @@ class BstMap : public Map<K, V> {
   // }
 
   Node * findRm(Node * curr, const K & key) {
-    if (curr == NULL) {
-      return NULL;
-    }
-    if (curr->name == key) {
-      if (curr->left == NULL && curr->right == NULL) {
-        delete curr;
-        curr = NULL;
-        return NULL;
+    if (curr != NULL) {
+      if (key > curr->name) {
+        curr->right = findRm(curr->right, key);
       }
-      if (curr->left == NULL && curr->right != NULL) {
-        Node * temp = curr->right;
-        delete curr;
-        curr = NULL;
-        return temp;
+      else if (curr->name > key) {
+        curr->left = findRm(curr->left, key);
       }
-      if (curr->left != NULL && curr->right == NULL) {
-        Node * temp = curr->left;
-        delete curr;
-        curr = NULL;
-        return temp;
+      else {
+        if (curr->left == NULL && curr->right == NULL) {
+          delete curr;
+          return NULL;
+        }
+        if (curr->left == NULL && curr->right != NULL) {
+          Node * temp = curr->right;
+          delete curr;
+          return temp;
+        }
+        if (curr->left != NULL && curr->right == NULL) {
+          Node * temp = curr->left;
+          delete curr;
+          return temp;
+        }
+        if (curr->left != NULL && curr->right != NULL) {
+          Node * minNode = findMin(curr->right);
+          curr->name = minNode->name;
+          curr->value = minNode->value;
+          K minName = minNode->name;
+          curr->right = findRm(curr->right, minName);
+          return curr;
+        }
       }
-      if (curr->left != NULL && curr->right != NULL) {
-        Node * minNode = findMin(curr->right);
-        curr->name = minNode->name;
-        curr->value = minNode->value;
-        K minName = minNode->name;
-        //curr->right = findRm(curr->right, minName);
-        return curr;
-      }
-    }
-    else if (curr->name < key) {
-      curr->right = findRm(curr->right, key);
-
-      return curr;
-    }
-    else {
-      curr->left = findRm(curr->left, key);
-      return curr;
     }
     return curr;
   }
