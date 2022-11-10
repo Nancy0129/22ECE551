@@ -19,6 +19,7 @@ class BstMap : public Map<K, V> {
   void findAdd(Node * curr, const K & key, const V & value) {
     //std::cout << key << "\n";
     if (curr == NULL) {
+      // std::cout << "aaa\n";
       curr = new Node(key, value);
       return;
     }
@@ -44,6 +45,7 @@ class BstMap : public Map<K, V> {
     }
   }
   const V & find(Node * curr, const K & key) const throw(std::invalid_argument) {
+    //std::cout << "Findding " << key << "\n";
     if (curr == NULL) {
       throw std::exception();
     }
@@ -112,17 +114,23 @@ class BstMap : public Map<K, V> {
   }
 
  public:
-  BstMap() : root(NULL) { std::cout << "begin\n"; }
+  BstMap() : root(NULL) { /*std::cout << "begin\n";*/
+  }
   virtual void add(const K & key, const V & value) {
-    std::cout << key << "\n";
-    this->findAdd(root, key, value);
+    //std::cout << key << "\n";
+    if (root == NULL) {
+      root = new Node(key, value);
+    }
+    else {
+      this->findAdd(root, key, value);
+    }
   }
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    std::cout << "find " << key << "\n";
+    //std::cout << "find " << key << "\n";
     return this->find(root, key);
   }
   virtual void remove(const K & key) {
-    std::cout << "remove " << key << "\n";
+    //std::cout << "remove " << key << "\n";
     root = this->findRm(root, key);
   }
   virtual ~BstMap() { this->postRM(root); }
