@@ -1,5 +1,6 @@
+#include <cstdlib>
 #include <iostream>
-#include <stdexcept>
+#include <memory>
 
 #include "map.h"
 template<typename K, typename V>
@@ -56,7 +57,9 @@ class BstMap : public Map<K, V> {
       return find(curr->left, key);
     }
     else {
-      return *curr->value;
+      std::auto_ptr<V> myv(new V());
+      *myv = *curr->value;
+      return *myv.release();
     }
   }
   Node * findMin(Node * curr) {
@@ -112,6 +115,7 @@ class BstMap : public Map<K, V> {
       postRM(curr->left);
       postRM(curr->right);
       delete curr->name;
+
       delete curr->value;
       delete curr;
     }

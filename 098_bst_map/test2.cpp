@@ -60,6 +60,7 @@ int main(void) {
   a.remove(9);
   a.print_tree();
   std::cout << "b is " << b << "\n";
+  delete &b;
   // b = a.lookup(12);
   //std::cout << "b is " << b << "\n";
   return 0;
