@@ -84,7 +84,7 @@ class BstMap : public Map<K, V> {
         Node * minNode = findMin(curr->right);
         curr->name = minNode->name;
         curr->value = minNode->value;
-        curr->right = findRm(curr->right, minNode->name);
+        curr->right = findRm(curr->right, curr->name);
         return curr;
       }
     }
