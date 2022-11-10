@@ -23,6 +23,7 @@ int main(void) {
   a.add(20, 20);
   a.add(30, 35);
   a.print_tree();
+  /*
   a.remove(9);
   a.remove(9);
   a.add(9, 6);
@@ -53,7 +54,11 @@ int main(void) {
   a.print_tree();
   a.remove(1);
   a.print_tree();
-  //  std::cout << "b is " << b << "\n";
+  */
+  const int & b = a.lookup(30);
+  a.remove(30);
+  a.print_tree();
+  std::cout << "b is " << b << "\n";
   // b = a.lookup(12);
   //std::cout << "b is " << b << "\n";
   return 0;
