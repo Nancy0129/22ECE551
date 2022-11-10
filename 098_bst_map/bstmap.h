@@ -47,9 +47,9 @@ class BstMap : public Map<K, V> {
 
   const V & find(Node * curr, const K & key) const throw(std::invalid_argument) {
     //std::cout << "Findding " << key << "\n";
-    // if (curr == NULL) {
-    //throw std::exception();
-    // }
+    if (curr == NULL) {
+      throw std::invalid_argument("No items!");
+    }
     if (curr->name == key) {
       return curr->value;
     }
@@ -120,10 +120,9 @@ class BstMap : public Map<K, V> {
   }
 
  public:
-  BstMap() : root(NULL) { /*std::cout << "begin\n";*/
-  }
+  BstMap() : root(NULL) { std::cout << "begin\n"; }
   virtual void add(const K & key, const V & value) {
-    //std::cout << key << "\n";
+    std::cout << key << "\n";
     if (root == NULL) {
       root = new Node(key, value);
     }
@@ -133,11 +132,14 @@ class BstMap : public Map<K, V> {
   }
 
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    if (root == NULL) {
-      throw std::invalid_argument("NO items!");
-    }
-
+    //try {
     //std::cout << "find " << key << "\n";
+    //return this->find(root, key);
+    // }
+    //catch (std::invalid_argument const & ex) {
+    //std::cout << "Invalid: " << ex.what() << '\n';
+    //   exit(EXIT_FAILURE);
+    // }
     return this->find(root, key);
   }
   virtual void remove(const K & key) {
