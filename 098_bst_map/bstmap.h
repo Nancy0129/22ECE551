@@ -107,11 +107,10 @@ class BstMap : public Map<K, V> {
         }
         if (curr->left != NULL && curr->right != NULL) {
           Node * minNode = findMin(curr->right);
-          curr->name = minNode->name;
-          curr->value = minNode->value;
-
-          curr->right = findRm(curr->right, curr->name);
-          return curr;
+          Node * temp = new Node(minNode->name, minNode->value, curr->left, curr->right);
+          temp->right = findRm(temp->right, temp->name);
+          delete curr;
+          return temp;
         }
       }
     }
