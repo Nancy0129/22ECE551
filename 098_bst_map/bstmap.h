@@ -1,3 +1,4 @@
+#include <iostream>
 #include <stdexcept>
 
 #include "map.h"
@@ -16,11 +17,14 @@ class BstMap : public Map<K, V> {
   };
   Node * root;
   void findAdd(Node * curr, const K & key, const V & value) {
+    std::cout << key << "\n";
     if (curr == NULL) {
       curr = new Node(key, value);
+      return;
     }
     if (curr->name == key) {
       curr->value = value;
+      return;
     }
     else if (curr->name < key) {
       if (curr->right == NULL) {
