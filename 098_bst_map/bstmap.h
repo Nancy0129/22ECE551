@@ -136,9 +136,26 @@ class BstMap : public Map<K, V> {
       std::cout << ")";
     }
   }
+  Node * copyHelper(const Node * rootCopy) {
+    if (!rootCopy)
+      return NULL;
+    Node * newLeft = copyHelper(rootCopy->left);
+    Node * newRight = copyHelper(rootCopy->right);
+    Node * curr = new Node(rootCopy->name, rootCopy->value, newLeft, newRight);
+    return curr;
+  }
 
  public:
   BstMap() : root(NULL) { /*std::cout << "begin\n"; */
+  }
+
+  BstMap<K, V>(const BstMap & rhs) : root(NULL) { root = copyHelper(rhs.root); }
+  BstMap<K, V> & operator=(const BstMap & rhs) {
+    if (this != &rhs) {
+      BstMap<K, V> temp(rhs);
+      std::swap(temp.root, root);
+    }
+    return *this;
   }
 
   virtual void add(const K & key, const V & value) {

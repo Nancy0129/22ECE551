@@ -1,86 +1,68 @@
 #include <iostream>
-#include <stdexcept>
 
 #include "bstmap.h"
-#include "map.h"
+using namespace std;
 
-int main(void) {
-  BstMap<int, int> a;
-  a.add(32, 10);
-  a.add(33, 100);
-  a.add(34, -10);
-  //a.add(4, 10);
-  // a.add(32, 1);
-  a.remove(32);
-  a.remove(32);
-  a.add(35, 34);
-  a.print_tree();
-  //a.remove(-1);
-  //a.remove(2);
-  //a.remove(1);
-  //a.lookup(2);
-  //  int b = a.lookup(9);
-  /*
-  a.print_tree();
-  a.add(9, 9);
-  a.add(7, 7);
-  a.add(81, 81);
-  a.add(4, 4);
-  a.add(1, 1);
-  a.add(6, 6);
-  a.add(32, 32);
-  a.add(64, 64);
-  a.add(99, 99);
-  a.add(16, 16);
-  a.add(22, 22);
-  a.add(81, 888);
-  a.add(20, 20);
-  a.add(30, 35);
-  a.print_tree();
+int main() {
+  try {
+    BstMap<int, int> bm;
+    bm.add(1, 2);
+    bm.add(0, 6);
+    bm.add(3, 4);
+    bm.add(-1, 99);
+    bm.add(2, 7);
+    bm.add(1, 34);
+    bm.add(80, 3);
+    bm.add(4, 90);
+    bm.add(-1, 98);
+    cout << "The tree bm is now: \n";
+    bm.print_tree();
+    cout << '\n';
 
-  a.remove(9);
-   a.remove(9);
-  a.add(9, 6);
-  a.add(9, 7);
-  a.remove(9);
-  a.print_tree();
-  a.remove(16);
-  a.print_tree();
-  a.remove(20);
-  a.print_tree();
-  a.remove(22);
-  a.print_tree();
-  a.remove(30);
-  a.print_tree();
-  a.remove(32);
-  a.print_tree();
-  a.remove(64);
-  a.print_tree();
-  a.remove(81);
-  a.print_tree();
-  a.remove(99);
-  a.print_tree();
-  a.remove(7);
-  a.print_tree();
-  a.remove(4);
-  a.print_tree();
-  a.remove(6);
-  a.print_tree();
-  a.remove(1);
-  a.print_tree();
-  a.add(9, 9);
-  a.add(16, 16);
-  const int & b = a.lookup(16);
-  //a.remove(9);
-  a.print_tree();
-  std::cout << "b is " << b << "\n";
-  //delete &b
+    BstMap<int, int> bmCopy(bm);
+    BstMap<int, int> bm2;
+    bm2 = bm;
 
-  a.add(1, 1);
-  a.add(2, 2);
-  const int & c = a.lookup(2);
-  // b = a.lookup(12);
-  std::cout << "c is " << c << "\n";
-*/
+    cout << "Looking for key -1: " << bm.lookup(-1) << endl;
+    cout << "Looking for key 0: " << bm.lookup(0) << endl;
+    cout << "Looking for key 2: " << bm.lookup(2) << endl;
+    cout << "Looking for key 4: " << bm.lookup(4) << endl;
+    // cout << "Looking for key 5: " << bm.lookup(5) << endl;
+    cout << "Looking for key 80: " << bm.lookup(80) << endl;
+
+    bm.remove(1);
+    cout << "After removing 0, the tree bm is now: \n";
+    //bm.printBstMap();
+    cout << '\n';
+
+    bm.remove(-1);
+    cout << "After removing -1, the tree bm is now: \n";
+    //  bm.printBstMap();
+    cout << '\n';
+
+    bm.remove(3);
+    cout << "After removing 3, the tree bm is now: \n";
+    //bm.printBstMap();
+    cout << '\n';
+
+    bm.remove(5);
+    cout << "After removing 5, the tree bm is now: \n";
+    //bm.printBstMap();
+    cout << '\n';
+
+    bm2.add(76, 3);
+    bm2.remove(80);
+    cout << "The tree bm2 is now: \n";
+    //bm2.printBstMap();
+    cout << '\n';
+
+    cout << "The tree bmCopy is now: \n";
+    //bmCopy.printBstMap();
+    cout << '\n';
+  }
+  catch (invalid_argument & e) {
+    cout << e.what() << endl;
+  }
+
   return 0;
 }
