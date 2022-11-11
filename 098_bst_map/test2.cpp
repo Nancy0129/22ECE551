@@ -6,9 +6,21 @@
 
 int main(void) {
   BstMap<int, int> a;
-  a.remove(1);
-
+  a.add(32, 10);
+  a.add(33, 100);
+  a.add(34, -10);
+  //a.add(4, 10);
+  // a.add(32, 1);
+  a.remove(32);
+  a.remove(32);
+  a.add(35, 34);
+  a.print_tree();
+  //a.remove(-1);
+  //a.remove(2);
+  //a.remove(1);
+  //a.lookup(2);
   //  int b = a.lookup(9);
+  /*
   a.print_tree();
   a.add(9, 9);
   a.add(7, 7);
@@ -27,7 +39,7 @@ int main(void) {
   a.print_tree();
 
   a.remove(9);
-  a.remove(9);
+   a.remove(9);
   a.add(9, 6);
   a.add(9, 7);
   a.remove(9);
@@ -69,5 +81,6 @@ int main(void) {
   const int & c = a.lookup(2);
   // b = a.lookup(12);
   std::cout << "c is " << c << "\n";
+*/
   return 0;
 }
