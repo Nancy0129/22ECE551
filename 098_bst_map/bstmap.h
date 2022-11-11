@@ -166,7 +166,8 @@ class BstMap : public Map<K, V> {
     //std::cout << "remove " << key << "\n";
     root = this->findRm(root, key);
   }
-  virtual ~BstMap() { this->postRM(root); }
+  virtual ~BstMap() { /*this->postRM(root);*/
+  }
 
   void print_tree() {
     this->preOrder(root);
