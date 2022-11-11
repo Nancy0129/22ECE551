@@ -62,7 +62,8 @@ int main(void) {
   //a.remove(9);
   a.print_tree();
   std::cout << "b is " << b << "\n";
-  //delete &b;
+  //delete &b
+
   a.add(1, 1);
   a.add(2, 2);
   const int & c = a.lookup(2);
