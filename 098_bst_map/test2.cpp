@@ -61,7 +61,10 @@ int main(void) {
   a.print_tree();
   std::cout << "b is " << b << "\n";
   delete &b;
+  a.add(1, 1);
+  a.add(2, 2);
+  const int & c = a.lookup(2);
   // b = a.lookup(12);
-  //std::cout << "b is " << b << "\n";
+  std::cout << "c is " << c << "\n";
   return 0;
 }

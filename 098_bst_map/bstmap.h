@@ -57,8 +57,10 @@ class BstMap : public Map<K, V> {
       return find(curr->left, key);
     }
     else {
-      std::auto_ptr<V> myv(new V());
-      *myv = *curr->value;
+      std::auto_ptr<V> myv(curr->value);
+      //myv.reset(curr->value);
+      //myv.get() = curr->value;
+      // *myv = *curr->value;
       return *myv.release();
     }
   }
