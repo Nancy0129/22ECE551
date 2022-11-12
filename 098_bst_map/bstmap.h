@@ -16,13 +16,16 @@ class BstMap : public Map<K, V> {
         name(n), value(v), left(l), right(r) {}
   };
   Node * root;
+  Node * deepCopy(Node * rhs) {
+    if (rhs == NULL) {
+      return NULL;
+    }
+    Node * curr = new Node(rhs->name, rhs->value);
+    curr->left = deepCopy(rhs->left);
+    curr->right = deepCopy(rhs->right);
+    return curr;
+  }
   void findAdd(Node * curr, const K & key, const V & value) {
-    //std::cout << key << "\n";
-    // if (curr == NULL) {
-    //std::cout << "aaa\n";
-    //curr = new Node(key, value);
-    //return;
-    // }
     if (curr->name == key) {
       curr->value = value;
       return;
@@ -73,14 +76,6 @@ class BstMap : public Map<K, V> {
     }
     return temp;
   }
-
-  // Node * findMin(Node * curr) {
-
-  //if (curr->left == NULL) {
-  //  return curr;
-  //}
-  //return findMin(curr->left);
-  // }
 
   Node * findRm(Node * curr, const K & key) {
     if (curr == NULL) {
@@ -136,30 +131,22 @@ class BstMap : public Map<K, V> {
       std::cout << ")";
     }
   }
-  Node * copyHelper(const Node * rootCopy) {
-    if (!rootCopy)
-      return NULL;
-    Node * newLeft = copyHelper(rootCopy->left);
-    Node * newRight = copyHelper(rootCopy->right);
-    Node * curr = new Node(rootCopy->name, rootCopy->value, newLeft, newRight);
-    return curr;
-  }
 
  public:
-  BstMap() : root(NULL) { /*std::cout << "begin\n"; */
-  }
+  BstMap() : root(NULL) {}
 
-  BstMap<K, V>(const BstMap & rhs) : root(NULL) { root = copyHelper(rhs.root); }
-  BstMap<K, V> & operator=(const BstMap & rhs) {
+  BstMap(const BstMap & rhs) : root(NULL) { root = this->deepCopy(rhs.root); }
+  BstMap & operator=(const BstMap & rhs) {
     if (this != &rhs) {
-      BstMap<K, V> temp(rhs);
-      std::swap(temp.root, root);
+      Node * temp = this->deepCopy(rhs.root);
+      this->postRM(root);
+      root = temp;
+      //std::swap(temp.root, root);
     }
     return *this;
   }
 
   virtual void add(const K & key, const V & value) {
-    // std::cout << key << "\n";
     if (root == NULL) {
       root = new Node(key, value);
     }
