@@ -3,6 +3,6 @@ E
 F
 B
 D
-A
-C
 B
+C
+A
