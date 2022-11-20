@@ -1,0 +1,41 @@
+Grading at 11/20/2022:21:46:10.973933
+For commit ID 68029fd3ee7ad22937377d918a1f038e5f85db9d
+Grading at Sun Nov 20 04:46:07 PM EST 2022
+Doing some basic checking for your submission
+
+Step 1
+Checking that cyoa-step1 compiles
+rm -f *~ cyoa-step1 cyoa-step1.o story.o page.o cyoa.o
+g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -c cyoa-step1.cpp
+g++ -o cyoa-step1 cyoa-step1.o
+rm cyoa-step1.o
+The code compiled (good)
+Executable cyoa-step1 exists (good)
+------------------------------------
+Now running YOUR tests for step 1
+------------------------------------
+------------------------------------
+You have requested that we check for intermediate deadline completion on step 1
+------------------------------------
+
+Step 1 EC intermediate deadline test 1
+===========================================================
+./cyoa-step1 /usr/local/ece551/cyoa/story1
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 1 EC intermediate deadline test 2
+===========================================================
+./cyoa-step1 /usr/local/ece551/cyoa/story2
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+Intermediate deadline requirements for Step 1 passed at Sun Nov 20 04:46:10 PM EST 2022
+
+Step 2
+Checking that cyoa-step2 compiles
+rm -f *~ cyoa-step1 cyoa-step1.o story.o page.o cyoa.o
+The code did not compile!
+
+Overall Grade: NO GRADE YET
