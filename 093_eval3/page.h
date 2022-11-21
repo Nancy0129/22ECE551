@@ -55,6 +55,8 @@ class Page {
   const char * getFile() const { return fileName.c_str(); }
   size_t numChoice() const { return choices.size(); }
   const std::string & getChoice(size_t ind) const { return choices[ind].contain; }
+  size_t getChoiceDest(size_t ind) const { return choices[ind].dest; }
+  ~Page() {}
 };
 std::ostream & operator<<(std::ostream & s, const Page & rhs) {
   std::ifstream pFile(rhs.getFile());

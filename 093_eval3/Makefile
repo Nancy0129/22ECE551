@@ -1,5 +1,5 @@
 CPPFLAGS=-std=gnu++98 -pedantic -Wall -Werror -ggdb3
-PROGS=cyoa-step1
+PROGS=cyoa-step1 cyoa-step2
 OBJS=$(patsubst %,%.o,$(PROGS)) story.o page.o cyoa.o
 all: $(PROGS)
 cyoa-step%: cyoa-step%.o 

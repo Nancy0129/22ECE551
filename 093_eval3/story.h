@@ -1,14 +1,15 @@
 #ifndef __STORY_H__
 #define __STORY_H__
 #include <fstream>
+#include <set>
 
 #include "cyoa.h"
 #include "page.h"
 class Story {
- protected:
   size_t pageNum;
   std::string directory;
-
+  bool hasWin, hasLose;
+  std::set<size_t> allDestPage;
   void addPage(const std::string & line) {
     size_t findAt = line.find("@");
     size_t findC = line.find(":", findAt);
@@ -24,7 +25,14 @@ class Story {
     if (!tryOpen.is_open()) {
       throw std::invalid_argument("Invalid page file name!");
     }
-    Page newP(number, fName, line.substr(findAt + 1, findC - (findAt + 1)));
+    std::string type = line.substr(findAt + 1, findC - (findAt + 1));
+    if (type == "W") {
+      hasWin = true;
+    }
+    if (type == "L") {
+      hasLose = true;
+    }
+    Page newP(number, fName, type);
     pages.push_back(newP);
     pageNum++;
   }
@@ -39,12 +47,48 @@ class Story {
     if (pages[fromPage].isLose() || pages[fromPage].isWin()) {
       throw std::invalid_argument("Add choices to a Win/Lose page!");
     }
+    allDestPage.insert(toPage);
     pages[fromPage].addChoice(toPage, line.substr(findC2 + 1));
+  }
+
+  void checkStory() {
+    if (!hasWin || !hasLose) {
+      throw std::range_error("There is no WIN / LOSE page!");
+    }
+    std::set<size_t> set_copy(allDestPage);
+    std::set<size_t>::iterator pos;
+    pos = set_copy.find(0);
+    if (pos != set_copy.end()) {
+      set_copy.erase(pos);
+    }
+    for (size_t i = 1; i < pages.size(); i++) {
+      pos = set_copy.find(i);
+      if (pos == set_copy.end()) {
+        throw std::range_error("A page has no reference!");
+      }
+      set_copy.erase(i);
+    }
+    if (set_copy.size() > 0) {
+      throw std::range_error("A page reference is not valid!");
+    }
+  }
+  size_t getNextPage(size_t curr, const std::string & userIn) {
+    size_t userC = getValidNum(userIn.c_str());
+    if (userC > pages[curr].numChoice() || userC == 0) {
+      throw std::invalid_argument("Choice index out of range!");
+    }
+    return pages[curr].getChoiceDest(userC - 1);
   }
 
  public:
   std::vector<Page> pages;
-  Story(std::string dir) : pageNum(0), directory(dir), pages(std::vector<Page>()) {
+  Story(std::string dir) :
+      pageNum(0),
+      directory(dir),
+      hasWin(false),
+      hasLose(false),
+      allDestPage(std::set<size_t>()),
+      pages(std::vector<Page>()) {
     std::string storyDir = directory + "/story.txt";
     std::ifstream sFile(storyDir.c_str());
     std::string line;
@@ -63,6 +107,28 @@ class Story {
       }
     }
   }
+
+  void play() {
+    checkStory();
+    std::string userChoice;
+    size_t currPos = 0;
+    std::cout << pages[currPos];
+    while (std::getline(std::cin, userChoice)) {
+      try {
+        currPos = getNextPage(currPos, userChoice);
+
+        std::cout << pages[currPos];
+        if (pages[currPos].isWin() || pages[currPos].isLose()) {
+          return;
+        }
+      }
+      catch (std::invalid_argument & ex) {
+        std::cout << "That is not a valid choice, please try again\n";
+      }
+    }
+  }
+
+  ~Story() {}
 };
 
 std::ostream & operator<<(std::ostream & s, const Story & rhs) {
