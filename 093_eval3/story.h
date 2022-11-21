@@ -11,6 +11,7 @@ class Story {
   std::string directory;
   bool hasWin, hasLose;
   std::set<size_t> allDestPage;
+  std::set<std::pair<std::string, long int> > properties;
   void addPage(const std::string & line) {
     size_t findAt = line.find("@");
     size_t findC = line.find(":", findAt);
@@ -37,10 +38,26 @@ class Story {
     pages.push_back(newP);
     pageNum++;
   }
-  void addNormalChoice(std::string & line) {
+  void addChoice(std::string & line, bool fancy = false) {
     size_t findC1 = line.find(":");
     size_t findC2 = line.find(":", findC1 + 1);
-    size_t fromPage = getValidNum(line.substr(0, findC1).c_str());
+    size_t fromPage;
+    size_t findBl = 0;
+    size_t findE = 0;
+    size_t findBr = 0;
+    long int propV;
+    if (fancy) {
+      findBl = line.find("[");
+      findE = line.find("=");
+      findBr = line.find("]");
+      checkType4(findC1, findC2, findBl, findE, findBr);
+      fromPage = getValidNum(line.substr(0, findBl).c_str());
+      propV = getValidLong(line.substr(findE + 1, findBr - (findE + 1)).c_str());
+    }
+
+    else {
+      fromPage = getValidNum(line.substr(0, findC1).c_str());
+    }
     size_t toPage = getValidNum(line.substr(findC1 + 1, findC2 - (findC1 + 1)).c_str());
     if (fromPage >= pages.size()) {
       throw std::invalid_argument("Add choices before a page declaration!");
@@ -49,7 +66,30 @@ class Story {
       throw std::invalid_argument("Add choices to a Win/Lose page!");
     }
     allDestPage.insert(toPage);
-    pages[fromPage].addChoice(toPage, line.substr(findC2 + 1));
+    if (fancy) {
+      pages[fromPage].addChoice(toPage,
+                                line.substr(findC2 + 1),
+                                line.substr(findBl + 1, findE - (findBl + 1)),
+                                propV);
+    }
+    else {
+      pages[fromPage].addChoice(toPage, line.substr(findC2 + 1));
+    }
+  }
+  void addProperty(std::string & line) {
+    size_t findD = line.find("$");
+    size_t findE = line.find("=", findD);
+    if (findE == std::string::npos) {
+      throw std::invalid_argument("Invalid line format for adding properties!");
+    }
+    size_t atPage = getValidNum(line.substr(0, findD).c_str());
+    if (atPage >= pages.size()) {
+      throw std::invalid_argument("Add properties before a page declaration!");
+    }
+    long int value = getValidNum(line.substr(findE + 1).c_str());
+    pages[atPage].addProp(line.substr(findD + 1, findE - (findD + 1)), value);
+    properties.insert(
+        std::pair<std::string, long int>(line.substr(findD + 1, findE - (findD + 1)), 0));
   }
 
   void checkStory() {
@@ -78,7 +118,26 @@ class Story {
     if (userC > pages[curr].numChoice() || userC == 0) {
       throw std::invalid_argument("Choice index out of range!");
     }
+
+    if (!pages[curr].getChoiceSat(userC - 1)) {
+      throw std::invalid_argument("Unvaliable Option!");
+    }
     return pages[curr].getChoiceDest(userC - 1);
+  }
+  void updateProp(const size_t & currPage) {
+    std::set<std::pair<std::string, long int> > newProps = pages[currPage].getProp();
+    std::set<std::pair<std::string, long int> >::iterator it;
+    for (it = newProps.begin(); it != newProps.end(); it++) {
+      // std::cout << it->first << " " << it->second << "\n";
+      findAddProp(properties, *it);
+    }
+    for (size_t i = 0; i < pages[currPage].numChoice(); i++) {
+      if (pages[currPage].choiceHasCond(i)) {
+        std::pair<std::string, long int> cond = pages[currPage].getChoiceCond(i);
+        bool sat = (properties.find(cond) != properties.end());
+        pages[currPage].setChoiceStatus(i, sat);
+      }
+    }
   }
 
  public:
@@ -89,6 +148,7 @@ class Story {
       hasWin(false),
       hasLose(false),
       allDestPage(std::set<size_t>()),
+      properties(std::set<std::pair<std::string, long int> >()),
       pages(std::vector<Page>()) {
     std::string storyDir = directory + "/story.txt";
     std::ifstream sFile(storyDir.c_str());
@@ -103,7 +163,13 @@ class Story {
           addPage(line);
         }
         else if (lineType == 2) {
-          addNormalChoice(line);
+          addChoice(line);
+        }
+        else if (lineType == 3) {
+          addProperty(line);
+        }
+        else if (lineType == 4) {
+          addChoice(line, true);
         }
       }
     }
@@ -117,7 +183,7 @@ class Story {
     while (std::getline(std::cin, userChoice)) {
       try {
         currPos = getNextPage(currPos, userChoice);
-
+        updateProp(currPos);
         std::cout << pages[currPos];
         if (pages[currPos].isWin() || pages[currPos].isLose()) {
           return;

@@ -21,11 +21,12 @@ int getLineType(const std::string & line) {
     if (findC2 != std::string::npos) {
       return 2;
     }
-    size_t find_e = line.find("=", findC1);
-    if (find_e != std::string::npos) {
-      return 3;
-    }
   }
+  size_t findD = line.find("$");
+  if (findD != std::string::npos) {
+    return 3;
+  }
+  std::cout << line << "\n";
   throw std::invalid_argument("There is a invalid line with wrong format in the file!");
 }
 size_t getValidNum(const char * word) {
@@ -39,6 +40,17 @@ size_t getValidNum(const char * word) {
   // indicates it is not a legal number
   throw std::invalid_argument("Cannot convert to a valid number!");
 }
+
+long int getValidLong(const char * word) {
+  char * endtr;
+  long int number = strtol(word, &endtr, 10);
+  if (endtr[0] == '\0') {
+    return number;
+  }
+  std::cerr << word << "\n";
+  throw std::invalid_argument("Cannot convert to a valid long int!");
+}
+
 class Path {
   std::vector<size_t> paths;
   std::vector<size_t> options;
@@ -83,5 +95,25 @@ std::ostream & operator<<(std::ostream & stream, const Path & rhs) {
   stream << rhs.paths[rhs.options.size()];
   stream << "(win)\n";
   return stream;
+}
+
+void findAddProp(std::set<std::pair<std::string, long int> > & pSet,
+                 const std::pair<std::string, long int> & p) {
+  std::set<std::pair<std::string, long int> >::iterator it;
+  for (it = pSet.begin(); it != pSet.end(); it++) {
+    if (it->first == p.first) {
+      pSet.erase(it);
+      break;
+    }
+  }
+  pSet.insert(p);
+}
+void checkType4(size_t c1, size_t c2, size_t bl, size_t e, size_t br) {
+  if (c2 != std::string::npos || br != std::string::npos || e != std::string::npos) {
+    if (bl < e && e < br && br < c1 && c1 < c2) {
+      return;
+    }
+  }
+  throw std::invalid_argument("Cannot convert the line to the fancy choice!");
 }
 #endif

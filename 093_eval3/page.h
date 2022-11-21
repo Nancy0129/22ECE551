@@ -12,15 +12,21 @@ class Page {
   class Choice {
    public:
     size_t dest;
-    std::string contain;
+    std::string content;
     bool hasCond;
+    bool satisfied;
     std::string cond;
     long int val;
 
     Choice(size_t toP, const std::string & c) :
-        dest(toP), contain(c), hasCond(false), cond(std::string()), val(0) {}
+        dest(toP),
+        content(c),
+        hasCond(false),
+        satisfied(true),
+        cond(std::string()),
+        val(0) {}
     Choice(size_t toP, const std::string & c, const std::string & prop, long int v) :
-        dest(toP), contain(c), hasCond(true), cond(prop), val(v) {}
+        dest(toP), content(c), hasCond(true), satisfied(false), cond(prop), val(v) {}
     ~Choice() {}
   };
   size_t pageInd;
@@ -28,6 +34,7 @@ class Page {
   std::string fileName;
   bool lose;
   bool win;
+  std::set<std::pair<std::string, long int> > newProps;
 
  public:
   Page(size_t num, const std::string & fName, const std::string & type) :
@@ -35,7 +42,8 @@ class Page {
       choices(std::vector<Choice>()),
       fileName(fName),
       lose(false),
-      win(false) {
+      win(false),
+      newProps(std::set<std::pair<std::string, long int> >()) {
     if (type == "W") {
       win = true;
     }
@@ -52,10 +60,27 @@ class Page {
     Choice newChoice(destPage, contain);
     choices.push_back(newChoice);
   }
+  void addChoice(size_t destPage, std::string contain, std::string cond, long int value) {
+    Choice newChoice(destPage, contain, cond, value);
+    choices.push_back(newChoice);
+  }
+
   const char * getFile() const { return fileName.c_str(); }
   size_t numChoice() const { return choices.size(); }
-  const std::string & getChoice(size_t ind) const { return choices[ind].contain; }
+
+  const std::string & getChoice(size_t ind) const { return choices[ind].content; }
   size_t getChoiceDest(size_t ind) const { return choices[ind].dest; }
+  bool choiceHasCond(size_t ind) const { return choices[ind].hasCond; }
+  std::pair<std::string, long int> getChoiceCond(size_t ind) const {
+    std::pair<std::string, long int> condPair(choices[ind].cond, choices[ind].val);
+    return condPair;
+  }
+  void setChoiceStatus(size_t ind, bool s) { choices[ind].satisfied = s; }
+  bool getChoiceSat(size_t ind) const { return choices[ind].satisfied; }
+  void addProp(const std::string & prop, const long int & value) {
+    findAddProp(newProps, std::pair<std::string, long int>(prop, value));
+  }
+  const std::set<std::pair<std::string, long int> > & getProp() { return newProps; }
   ~Page() {}
 };
 std::ostream & operator<<(std::ostream & s, const Page & rhs) {
@@ -78,7 +103,12 @@ std::ostream & operator<<(std::ostream & s, const Page & rhs) {
     s << "What would you like to do?\n";
     s << "\n";
     for (size_t i = 0; i < rhs.numChoice(); i++) {
-      s << " " << i + 1 << ". " << rhs.getChoice(i) << "\n";
+      if (rhs.getChoiceSat(i)) {
+        s << " " << i + 1 << ". " << rhs.getChoice(i) << "\n";
+      }
+      else {
+        s << " " << i + 1 << ". <UNAVAILABLE>\n";
+      }
     }
   }
   return s;
