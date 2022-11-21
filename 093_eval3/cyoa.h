@@ -42,12 +42,14 @@ size_t getValidNum(const char * word) {
 }
 
 long int getValidLong(const char * word) {
-  char * endtr;
-  long int number = strtol(word, &endtr, 10);
-  if (endtr[0] == '\0') {
-    return number;
+  if (word[0] != '\0') {
+    char * endtr;
+    long int number = strtol(word, &endtr, 10);
+    if (endtr[0] == '\0') {
+      return number;
+    }
   }
-  std::cerr << word << "\n";
+
   throw std::invalid_argument("Cannot convert to a valid long int!");
 }
 
