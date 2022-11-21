@@ -60,13 +60,15 @@ int main(int argc, char ** argv) {
   std::string user_in;
   char * endptr;
   while (std::getline(std::cin, user_in)) {
-    size_t o = std::strtoul(user_in.c_str(), &endptr, 10);
+    if (user_in.find_first_not_of(" \t\n\v\f\r") != std::string::npos) {
+      size_t o = std::strtoul(user_in.c_str(), &endptr, 10);
 
-    if ((user_in[0] != '\0') && endptr[0] == '\0') {
-      std::cout << o << "\n";
-    }
-    else {
-      std::cout << "That is not a valid choice, please try again\n";
+      if (endptr[0] == '\0') {
+        std::cout << o << "\n";
+      }
+      else {
+        std::cout << "That is not a valid choice, please try again\n";
+      }
     }
   }
   return 0;

@@ -157,7 +157,7 @@ class Story {
       throw std::invalid_argument("Cannot open the story.txt file!");
     }
     while (std::getline(sFile, line)) {
-      if (!line.empty()) {
+      if (line.find_first_not_of(" \t\n") != std::string::npos) {
         int lineType = getLineType(line);
         if (lineType == 1) {
           addPage(line);
