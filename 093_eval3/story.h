@@ -54,7 +54,6 @@ class Story {
       fromPage = getValidNum(line.substr(0, findBl).c_str());
       propV = getValidLong(line.substr(findE + 1, findBr - (findE + 1)).c_str());
     }
-
     else {
       fromPage = getValidNum(line.substr(0, findC1).c_str());
     }

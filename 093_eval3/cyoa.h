@@ -7,26 +7,28 @@
 #include <string>
 #include <vector>
 int getLineType(const std::string & line) {
-  size_t findAt = line.find("@");
-  if (findAt != std::string::npos) {
-    return 1;
-  }
   size_t findC1 = line.find(":");
   if (findC1 != std::string::npos) {
     size_t findB = line.find("[");
     if (findB != std::string::npos && findB < findC1) {
       return 4;
     }
-    size_t findC2 = line.find(":", findC1);
+    size_t findAt = line.find("@");
+    if (findAt != std::string::npos && findAt < findC1) {
+      return 1;
+    }
+    size_t findC2 = line.find(":", findC1 + 1);
     if (findC2 != std::string::npos) {
       return 2;
     }
   }
-  size_t findD = line.find("$");
-  if (findD != std::string::npos) {
-    return 3;
+  else {
+    size_t findD = line.find("$");
+    if (findD != std::string::npos) {
+      return 3;
+    }
   }
-  std::cout << line << "\n";
+  std::cerr << line << "\n";
   throw std::invalid_argument("There is a invalid line with wrong format in the file!");
 }
 size_t getValidNum(const char * word) {
@@ -113,7 +115,7 @@ void findAddProp(std::set<std::pair<std::string, long int> > & pSet,
   pSet.insert(p);
 }
 void checkType4(size_t c1, size_t c2, size_t bl, size_t e, size_t br) {
-  if (c2 != std::string::npos || br != std::string::npos || e != std::string::npos) {
+  if (c2 != std::string::npos && br != std::string::npos && e != std::string::npos) {
     if (bl < e && e < br && br < c1 && c1 < c2) {
       return;
     }
