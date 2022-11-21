@@ -120,7 +120,7 @@ class Story {
     }
 
     if (!pages[curr].getChoiceSat(userC - 1)) {
-      throw std::invalid_argument("Unvaliable Option!");
+      throw std::range_error("Unvaliable Option!");
     }
     return pages[curr].getChoiceDest(userC - 1);
   }
@@ -191,6 +191,9 @@ class Story {
       }
       catch (std::invalid_argument & ex) {
         std::cout << "That is not a valid choice, please try again\n";
+      }
+      catch (std::range_error & ex) {
+        std::cout << "That choice is not available at this time, please try again";
       }
     }
   }
