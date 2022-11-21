@@ -104,10 +104,12 @@ std::ostream & operator<<(std::ostream & s, const Page & rhs) {
     s << "\n";
     for (size_t i = 0; i < rhs.numChoice(); i++) {
       if (rhs.getChoiceSat(i)) {
-        s << " " << i + 1 << ". " << rhs.getChoice(i) << "\n";
+        s << i + 1 << "." << rhs.getChoice(i) << "\n";
+        // s << " " << i + 1 << ". " << rhs.getChoice(i) << "\n";
       }
       else {
-        s << " " << i + 1 << ". <UNAVAILABLE>\n";
+        //s << " " << i + 1 << ". <UNAVAILABLE>\n";
+        s << i + 1 << ".<UNAVAILABLE>\n";
       }
     }
   }
