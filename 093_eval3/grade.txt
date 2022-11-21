@@ -1,6 +1,6 @@
-Grading at 11/21/2022:07:50:06.542361
-For commit ID 67f8b613d23aac9d38419df7d8cd2cce11046304
-Grading at Mon Nov 21 02:49:40 AM EST 2022
+Grading at 11/21/2022:07:56:32.862489
+For commit ID ffb3715df8ecb35c1e95dfc03865f9a55a998490
+Grading at Mon Nov 21 02:56:06 AM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -134,9 +134,9 @@ What would you like to do?					What would you like to do?
 4.Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
 5.<UNAVAILABLE>							5.<UNAVAILABLE>
 6.Ask the dragon if he has heard any good jokes lately.		6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-As you charge the dragon with your sword, you realize		As you charge the dragon with your sword, you realize
+That choice is not available at this time, please try againTh |	That choice is not available at this time, please try again
+							      >	That choice is not available at this time, please try again
+							      >	As you charge the dragon with your sword, you realize
 that you don't really have training in sword fighting.		that you don't really have training in sword fighting.
 The dragon happily eats you for breakfast.			The dragon happily eats you for breakfast.
 
@@ -230,9 +230,9 @@ What would you like to do?					What would you like to do?
 2.Attack the dragon with your sword				2.Attack the dragon with your sword
 3.<UNAVAILABLE>							3.<UNAVAILABLE>
 4.Run for it!							4.Run for it!
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-You run away.  Not the most heroic victory,			You run away.  Not the most heroic victory,
+That choice is not available at this time, please try againTh |	That choice is not available at this time, please try again
+							      >	That choice is not available at this time, please try again
+							      >	You run away.  Not the most heroic victory,
 but we'll call it a win.					but we'll call it a win.
 
 Congratulations! You have won. Hooray!				Congratulations! You have won. Hooray!
@@ -315,8 +315,8 @@ What would you like to do?					What would you like to do?
 4.Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
 5.<UNAVAILABLE>							5.<UNAVAILABLE>
 6.Ask the dragon if he has heard any good jokes lately.		6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-As you charge the dragon with your sword, you realize		As you charge the dragon with your sword, you realize
+That choice is not available at this time, please try againAs |	That choice is not available at this time, please try again
+							      >	As you charge the dragon with your sword, you realize
 that you don't really have training in sword fighting.		that you don't really have training in sword fighting.
 The dragon happily eats you for breakfast.			The dragon happily eats you for breakfast.
 
@@ -411,8 +411,8 @@ What would you like to do?					What would you like to do?
 2.<UNAVAILABLE>							2.<UNAVAILABLE>
 3.Run for it!							3.Run for it!
 4.<UNAVAILABLE>							4.<UNAVAILABLE>
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-As you fling the coins at the dragon, the jangling sound they	As you fling the coins at the dragon, the jangling sound they
+That choice is not available at this time, please try againAs |	That choice is not available at this time, please try again
+							      >	As you fling the coins at the dragon, the jangling sound they
 the air lets the dragon know where you are.  He turns and bre	the air lets the dragon know where you are.  He turns and bre
 fire at you.							fire at you.
 
@@ -493,8 +493,8 @@ What would you like to do?					What would you like to do?
 2.<UNAVAILABLE>							2.<UNAVAILABLE>
 3.Run for it!							3.Run for it!
 4.<UNAVAILABLE>							4.<UNAVAILABLE>
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-You start to run, but the remaining coins in your pocket	You start to run, but the remaining coins in your pocket
+That choice is not available at this time, please try againYo |	That choice is not available at this time, please try again
+							      >	You start to run, but the remaining coins in your pocket
 jangle loudly.  The dragon hears you and breathes fire		jangle loudly.  The dragon hears you and breathes fire
 at you.								at you.
 
@@ -578,8 +578,8 @@ What would you like to do?					What would you like to do?
 4.<UNAVAILABLE>							4.<UNAVAILABLE>
 5.<UNAVAILABLE>							5.<UNAVAILABLE>
 6.Ask the dragon if he has heard any good jokes lately.		6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-As you charge the dragon with your sword, you realize		As you charge the dragon with your sword, you realize
+That choice is not available at this time, please try againAs |	That choice is not available at this time, please try again
+							      >	As you charge the dragon with your sword, you realize
 that you don't really have training in sword fighting.		that you don't really have training in sword fighting.
 The dragon happily eats you for breakfast.			The dragon happily eats you for breakfast.
 
@@ -638,9 +638,9 @@ What would you like to do?					What would you like to do?
 4.<UNAVAILABLE>							4.<UNAVAILABLE>
 5.Throw the muffin at the dragon's nose and run for it!		5.Throw the muffin at the dragon's nose and run for it!
 6.Ask the dragon if he has heard any good jokes lately.		6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-As you throw the muffin at the dragon, it harmlessly bounces 	As you throw the muffin at the dragon, it harmlessly bounces 
+That choice is not available at this time, please try againTh |	That choice is not available at this time, please try again
+							      >	That choice is not available at this time, please try again
+							      >	As you throw the muffin at the dragon, it harmlessly bounces 
 his thick scales.  You wonder what you were thinking as the d	his thick scales.  You wonder what you were thinking as the d
 eats you for breakfast.						eats you for breakfast.
 
@@ -717,10 +717,10 @@ What would you like to do?					What would you like to do?
 4.<UNAVAILABLE>							4.<UNAVAILABLE>
 5.Throw the muffin at the dragon's nose and run for it!		5.Throw the muffin at the dragon's nose and run for it!
 6.Ask the dragon if he has heard any good jokes lately.		6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-As you charge the dragon with your sword, you realize		As you charge the dragon with your sword, you realize
+That choice is not available at this time, please try againTh |	That choice is not available at this time, please try again
+							      >	That choice is not available at this time, please try again
+							      >	That choice is not available at this time, please try again
+							      >	As you charge the dragon with your sword, you realize
 that you don't really have training in sword fighting.		that you don't really have training in sword fighting.
 The dragon happily eats you for breakfast.			The dragon happily eats you for breakfast.
 
@@ -791,9 +791,9 @@ What would you like to do?					What would you like to do?
 4.<UNAVAILABLE>							4.<UNAVAILABLE>
 5.Throw the muffin at the dragon's nose and run for it!		5.Throw the muffin at the dragon's nose and run for it!
 6.Ask the dragon if he has heard any good jokes lately.		6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-As you throw the muffin at the dragon, it harmlessly bounces 	As you throw the muffin at the dragon, it harmlessly bounces 
+That choice is not available at this time, please try againTh |	That choice is not available at this time, please try again
+							      >	That choice is not available at this time, please try again
+							      >	As you throw the muffin at the dragon, it harmlessly bounces 
 his thick scales.  You wonder what you were thinking as the d	his thick scales.  You wonder what you were thinking as the d
 eats you for breakfast.						eats you for breakfast.
 
@@ -892,8 +892,8 @@ What would you like to do?					What would you like to do?
 5.<UNAVAILABLE>							5.<UNAVAILABLE>
 6.Ask the dragon if he has heard any good jokes lately.		6.Ask the dragon if he has heard any good jokes lately.
 That is not a valid choice, please try again			That is not a valid choice, please try again
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-"Oh my! I'm so hungry, but I do love a good joke.   The		"Oh my! I'm so hungry, but I do love a good joke.   The
+That choice is not available at this time, please try again"O |	That choice is not available at this time, please try again
+							      >	"Oh my! I'm so hungry, but I do love a good joke.   The
 best one I've heard lately is					best one I've heard lately is
   Why can't you hear a pterodactyl go to the bathroom?"		  Why can't you hear a pterodactyl go to the bathroom?"
 
@@ -993,8 +993,8 @@ What would you like to do?					What would you like to do?
 4.<UNAVAILABLE>							4.<UNAVAILABLE>
 5.<UNAVAILABLE>							5.<UNAVAILABLE>
 6.Ask the dragon if he has heard any good jokes lately.		6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-"Oh thank you this looks delicious!" the dragon says		"Oh thank you this looks delicious!" the dragon says
+That choice is not available at this time, please try again"O |	That choice is not available at this time, please try again
+							      >	"Oh thank you this looks delicious!" the dragon says
 as he devours the pastry.   "I was so hungry I couldn't		as he devours the pastry.   "I was so hungry I couldn't
 think straight and was about to eat you!  How terrible		think straight and was about to eat you!  How terrible
 would that have been."						would that have been."
@@ -1082,8 +1082,8 @@ What would you like to do?					What would you like to do?
 2.<UNAVAILABLE>							2.<UNAVAILABLE>
 3.Run for it!							3.Run for it!
 4.<UNAVAILABLE>							4.<UNAVAILABLE>
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-As you fling the coins at the dragon, the jangling sound they	As you fling the coins at the dragon, the jangling sound they
+That choice is not available at this time, please try againAs |	That choice is not available at this time, please try again
+							      >	As you fling the coins at the dragon, the jangling sound they
 the air lets the dragon know where you are.  He turns and bre	the air lets the dragon know where you are.  He turns and bre
 fire at you.							fire at you.
 
@@ -1159,8 +1159,8 @@ What would you like to do?					What would you like to do?
 2.<UNAVAILABLE>							2.<UNAVAILABLE>
 3.Run for it!							3.Run for it!
 4.<UNAVAILABLE>							4.<UNAVAILABLE>
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-You start to run, but the remaining coins in your pocket	You start to run, but the remaining coins in your pocket
+That choice is not available at this time, please try againYo |	That choice is not available at this time, please try again
+							      >	You start to run, but the remaining coins in your pocket
 jangle loudly.  The dragon hears you and breathes fire		jangle loudly.  The dragon hears you and breathes fire
 at you.								at you.
 
@@ -1219,8 +1219,8 @@ What would you like to do?					What would you like to do?
 4.Squirt the eclair filling in the dragon's eye.		4.Squirt the eclair filling in the dragon's eye.
 5.<UNAVAILABLE>							5.<UNAVAILABLE>
 6.Ask the dragon if he has heard any good jokes lately.		6.Ask the dragon if he has heard any good jokes lately.
-That is not a valid choice, please try again		      |	That choice is not available at this time, please try again
-You offer the last of your money to the dragon, who seems a b	You offer the last of your money to the dragon, who seems a b
+That choice is not available at this time, please try againYo |	That choice is not available at this time, please try again
+							      >	You offer the last of your money to the dragon, who seems a b
 "Oh thank you!" he says.  Now, I can just go buy some breafka	"Oh thank you!" he says.  Now, I can just go buy some breafka
 at the bakery rather than eating travelers who wander on the 	at the bakery rather than eating travelers who wander on the 
 
