@@ -193,7 +193,7 @@ class Story {
         std::cout << "That is not a valid choice, please try again\n";
       }
       catch (std::range_error & ex) {
-        std::cout << "That choice is not available at this time, please try again";
+        std::cout << "That choice is not available at this time, please try again\n";
       }
     }
   }
