@@ -2,6 +2,7 @@
 #define __STORY_H__
 #include <fstream>
 #include <set>
+#include <stack>
 
 #include "cyoa.h"
 #include "page.h"
@@ -127,7 +128,32 @@ class Story {
       }
     }
   }
-
+  void showWinPath() {
+    checkStory();
+    std::stack<Path> todo;
+    todo.push(Path(0));
+    bool noWin = true;
+    while (!todo.empty()) {
+      Path currPath = todo.top();
+      todo.pop();
+      size_t currNode = currPath.last();
+      if (pages[currNode].isWin()) {
+        noWin = false;
+        std::cout << currPath;
+      }
+      else {
+        for (size_t i = 0; i < pages[currNode].numChoice(); i++) {
+          size_t dest = pages[currNode].getChoiceDest(i);
+          if (!currPath.find(dest)) {
+            todo.push(currPath.addNode(dest, i + 1));
+          }
+        }
+      }
+    }
+    if (noWin) {
+      std::cout << "This story is unwinnable !\n";
+    }
+  }
   ~Story() {}
 };
 
