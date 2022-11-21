@@ -30,14 +30,16 @@ int getLineType(const std::string & line) {
   throw std::invalid_argument("There is a invalid line with wrong format in the file!");
 }
 size_t getValidNum(const char * word) {
-  char * endtr;  // store the non-number characters
-  long number = strtoll(word, &endtr, 10);
-  if (number >= 0) {                   // It is non-negative  number
-    if (endtr[0] == '\0') {            //The string contains only numbers
-      return strtoul(word, NULL, 10);  // return the unsigned value
+  if (word[0] != '\0') {
+    char * endtr;  // store the non-number characters
+    long number = strtoll(word, &endtr, 10);
+    if (number >= 0) {                   // It is non-negative  number
+      if (endtr[0] == '\0') {            //The string contains only numbers
+        return strtoul(word, NULL, 10);  // return the unsigned value
+      }
     }
+    // indicates it is not a legal number
   }
-  // indicates it is not a legal number
   throw std::invalid_argument("Cannot convert to a valid number!");
 }
 

@@ -61,7 +61,8 @@ int main(int argc, char ** argv) {
   char * endptr;
   while (std::getline(std::cin, user_in)) {
     size_t o = std::strtoul(user_in.c_str(), &endptr, 10);
-    if (endptr[0] == '\0') {
+
+    if ((user_in[0] != '\0') && endptr[0] == '\0') {
       std::cout << o << "\n";
     }
     else {
