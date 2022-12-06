@@ -13,7 +13,7 @@ class Story {
   bool hasWin, hasLose;
   std::set<size_t> allDestPage;
   std::set<std::pair<std::string, long int> > properties;
-
+  std::vector<Page> pages;
   void addPage(const std::string & line) {
     size_t findAt = line.find("@");
     size_t findC = line.find(":", findAt);
@@ -145,7 +145,6 @@ class Story {
   }
 
  public:
-  std::vector<Page> pages;
   Story(std::string dir) :
       pageNum(0),
       directory(dir),
@@ -228,7 +227,7 @@ class Story {
       std::cout << "This story is unwinnable !\n";
     }
   }
-  ~Story() {}
+  friend std::ostream & operator<<(std::ostream & s, const Story & rhs);
 };
 
 std::ostream & operator<<(std::ostream & s, const Story & rhs) {

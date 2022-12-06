@@ -26,6 +26,7 @@ class Choice {
   Choice(size_t toP, const std::string & c, const std::string & prop, long int v) :
       dest(toP), content(c), hasCond(true), satisfied(false), cond(prop), val(v) {}
 };
+
 class Path {
   std::vector<size_t> paths;
   std::vector<size_t> options;
