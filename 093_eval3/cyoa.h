@@ -6,57 +6,26 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
-int getLineType(const std::string & line) {
-  size_t findC1 = line.find(":");
-  if (findC1 != std::string::npos) {
-    size_t findB = line.find("[");
-    if (findB != std::string::npos && findB < findC1) {
-      return 4;
-    }
-    size_t findAt = line.find("@");
-    if (findAt != std::string::npos && findAt < findC1) {
-      return 1;
-    }
-    size_t findC2 = line.find(":", findC1 + 1);
-    if (findC2 != std::string::npos) {
-      return 2;
-    }
-  }
-  else {
-    size_t findD = line.find("$");
-    if (findD != std::string::npos) {
-      return 3;
-    }
-  }
-  std::cerr << line << "\n";
-  throw std::invalid_argument("There is a invalid line with wrong format in the file!");
-}
-size_t getValidNum(const char * word) {
-  if (word[0] != '\0') {
-    char * endtr;  // store the non-number characters
-    long number = strtoll(word, &endtr, 10);
-    if (number >= 0) {                   // It is non-negative  number
-      if (endtr[0] == '\0') {            //The string contains only numbers
-        return strtoul(word, NULL, 10);  // return the unsigned value
-      }
-    }
-    // indicates it is not a legal number
-  }
-  throw std::invalid_argument("Cannot convert to a valid number!");
-}
 
-long int getValidLong(const char * word) {
-  if (word[0] != '\0') {
-    char * endtr;
-    long int number = strtol(word, &endtr, 10);
-    if (endtr[0] == '\0') {
-      return number;
-    }
-  }
+class Choice {
+ public:
+  size_t dest;
+  std::string content;
+  bool hasCond;
+  bool satisfied;
+  std::string cond;
+  long int val;
 
-  throw std::invalid_argument("Cannot convert to a valid long int!");
-}
-
+  Choice(size_t toP, const std::string & c) :
+      dest(toP),
+      content(c),
+      hasCond(false),
+      satisfied(true),
+      cond(std::string()),
+      val(0) {}
+  Choice(size_t toP, const std::string & c, const std::string & prop, long int v) :
+      dest(toP), content(c), hasCond(true), satisfied(false), cond(prop), val(v) {}
+};
 class Path {
   std::vector<size_t> paths;
   std::vector<size_t> options;
@@ -79,6 +48,7 @@ class Path {
     }
     return *this;
   }
+  ~Path() {}
   Path addNode(size_t p, size_t o) const {
     Path pathCopy(*this);
     pathCopy.paths.push_back(p);
@@ -93,6 +63,7 @@ class Path {
   size_t last() { return paths[paths.size() - 1]; }
   friend std::ostream & operator<<(std::ostream & stream, const Path & rhs);
 };
+
 std::ostream & operator<<(std::ostream & stream, const Path & rhs) {
   for (size_t i = 0; i < rhs.options.size(); i++) {
     stream << rhs.paths[i];
@@ -101,6 +72,57 @@ std::ostream & operator<<(std::ostream & stream, const Path & rhs) {
   stream << rhs.paths[rhs.options.size()];
   stream << "(win)\n";
   return stream;
+}
+
+int getLineType(const std::string & line) {
+  size_t findC1 = line.find(":");
+  if (findC1 != std::string::npos) {
+    size_t findB = line.find("[");
+    if (findB != std::string::npos && findB < findC1) {
+      return 4;
+    }
+    size_t findAt = line.find("@");
+    if (findAt != std::string::npos && findAt < findC1) {
+      return 1;
+    }
+    size_t findC2 = line.find(":", findC1 + 1);
+    if (findC2 != std::string::npos) {
+      return 2;
+    }
+  }
+  else {
+    size_t findD = line.find("$");
+    if (findD != std::string::npos) {
+      return 3;
+    }
+  }
+  std::cerr << "At \"" << line << "\"\n";
+  throw std::invalid_argument("The input line has invalid format!");
+}
+size_t getValidNum(const char * word) {
+  if (word[0] != '\0') {
+    char * endtr;  // store the non-number characters
+    long number = strtoll(word, &endtr, 10);
+    if (number >= 0) {                   // It is non-negative  number
+      if (endtr[0] == '\0') {            //The string contains only numbers
+        return strtoul(word, NULL, 10);  // return the unsigned value
+      }
+    }
+  }
+  // indicates it is not a legal number
+  throw std::invalid_argument("Cannot convert to a valid number!");
+}
+
+long int getValidLong(const char * word) {
+  if (word[0] != '\0') {
+    char * endtr;
+    long int number = strtol(word, &endtr, 10);
+    if (endtr[0] == '\0') {
+      return number;
+    }
+  }
+
+  throw std::invalid_argument("Cannot convert to a valid long int!");
 }
 
 void findAddProp(std::set<std::pair<std::string, long int> > & pSet,

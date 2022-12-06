@@ -6,12 +6,14 @@
 
 #include "cyoa.h"
 #include "page.h"
+
 class Story {
   size_t pageNum;
   std::string directory;
   bool hasWin, hasLose;
   std::set<size_t> allDestPage;
   std::set<std::pair<std::string, long int> > properties;
+
   void addPage(const std::string & line) {
     size_t findAt = line.find("@");
     size_t findC = line.find(":", findAt);
@@ -34,17 +36,18 @@ class Story {
     if (type == "L") {
       hasLose = true;
     }
-    Page newP(number, fName, type);
+    Page newP(fName, type);
     pages.push_back(newP);
     pageNum++;
   }
+
   void addChoice(std::string & line, bool fancy = false) {
     size_t findC1 = line.find(":");
     size_t findC2 = line.find(":", findC1 + 1);
-    size_t fromPage;
     size_t findBl = 0;
     size_t findE = 0;
     size_t findBr = 0;
+    size_t fromPage;
     long int propV;
     if (fancy) {
       findBl = line.find("[");
@@ -75,6 +78,7 @@ class Story {
       pages[fromPage].addChoice(toPage, line.substr(findC2 + 1));
     }
   }
+
   void addProperty(std::string & line) {
     size_t findD = line.find("$");
     size_t findE = line.find("=", findD);
@@ -112,6 +116,7 @@ class Story {
       throw std::range_error("A page reference is not valid!");
     }
   }
+
   size_t getNextPage(size_t curr, const std::string & userIn) {
     size_t userC = getValidNum(userIn.c_str());
     if (userC > pages[curr].numChoice() || userC == 0) {
@@ -123,11 +128,11 @@ class Story {
     }
     return pages[curr].getChoiceDest(userC - 1);
   }
+
   void updateProp(const size_t & currPage) {
     std::set<std::pair<std::string, long int> > newProps = pages[currPage].getProp();
     std::set<std::pair<std::string, long int> >::iterator it;
     for (it = newProps.begin(); it != newProps.end(); it++) {
-      // std::cout << it->first << " " << it->second << "\n";
       findAddProp(properties, *it);
     }
     for (size_t i = 0; i < pages[currPage].numChoice(); i++) {
@@ -196,6 +201,7 @@ class Story {
       }
     }
   }
+
   void showWinPath() {
     checkStory();
     std::stack<Path> todo;
