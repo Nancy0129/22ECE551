@@ -30,3 +30,15 @@ cyoa-step2 /usr/local/ece551/cyoa/story1 < ./Test/Input/in2_1.txt
 cyoa-step2 /usr/local/ece551/cyoa/story1 < ./Test/Input/in2_2.txt
 cyoa-step2 /usr/local/ece551/cyoa/story1 < ./Test/Input/in2_3.txt
 cyoa-step2 /usr/local/ece551/cyoa/story1 < ./Test/Input//badin2_1.txt
+
+cyoa-step1 ./Test/bad2_1
+cyoa-step1 ./Test/bad2_2
+cyoa-step1 ./Test/bad2_3
+cyoa-step2 ./Test/bad2_1  < ./Test/Input/all1.txt
+cyoa-step2 ./Test/bad2_2  < ./Test/Input/all1.txt
+cyoa-step2 ./Test/bad2_3  < ./Test/Input/all1.txt
+
+ec:step1
+ec:step2
+ec:step3
+ec:step4

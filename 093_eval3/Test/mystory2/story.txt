@@ -1,0 +1,35 @@
+0@N:p0.txt
+1@N:p1.txt
+2@N:p2.txt
+3@N:p3.txt
+4@N:p4.txt
+5@W:p5.txt
+6@L:p6.txt
+7@N:p7.txt
+8@N:p8.txt
+9@W:p9.txt
+
+0:1:begin
+0:0:not begin
+
+1:2:1 to 2
+1:7:1 to 7
+1:9:1 to 9
+1:6:reject 1
+
+2:3:2 to 3
+2:9:2 to 9
+2:6:reject 2
+
+3:4:3 to 4
+3:9:3 to 9
+3:6:reject 3
+
+4:5:4 to 5 win
+4:8:4 to 8
+4:9:4 to 9
+4:6:reject 4
+
+7:3:7 to 3
+
+8:7:8 back to 7
