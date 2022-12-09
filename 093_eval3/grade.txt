@@ -1,6 +1,6 @@
-Grading at 12/09/2022:04:34:14.447351
-For commit ID cacf2664c06aae0cf06454f41f6c211503b2d3e5
-Grading at Thu Dec  8 11:33:45 PM EST 2022
+Grading at 12/09/2022:04:39:01.598724
+For commit ID da3afdd797c751387f00f855864a7fb78923ad52
+Grading at Thu Dec  8 11:38:32 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -115,9 +115,47 @@ Valgrind was clean
 
 1.11: Current test is ./cyoa-step1 ./Test/bad1_8 < /dev/null
 -----------------------------
-You considered this a failure case:
-Cannot convert to a valid number!
-But we did not.
+It looks like you got different output from us on that case.
+Here is the diff (yours on left, ours on right):
+
+Page 0								Page 0
+==========							==========
+Story Begin							Story Begin
+This is page 0!!!						This is page 0!!!
+
+What would you like to do?					What would you like to do?
+ 
+ 1. 								 1. 
+ 2. sepcials=[]@$						 2. sepcials=[]@$
+ 3. <UNAVAILABLE>					      |	 3. directly win
+ 4. space							 4. space
+Page 1								Page 1
+==========							==========
+~~~This is page 1!!!!						~~~This is page 1!!!!
+
+What would you like to do?					What would you like to do?
+ 
+ 1. addchoice after a page					 1. addchoice after a page
+Page 2								Page 2
+==========							==========
+~~~This is page 2!!!!						~~~This is page 2!!!!
+
+What would you like to do?					What would you like to do?
+ 
+ 1. addchoice after a choice					 1. addchoice after a choice
+ 2. add lose path						 2. add lose path
+Page 3								Page 3
+==========							==========
+~~~This is page 3!!!!						~~~This is page 3!!!!
+
+Congratulations! You have won. Hooray!				Congratulations! You have won. Hooray!
+Page 4								Page 4
+==========							==========
+~~~This is page 4!!!!						~~~This is page 4!!!!
+
+Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
+Your file did not match the expected output
+
 
 
 1.12: Current test is ./cyoa-step1 ./Test/bad1_9 < /dev/null
@@ -284,7 +322,8 @@ Valgrind was clean
 -----------------------------
 Great: we both considered this an error
 ----here is what you printed on stderr---
-Cannot convert to a valid number!
+The game is not end!
+
 -----------------------------------------
 Lets check if it valgrinds:
 Valgrind was clean
