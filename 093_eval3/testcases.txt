@@ -37,3 +37,8 @@ cyoa-step1 ./Test/bad2_3
 cyoa-step2 ./Test/bad2_1  < ./Test/Input/all1.txt
 cyoa-step2 ./Test/bad2_2  < ./Test/Input/all1.txt
 cyoa-step2 ./Test/bad2_3  < ./Test/Input/all1.txt
+
+ec:step1
+ec:step2
+ec:step3
+ec:step4
