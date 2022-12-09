@@ -1,6 +1,11 @@
 0@N:p0.txt
+0:0:to self
 1@N:p1.txt
+1:1:to self
 2@N:p2.txt
+2:2:aaa
+2:3:aaaa
+2:4:aaaaaa
 3@W:p3.txt
 4@L:p4.txt
 
