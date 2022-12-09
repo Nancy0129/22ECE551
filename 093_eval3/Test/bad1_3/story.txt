@@ -11,7 +11,7 @@
 1:2:addchoice after a page
   0:  3:space
 2:3:addchoice after a choice
-2:-4:add lose path
+2:4abc:add lose path
 3@W:p3.txt
 4@L:p4.txt
 
