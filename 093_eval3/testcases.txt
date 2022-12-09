@@ -23,3 +23,5 @@ cyoa-step2 ./Test/bad1_2
 cyoa-step2 ./Test/bad1_3
 cyoa-step2 ./Test/bad1_4
 cyoa-step2 ./Test/bad1_5
+
+cyoa-step4 ./Test/bad1_8
