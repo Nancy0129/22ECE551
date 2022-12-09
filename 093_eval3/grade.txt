@@ -1,6 +1,6 @@
-Grading at 12/09/2022:15:46:44.268494
-For commit ID 05611668a5268a58aa276bd1336a1bc73a15dbd6
-Grading at Fri Dec  9 10:45:46 AM EST 2022
+Grading at 12/09/2022:15:54:42.885325
+For commit ID b05af0a3dd55ea32d0c2b8ede762af65ad4b9c80
+Grading at Fri Dec  9 10:53:42 AM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -113,52 +113,7 @@ Lets check if it valgrinds:
 Valgrind was clean
 
 
-1.11: Current test is ./cyoa-step1 ./Test/bad1_8 < /dev/null
------------------------------
-It looks like you got different output from us on that case.
-Here is the diff (yours on left, ours on right):
-
-Page 0								Page 0
-==========							==========
-Story Begin							Story Begin
-This is page 0!!!						This is page 0!!!
-
-What would you like to do?					What would you like to do?
- 
- 1. 								 1. 
- 2. sepcials=[]@$						 2. sepcials=[]@$
- 3. directly win					      |	 3. <UNAVAILABLE>
- 4. space							 4. space
-Page 1								Page 1
-==========							==========
-~~~This is page 1!!!!						~~~This is page 1!!!!
-
-What would you like to do?					What would you like to do?
- 
- 1. addchoice after a page					 1. addchoice after a page
-Page 2								Page 2
-==========							==========
-~~~This is page 2!!!!						~~~This is page 2!!!!
-
-What would you like to do?					What would you like to do?
- 
- 1. addchoice after a choice					 1. addchoice after a choice
- 2. add lose path						 2. add lose path
-Page 3								Page 3
-==========							==========
-~~~This is page 3!!!!						~~~This is page 3!!!!
-
-Congratulations! You have won. Hooray!				Congratulations! You have won. Hooray!
-Page 4								Page 4
-==========							==========
-~~~This is page 4!!!!						~~~This is page 4!!!!
-
-Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
-Your file did not match the expected output
-
-
-
-1.12: Current test is ./cyoa-step1 ./Test/bad1_9 < /dev/null
+1.11: Current test is ./cyoa-step1 ./Test/bad1_9 < /dev/null
 -----------------------------
 Great: we both considered this an error
 ----here is what you printed on stderr---
@@ -169,21 +124,21 @@ Lets check if it valgrinds:
 Valgrind was clean
 
 
-1.13: Current test is ./cyoa-step1 ./Test/bad2_1 < /dev/null
+1.12: Current test is ./cyoa-step1 ./Test/bad2_1 < /dev/null
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
 
-1.14: Current test is ./cyoa-step1 ./Test/bad2_2 < /dev/null
+1.13: Current test is ./cyoa-step1 ./Test/bad2_2 < /dev/null
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
 
-1.15: Current test is ./cyoa-step1 ./Test/bad2_3 < /dev/null
+1.14: Current test is ./cyoa-step1 ./Test/bad2_3 < /dev/null
 -----------------------------
 Great: we both considered this an error
 ----here is what you printed on stderr---
@@ -193,35 +148,35 @@ Lets check if it valgrinds:
 Valgrind was clean
 
 
-1.16: Current test is ./cyoa-step1 ./Test/bad2_4 < /dev/null
+1.15: Current test is ./cyoa-step1 ./Test/bad2_4 < /dev/null
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
 
-1.17: Current test is ./cyoa-step1 ./Test/mystory1 < /dev/null
+1.16: Current test is ./cyoa-step1 ./Test/mystory1 < /dev/null
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
 
-1.18: Current test is ./cyoa-step1 ./Test/mystory2 < /dev/null
+1.17: Current test is ./cyoa-step1 ./Test/mystory2 < /dev/null
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
 
-1.19: Current test is ./cyoa-step1 ./Test/mystory3 < /dev/null
+1.18: Current test is ./cyoa-step1 ./Test/mystory3 < /dev/null
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
 
-1.20: Current test is ./cyoa-step1 ./Test/mystory4 < /dev/null
+1.19: Current test is ./cyoa-step1 ./Test/mystory4 < /dev/null
 -----------------------------
 Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
@@ -573,34 +528,9 @@ Valgrind was clean
 
 4.3: Current test is ./cyoa-step4 ./Test/bad1_8  <  ./Test/Input/all1.txt
 -----------------------------
-It looks like you got different output from us on that case.
-Here is the diff (yours on left, ours on right):
-
-Story Begin							Story Begin
-This is page 0!!!						This is page 0!!!
-
-What would you like to do?					What would you like to do?
- 
- 1. 								 1. 
- 2. sepcials=[]@$						 2. sepcials=[]@$
- 3. directly win					      |	 3. <UNAVAILABLE>
- 4. space							 4. space
-~~~This is page 1!!!!						~~~This is page 1!!!!
-
-What would you like to do?					What would you like to do?
- 
- 1. addchoice after a page					 1. addchoice after a page
-~~~This is page 2!!!!						~~~This is page 2!!!!
-
-What would you like to do?					What would you like to do?
- 
- 1. addchoice after a choice					 1. addchoice after a choice
- 2. add lose path						 2. add lose path
-~~~This is page 3!!!!						~~~This is page 3!!!!
-
-Congratulations! You have won. Hooray!				Congratulations! You have won. Hooray!
-Your file did not match the expected output
-
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
 
 
 4.4: Current test is ./cyoa-step4 /usr/local/ece551/cyoa/story1  <  ./Test/Input/in2_1.txt
@@ -686,8 +616,8 @@ Lets check if it valgrinds:
 Valgrind was clean
 No request to check for intermediate deadline completion on step 4
 
-You have NOT passed your test cases!
-You should go and figure out/understand where thing went wrong
-And fix the problem(s) before the deadline
+You have passed the test cases YOU provided
+If your tests are good, this is great. 
+If your tests are insufficient, you should do much more testing
 
 Overall Grade: NO GRADE YET
