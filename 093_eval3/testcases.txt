@@ -12,4 +12,4 @@ cyoa-step3 ./Test/mystory3
 cyoa-step1 ./Test/mystory1
 cyoa-step1 ./Test/mystory2
 cyoa-step1 ./Test/mystory3
-
+ec:step3

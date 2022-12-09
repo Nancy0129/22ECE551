@@ -253,9 +253,12 @@ class Story {
         std::cout << currPath;  // show the winning path
       }
       else {
+        std::set<size_t> destSet;
         for (size_t i = 0; i < pages[currNode].numChoice(); i++) {
           size_t dest = pages[currNode].getChoiceDest(i);
-          if (!currPath.find(dest)) {  // check if the destination has visited
+          // check if the destination has visited
+          if (!currPath.find(dest) && destSet.find(dest) == destSet.end()) {
+            destSet.insert(dest);
             todo.push(currPath.addNode(dest, i + 1));
           }
         }
