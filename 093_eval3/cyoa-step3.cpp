@@ -4,10 +4,10 @@ int main(int argc, char ** argv) {
     std::cerr << "Invalid number of argument!\n";
     return EXIT_FAILURE;
   }
-  try {
+  try {  // generate and show the winning path
     Story mystory(argv[1]);
     mystory.showWinPath();
-  }
+  }  // catch and display the error
   catch (std::invalid_argument & ex) {
     std::cerr << "Cannot generate story: " << ex.what() << "\n";
     return EXIT_FAILURE;

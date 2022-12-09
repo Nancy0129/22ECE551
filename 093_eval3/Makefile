@@ -9,7 +9,4 @@ cyoa-step%: cyoa-step%.o
 .PHONY: clean
 clean:
 	rm -f *~ $(PROGS) $(OBJS)
-#story.o: story.h
-#page.o: page.h
-#cyoa.o: cyoa.h
 

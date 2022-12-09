@@ -5,11 +5,11 @@ int main(int argc, char ** argv) {
     std::cerr << "Invalid number of argument!\n";
     return EXIT_FAILURE;
   }
-  try {
+  try {  // print story
     Story mystory(argv[1]);
     std::cout << mystory;
   }
-  catch (std::invalid_argument & ex) {
+  catch (std::invalid_argument & ex) {  // show the error
     std::cerr << "Cannot generate/print story: " << ex.what() << "\n";
     return EXIT_FAILURE;
   }
