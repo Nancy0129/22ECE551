@@ -1,6 +1,6 @@
-Grading at 12/09/2022:04:11:02.748871
-For commit ID 314cc4f0f65789977fa0fdda39bbd4e7eea394ba
-Grading at Thu Dec  8 11:10:35 PM EST 2022
+Grading at 12/09/2022:04:22:46.365515
+For commit ID 39048ffde4e3d8e1af979a6088f91d7a13897caa
+Grading at Thu Dec  8 11:22:15 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -115,12 +115,9 @@ Valgrind was clean
 
 1.11: Current test is ./cyoa-step1 ./Test/bad1_8 < /dev/null
 -----------------------------
-Great: we both considered this an error
-----here is what you printed on stderr---
-Invalid page type: not N, W, or L!
------------------------------------------
-Lets check if it valgrinds:
-Valgrind was clean
+You considered this a failure case:
+Cannot convert to a valid number!
+But we did not.
 
 
 1.12: Current test is ./cyoa-step1 ./Test/bad1_9 < /dev/null
@@ -281,10 +278,20 @@ A page reference is not valid!
 -----------------------------------------
 Lets check if it valgrinds:
 Valgrind was clean
+
+
+4.3: Current test is ./cyoa-step4 ./Test/bad1_8 < /dev/null
+-----------------------------
+Great: we both considered this an error
+----here is what you printed on stderr---
+Cannot convert to a valid number!
+-----------------------------------------
+Lets check if it valgrinds:
+Valgrind was clean
 No request to check for intermediate deadline completion on step 4
 
-You have passed the test cases YOU provided
-If your tests are good, this is great. 
-If your tests are insufficient, you should do much more testing
+You have NOT passed your test cases!
+You should go and figure out/understand where thing went wrong
+And fix the problem(s) before the deadline
 
 Overall Grade: NO GRADE YET
