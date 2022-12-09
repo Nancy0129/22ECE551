@@ -5,14 +5,13 @@
 
 
 	
-
+1:2:addchoice before a page
   1@N:p1.txt
 2@N:p2.txt
-1:2:addchoice after a page
   0:  3:space
 2:3:addchoice after a choice
 2:4:add lose path
-2:5:no page
+
 3@W:p3.txt
 4@L:p4.txt
 

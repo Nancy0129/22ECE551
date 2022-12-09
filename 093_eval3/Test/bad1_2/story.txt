@@ -1,5 +1,5 @@
 0@N:p0.txt
-0:1:multiple:::
+0 :1:multiple:::
 0:2:sepcials=[]@$
 0:4:number@type:filenamepagenum:destpage:textpagenum$var=valuepagenum[var=value]:dest:text
 
@@ -12,7 +12,6 @@
   0:  3:space
 2:3:addchoice after a choice
 2:4:add lose path
-2:5:no page
 3@W:p3.txt
 4@L:p4.txt
 
