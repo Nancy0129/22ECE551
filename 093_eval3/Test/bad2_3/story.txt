@@ -1,0 +1,14 @@
+0@N:p0.txt
+0:1:to1
+0:2:to2
+1@N:p1.txt
+0:3:to3
+0:4:to4
+2@N:p2.txt
+3@W:p3.txt
+4@L:p4.txt
+
+
+
+
+
