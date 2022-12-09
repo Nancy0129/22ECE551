@@ -38,8 +38,8 @@ class Choice {
   Choice(size_t toP, const std::string & c, const std::string & prop, long int v) :
       dest(toP),
       content(c),
-      hasCond(true),     //there is a condition
-      satisfied(false),  // the condition is not satisfied as default
+      hasCond(true),    //there is a condition
+      satisfied(true),  // the condition is satisfied as default
       cond(prop),
       val(v) {}
 };
