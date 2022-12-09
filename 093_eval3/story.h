@@ -186,7 +186,7 @@ class Story {
     }
     while (std::getline(sFile, line)) {
       // Ignore the blank lines (there are content other than " ","\n"," \t")
-      if (line.find_first_not_of(" \n\t") != std::string::npos) {
+      if (line.find_first_not_of(" \n\t\v\f\r") != std::string::npos) {
         // Check format and get corresponding types (see cyoa.h)
         int lineType = getLineType(line);
         // Send the line to corresponding function to handle
@@ -213,7 +213,7 @@ class Story {
     size_t currPos = 0;           // current page number
     std::cout << pages[currPos];  // print current page
     while (std::getline(std::cin, userChoice)) {
-      if (userChoice.find_first_not_of(" \n\t") != std::string::npos) {
+      if (userChoice.find_first_not_of(" \n\t\v\f\r") != std::string::npos) {
         try {  // ignore blank lines
 
           // Update page number

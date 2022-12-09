@@ -1,3 +1,7 @@
+cyoa-step1 ./Test/bad2_4
+cyoa-step2 ./Test/bad2_4 < ./Test/Input/all1.txt
+cyoa-step2 ./Test/mystory4 < ./Test/Input/all1.txt
+
 cyoa-step3 ./Test/emptystory
 cyoa-step3 ./Test/bad1_1
 cyoa-step3 ./Test/bad1_2
@@ -5,11 +9,18 @@ cyoa-step3 ./Test/bad1_3
 cyoa-step3 ./Test/bad2_1
 cyoa-step3 ./Test/bad2_2
 cyoa-step3 ./Test/bad2_3
+cyoa-step3 ./Test/bad2_4
 cyoa-step3 ./Test/mystory1
 cyoa-step3 ./Test/mystory2
 cyoa-step3 ./Test/mystory3
+cyoa-step3 ./Test/mystory4
 
 cyoa-step1 ./Test/mystory1
 cyoa-step1 ./Test/mystory2
 cyoa-step1 ./Test/mystory3
+cyoa-step1 ./Test/mystory4
+ec:step1
+ec:step2
 ec:step3
+ec:step4
+
