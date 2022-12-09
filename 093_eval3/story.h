@@ -97,7 +97,7 @@ class Story {
     if (atPage >= pages.size()) {  // check if the page already exists
       throw std::invalid_argument("Add properties before a page declaration!");
     }
-    long int value = getValidNum(line.substr(findE + 1).c_str());  //get val
+    long int value = getValidLong(line.substr(findE + 1).c_str());  //get val
     pages[atPage].addProp(line.substr(findD + 1, findE - (findD + 1)), value);
     // Set the property val to 0 in story's property pair set
     properties.insert(propPair(line.substr(findD + 1, findE - (findD + 1)), 0));

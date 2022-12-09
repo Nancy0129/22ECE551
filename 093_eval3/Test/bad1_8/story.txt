@@ -1,7 +1,7 @@
 0@N:p0.txt
 0:1:
 0:2:sepcials=[]@$
-0$shownotappear=-100
+0$shownotappear=     -100
 0[notAppear=0]:3:directly win
 
 
