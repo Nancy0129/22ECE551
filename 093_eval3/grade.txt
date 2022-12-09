@@ -1,6 +1,6 @@
-Grading at 12/09/2022:05:12:09.593665
-For commit ID 371ff8b9f00b0622d6ef83921bb913c671ba8289
-Grading at Fri Dec  9 12:11:30 AM EST 2022
+Grading at 12/09/2022:05:29:00.077336
+For commit ID fcad32e6d716e0c8af5248b92859e93bfb475ba7
+Grading at Fri Dec  9 12:28:27 AM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -229,6 +229,7 @@ Only you can decide....						Only you can decide....
 What would you like to do?					What would you like to do?
  
  1. I am ready for this story!					 1. I am ready for this story!
+That is not a valid choice, please try again			That is not a valid choice, please try again
 One day, a strange old wizard comes to your village and tells	One day, a strange old wizard comes to your village and tells
 there is an evil dragon lurking in the hills. This wizard's s	there is an evil dragon lurking in the hills. This wizard's s
 why the village's goats and cows have been going missing late	why the village's goats and cows have been going missing late
