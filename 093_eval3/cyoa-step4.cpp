@@ -8,12 +8,8 @@ int main(int argc, char ** argv) {
     Story mystory(argv[1]);
     mystory.play();
   }  // catch and display the error:
-  catch (std::invalid_argument & ex) {
-    std::cerr << "Cannot generate story: " << ex.what() << "\n";
-    return EXIT_FAILURE;
-  }
-  catch (std::range_error & ex) {
-    std::cerr << "The story is invalid: " << ex.what() << "\n";
+  catch (std::exception & ex) {
+    std::cerr << ex.what() << "\n";
     return EXIT_FAILURE;
   }
   return EXIT_SUCCESS;

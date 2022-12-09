@@ -230,6 +230,8 @@ class Story {
         std::cout << "That choice is not available at this time, please try again\n";
       }
     }
+    // Get the end of input but the story is not end -> error
+    throw std::invalid_argument("The game is not end!\n");
   }
 
   // Use DFS to find all winning path

@@ -9,8 +9,8 @@ int main(int argc, char ** argv) {
     Story mystory(argv[1]);
     std::cout << mystory;
   }
-  catch (std::invalid_argument & ex) {  // show the error
-    std::cerr << "Cannot generate/print story: " << ex.what() << "\n";
+  catch (std::exception & ex) {  // show the error
+    std::cerr << ex.what() << "\n";
     return EXIT_FAILURE;
   }
   return EXIT_SUCCESS;
