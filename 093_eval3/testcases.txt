@@ -74,4 +74,8 @@ cyoa-step1 ./Test/mystory2
 cyoa-step1 ./Test/mystory3
 cyoa-step1 ./Test/mystory4
 
+ec:step1
+ec:step2
+ec:step3
+ec:step4
 
