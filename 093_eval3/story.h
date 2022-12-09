@@ -211,6 +211,7 @@ class Story {
     checkStory();                 // check sotry format beforehand
     std::string userChoice;       // user's input choice
     size_t currPos = 0;           // current page number
+    updateProp(currPos);          // update status
     std::cout << pages[currPos];  // print current page
     while (std::getline(std::cin, userChoice)) {
       if (userChoice.find_first_not_of(" \n\t\v\f\r") != std::string::npos) {

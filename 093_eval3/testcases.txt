@@ -15,7 +15,7 @@ cyoa-step1 ./Test/bad1_4
 cyoa-step1 ./Test/bad1_5
 cyoa-step1 ./Test/bad1_6
 cyoa-step1 ./Test/bad1_7
-cyoa-step1 ./Test/bad1_8
+
 cyoa-step1 ./Test/bad1_9
 
 cyoa-step2 ./Test/bad1_1
