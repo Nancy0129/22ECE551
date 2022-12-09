@@ -213,21 +213,25 @@ class Story {
     size_t currPos = 0;           // current page number
     std::cout << pages[currPos];  // print current page
     while (std::getline(std::cin, userChoice)) {
-      try {
-        // Update page number
-        currPos = getNextPage(currPos, userChoice);
-        // Update the property pair set and the status of chocies
-        updateProp(currPos);
-        std::cout << pages[currPos];  // display the page
-        if (pages[currPos].isWin() || pages[currPos].isLose()) {
-          return;  // if win/lose -> end the game
+      if (userChoice.find_first_not_of(" \n\t") != std::string::npos) {
+        try {  // ignore blank lines
+
+          // Update page number
+          currPos = getNextPage(currPos, userChoice);
+          // Update the property pair set and the status of chocies
+          updateProp(currPos);
+          std::cout << pages[currPos];  // display the page
+          if (pages[currPos].isWin() || pages[currPos].isLose()) {
+            return;  // if win/lose -> end the game
+          }
+
+        }  // catch the exception for invalid choice and let user choose again
+        catch (std::invalid_argument & ex) {  // indicate the input is not valid
+          std::cout << "That is not a valid choice, please try again\n";
         }
-      }  // catch the exception for invalid choice and let user choose again
-      catch (std::invalid_argument & ex) {  // indicate the input is not valid
-        std::cout << "That is not a valid choice, please try again\n";
-      }
-      catch (std::range_error & ex) {  // indicate the choice is not available
-        std::cout << "That choice is not available at this time, please try again\n";
+        catch (std::range_error & ex) {  // indicate the choice is not available
+          std::cout << "That choice is not available at this time, please try again\n";
+        }
       }
     }
     // Get the end of input but the story is not end -> error
