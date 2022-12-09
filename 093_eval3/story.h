@@ -54,8 +54,10 @@ class Story {
     long int propV;     // property val for fancy
     if (fancy) {
       findBl = line.find("[");
-      findE = line.find("=");
-      findBr = line.find("]");
+      findE = line.find("=", findBl + 1);
+      findBr = line.find("]", findE + 1);
+      findC1 = line.find(":", findBr + 1);
+      findC2 = line.find(":", findC1 + 1);
       checkType4(findC1, findC2, findBl, findE, findBr);  // check the format
       fromPage = getValidNum(line.substr(0, findBl).c_str());
       propV = getValidLong(line.substr(findE + 1, findBr - (findE + 1)).c_str());

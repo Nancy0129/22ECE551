@@ -25,6 +25,7 @@ cyoa-step2 ./Test/bad1_4
 cyoa-step2 ./Test/bad1_5
 
 cyoa-step4 ./Test/bad1_8  < ./Test/Input/all1.txt
+cyoa-step4 ./Test/mystory5  < ./Test/Input/all1.txt
 
 cyoa-step2 /usr/local/ece551/cyoa/story1 < ./Test/Input/in2_1.txt
 cyoa-step2 /usr/local/ece551/cyoa/story1 < ./Test/Input/in2_2.txt

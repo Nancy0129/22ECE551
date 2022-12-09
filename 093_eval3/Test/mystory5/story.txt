@@ -1,0 +1,35 @@
+0@N:p0.txt
+1@N:p1.txt
+2@N:p2.txt
+3@N:p3.txt
+4@N:p4.txt
+5@W:p5.txt
+6@L:p6.txt
+7@N:p7.txt
+8@N:p8.txt
+9@W:p9.txt
+
+0:1:begin
+0:0:not begin
+0$[]::=-1000
+0[[$::]=-99]:9:directly win
+
+1[[]::=-1000]:9:directly win
+1:2:1 to 2
+
+
+2:3:2 to 3
+
+3:2:3 back to 2
+3:4:3 to 4
+
+4:1:4 back to 1
+4:4:4 to 4
+
+7:8:7 to 8
+8:7:8 to 7
+
+8:9:8 to 9 win
+8:5:8 to 5 win
+7:6:7 to 6 reject
+
